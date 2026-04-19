@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ducrp5e415mcm"]
+
+[ext_resource type="Texture2D" uid="uid://bqn0uckq6oqrw" path="res://images/ui/character_icon/character_icon_akai.png" id="1_vlre5"]
+
+[node name="YakumoakaiIcon" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vlre5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://oqbq7pxpfhuy"]
+
+[ext_resource type="Texture2D" uid="uid://cprkqivvmoc1p" path="res://character/akai/portrait.png" id="1_4a635"]
+
+[node name="CharSelectBgYakumoakai" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1361, 658)
+scale = Vector2(0.93906265, 0.91083336)
+texture = ExtResource("1_4a635")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]

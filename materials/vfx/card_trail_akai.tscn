@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwpgd5cjehj1q"]
+
+[ext_resource type="Script" uid="uid://ti2gyrw32hkq" path="res://scenes/vfx/CardTrailAkai.cs" id="1_ewled"]
+[ext_resource type="Texture2D" uid="uid://bukwlvqlw5opk" path="res://scenes/vfx/brush_particle_2.png" id="2_ewled"]
+[ext_resource type="Script" uid="uid://g10kf5nhftbq" path="res://scenes/vfx/Out.cs" id="2_pycwb"]
+[ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://scenes/vfx/canvas_item_material_additive_shared.tres" id="3_pycwb"]
+[ext_resource type="Script" uid="uid://cxgcr0utfibb3" path="res://scenes/vfx/Inner.cs" id="3_reym5"]
+[ext_resource type="Texture2D" uid="uid://ohllqp6053tm" path="res://scenes/vfx/sparkle.png" id="4_reym5"]
+[ext_resource type="Texture2D" uid="uid://c22l8vqrga8k" path="res://scenes/vfx/small_card_silhouette.png" id="5_a2v62"]
+
+[sub_resource type="Gradient" id="Gradient_2qveg"]
+offsets = PackedFloat32Array(0, 0.15753424, 0.30821916, 0.56164384)
+colors = PackedColorArray(0.9843137, 0, 0, 1, 1, 1, 1, 1, 0.8352941, 0.011764706, 0, 1, 0.58785677, 0.18201159, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_125an"]
+offsets = PackedFloat32Array(0, 0.0890411, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.43835616, 0.43835616, 1, 1, 1, 1, 1)
+
+[node name="CardTrailYakumoakai" type="Node2D"]
+script = ExtResource("1_ewled")
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="out" type="Line2D" parent="1"]
+script = ExtResource("2_pycwb")
+
+[node name="inner" type="Line2D" parent="1"]
+script = ExtResource("3_reym5")
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="BigSparks" type="CPUParticles2D" parent="2"]
+amount = 64
+texture = ExtResource("2_ewled")
+lifetime = 2.0
+randomness = 0.5
+lifetime_randomness = 1.0
+fract_delta = false
+emission_shape = 3
+emission_rect_extents = Vector2(24, 24)
+direction = Vector2(5, -5)
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 32.0
+angular_velocity_min = -32.0
+angular_velocity_max = 32.0
+damping_min = 1.0
+damping_max = 5.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.2
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_2qveg")
+
+[node name="LittleSparks" type="CPUParticles2D" parent="2"]
+material = ExtResource("3_pycwb")
+amount = 64
+texture = ExtResource("4_reym5")
+lifetime = 0.3
+explosiveness = 0.35
+randomness = 1.0
+lifetime_randomness = 1.0
+fract_delta = false
+emission_shape = 3
+emission_rect_extents = Vector2(24, 24)
+direction = Vector2(0, -5)
+gravity = Vector2(0, 1960)
+initial_velocity_max = 480.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.02
+scale_amount_max = 0.05
+color_ramp = SubResource("Gradient_125an")
+
+[node name="Sprite2D2" type="Sprite2D" parent="2"]
+modulate = Color(1, 0, 0, 0.4)
+material = ExtResource("3_pycwb")
+scale = Vector2(1.054, 1.054)
+texture = ExtResource("5_a2v62")
+
+[node name="Sprite2D3" type="Sprite2D" parent="2"]
+modulate = Color(0.4745098, 0, 0, 0.64705884)
+material = ExtResource("3_pycwb")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_a2v62")
