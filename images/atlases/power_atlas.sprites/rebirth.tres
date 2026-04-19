@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://1xd1h8tx8qw8"]
+
+[ext_resource type="Texture2D" uid="uid://b0ho2euynwmxe" path="res://images/powers/rebirth.png" id="1_4fews"]
+
+[resource]
+atlas = ExtResource("1_4fews")
+region = Rect2(0, 0, 84, 84)

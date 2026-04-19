@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bh2tenwuq4igg"]
+
+[ext_resource type="Texture2D" uid="uid://cq0wrwr13i36i" path="res://images/powers/divine_god_incantation_power.png" id="1_hf040"]
+
+[resource]
+atlas = ExtResource("1_hf040")
+region = Rect2(0, 0, 84, 84)

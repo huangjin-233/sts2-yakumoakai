@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://lq57ybsvrwmv"]
+
+[ext_resource type="Texture2D" uid="uid://d6crkmj0dh6j" path="res://images/ui/energys/yakumoakai_energy_icon.png" id="1_kuqgn"]
+
+[resource]
+atlas = ExtResource("1_kuqgn")
+region = Rect2(0, 0, 74, 74)
