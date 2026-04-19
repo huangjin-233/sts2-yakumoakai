@@ -1,0 +1,28 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <Target Name="CopyCustomOutput" AfterTargets="Build">
+    <ItemGroup>
+      <OutputDlls Include="$(OutputPath)\$(AssemblyName).dll" />
+      <OutputDlls Include="$(OutputPath)\$(AssemblyName).pdb" />
+    </ItemGroup>
+
+    <MakeDir Directories="$(MSBuildProjectDirectory)\build" />
+    <Copy SourceFiles="@(OutputDlls)" DestinationFolder="$(MSBuildProjectDirectory)\build" />
+</Target>
+  <ItemGroup>
+    <ProjectReference Include="..\ritus\STS2-RitsuLib-main\STS2-RitsuLib.csproj" />
+  </ItemGroup>
+<PropertyGroup><NoWarn>$(NoWarn);STS001;STS003</NoWarn></PropertyGroup><ItemGroup><PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="all" /></ItemGroup><ItemGroup><Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" /></ItemGroup><ItemGroup>
+  <Folder Include="scenes\creature_visuals\" />
+</ItemGroup><ItemGroup>
+  <Reference Include="0Harmony">
+    <HintPath>libs\0Harmony.dll</HintPath>
+  </Reference>
+  <Reference Include="sts2">
+    <HintPath>libs\sts2.dll</HintPath>
+  </Reference>
+</ItemGroup></Project>
