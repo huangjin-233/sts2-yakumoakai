@@ -125,7 +125,7 @@
 	"DESTROY_ROAR.title":  "破灭之咆哮",
 	"DIVINE_GOD_INCANTATION.description":  "本回合每消耗10[gold]mp[/gold],获得{DivineGodIncantationPower:diff()}点[gold]格挡[/gold]",
 	"DIVINE_GOD_INCANTATION.title":  "魔神吟诵",
-	"SLEEP.description":  "[gold]击晕[/gold]一名敌人，使其获得1层[gold]无实体[/gold]",
+	"SLEEP.description":  "[gold]击晕[/gold]一名敌人，使其获得2层[gold]无实体[/gold]",
 	"SLEEP.title":  "昏睡鳞粉",
 	"FLANRDE_WING.description":  "失去3点生命，获得{mp:diff()}[gold]mp[/gold]",
 	"FLANRDE_WING.title":  "七曜的支点水晶翼",
