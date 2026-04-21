@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -33,11 +34,22 @@ namespace YakumoAkai.character.power
         public override bool AllowNegative => false;
         public override decimal ModifyDamageMultiplicative(Creature target, decimal amount, ValueProp props, Creature dealer, CardModel cardSource)
         {
-            return base.Amount;
+            if (amount > 0) 
+            {   
+                return base.Amount;
+            }
+            return 1m;
         }
         public override async Task AfterEnergyReset(Player player)
         {
             await PowerCmd.Remove(this);
+        }
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (side == base.Owner.Side)
+            {
+                await CreatureCmd.Damage(choiceContext, base.Owner, 99999, ValueProp.Unpowered, base.Owner, null);
+            }
         }
     }
 }

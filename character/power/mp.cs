@@ -12,6 +12,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Rewards;
+using MegaCrit.Sts2.Core.Rooms;
+using YakumoAkai.character.card.rare;
 namespace YakumoAkai.character.power
 {
 	public sealed class mp : PowerModel
@@ -26,12 +29,18 @@ namespace YakumoAkai.character.power
 
 		// 允许层数为负数
 		public override bool AllowNegative => false;
+		public static int max = 150;
         public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            if (base.Owner.GetPowerAmount<mp>() >= 150)
+            if (base.Owner.GetPowerAmount<mp>() >= max)
             {
                 Amount = 150;
             }
+        }
+        public override Task AfterCombatEnd(CombatRoom room)
+        {
+            IronWheel.SetValue(base.Owner.Player, 0);
+            return Task.CompletedTask;
         }
     }
 }

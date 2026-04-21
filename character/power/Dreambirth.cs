@@ -28,14 +28,14 @@ namespace YakumoAkai.character.power
 
         {
             int nowmp = (int)base.Owner.GetPowerAmount<mp>();
-            await PowerCmd.Apply<mp>(Owner, 150m, Owner, null);
+            await PowerCmd.Apply<mp>(Owner, 9999m, Owner, null);
         }
         public override async Task AfterEnergyReset(Player player)
         {
             if (player == base.Owner.Player)
             {
                 await PowerCmd.TickDownDuration(this);
-                await PowerCmd.Apply<mp>(Owner, -300m, Owner, null);
+                await PowerCmd.Apply<mp>(Owner, -9999m, Owner, null);
                 await PowerCmd.Apply<mp>(Owner, nowmp, Owner, null);
             }
         }
