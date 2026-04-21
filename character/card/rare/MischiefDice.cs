@@ -32,7 +32,11 @@ namespace YakumoAkai.character.card.rare
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            IReadOnlyList<CardModel> cards = PileType.Draw.GetPile(base.Owner).Cards;
+            IReadOnlyList<CardModel> cards1 = PileType.Draw.GetPile(base.Owner).Cards;
+            IReadOnlyList<CardModel> cards2 = PileType.Discard.GetPile(base.Owner).Cards;
+            List<CardModel> cards = new List<CardModel>();
+            cards.AddRange(cards1);
+            cards.AddRange(cards2);
             foreach (CardModel dice in await CardSelectCmd.FromSimpleGrid(choiceContext,cards, base.Owner, new CardSelectorPrefs(RelicModel.L10NLookup("CHOICES_PARADOX.selectionScreenPrompt"), 1)))
             {
                 await CardPileCmd.Add(dice, PileType.Hand);
@@ -42,12 +46,9 @@ namespace YakumoAkai.character.card.rare
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
+            RemoveKeyword(CardKeyword.Exhaust);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromKeyword(AkaiKeyword.Medice)];
-        //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {

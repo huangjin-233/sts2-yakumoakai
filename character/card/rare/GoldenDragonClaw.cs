@@ -47,7 +47,8 @@ namespace YakumoAkai.character.card.rare
                     await PowerCmd.Remove(selected);
                     await PowerCmd.Apply<mp>(base.Owner.Creature, -30, base.Owner.Creature, this);
                     Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 30;
-                    IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
+                    IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 6;
+                    Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 30;
                     DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 30;
                 }
             }

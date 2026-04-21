@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
@@ -28,7 +29,7 @@ namespace YakumoAkai.character.card.rare
     {
         public static Dictionary<Player, int> card = new Dictionary<Player, int>();
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
-        public void SetValue(Player player, int value)
+        public static void SetValue(Player player, int value)
         {
             IronWheel.card[player] = value;
         }
@@ -40,42 +41,19 @@ namespace YakumoAkai.character.card.rare
         {
            IronWheel.card[player] = value;
         }
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
-        {
-            // 判断事件调用时是否为遗物持有者一方，且回合数是否为 1
-            if (side == Owner.Creature.Side && combatState.RoundNumber == 1)
-            {
-                IronWheel.card[base.Owner] = 0;
-            }
-
-        }
-
         protected override IEnumerable<DynamicVar> CanonicalVars => [
             new DamageVar(1m, ValueProp.Move),
             new CalculationBaseVar(1m),
-            new CalculationExtraVar(1m),
-            new CalculatedVar("mpExhaust").WithMultiplier(static(CardModel card,Creature _) => (decimal)IronWheel.GetValue(card.Owner))];
+            new ExtraDamageVar(1m),
+            new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static(CardModel card,Creature _) => IronWheel.GetValue(card.Owner))];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
         public IronWheel()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override async Task AfterCardDrawnEarly(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-            IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner);
-            base.DynamicVars.Damage.BaseValue = IronWheel.card[base.Owner]+1;
-        }
-        //抽卡时判定
-        public override Task BeforeCardPlayed(CardPlay cardPlay)
-        {
-            IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner);
-            base.DynamicVars.Damage.BaseValue = IronWheel.card[base.Owner]+1;
-            return Task.CompletedTask;
-        }//打出其他牌时判定
-
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await DamageCmd.Attack(base.DynamicVars["mpExhaust"].PreviewValue)
+            await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
          .FromCard(this) // 攻击来源
          .Targeting(cardPlay.Target) // 攻击目标
          .Execute(choiceContext); // 执行攻击效果

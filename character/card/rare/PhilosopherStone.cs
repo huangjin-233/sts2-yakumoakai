@@ -20,7 +20,7 @@ namespace YakumoAkai.character.card.rare
     public sealed class PhilosopherStone : CardModel
     {
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Ethereal];
         public PhilosopherStone()
             : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

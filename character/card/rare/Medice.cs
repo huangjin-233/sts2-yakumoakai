@@ -21,7 +21,7 @@ namespace YakumoAkai.character.card.rare
         protected override List<DynamicVar> CanonicalVars => [
            new PowerVar<IntangiblePower>(1)
         ];
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice];
         // 动态变量
         public Medice()
             : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
@@ -42,9 +42,6 @@ namespace YakumoAkai.character.card.rare
             base.EnergyCost.UpgradeBy(-1);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromKeyword(AkaiKeyword.Medice)];
-        //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {

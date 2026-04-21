@@ -38,7 +38,8 @@ namespace YakumoAkai.character.card.rare
                 await CreatureCmd.GainBlock(base.Owner.Creature, base.Owner.Creature.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -40m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 40;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 8;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 40;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 40;
             }
             //mp 效果

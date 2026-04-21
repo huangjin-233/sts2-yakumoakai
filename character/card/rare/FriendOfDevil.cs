@@ -22,6 +22,7 @@ namespace YakumoAkai.character.card.rare
 {
     public sealed class FriendOfDevil : CardModel
     {
+        public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
             new HpLossVar(3) // 伤害值
         ];

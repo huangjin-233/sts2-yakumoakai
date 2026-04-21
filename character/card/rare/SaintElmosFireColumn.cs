@@ -40,7 +40,8 @@ namespace YakumoAkai.character.card.rare
                 num += 2;
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -30m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 30;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 6;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 30;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 30;
             }
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)

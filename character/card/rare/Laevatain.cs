@@ -58,7 +58,8 @@ namespace YakumoAkai.character.card.rare
             }
             await PowerCmd.Apply<mp>(base.Owner.Creature, -45m, base.Owner.Creature, this);
             Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 45;
-            IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
+            IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 9;
+            Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 45;
             DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 45;
         }
         public override string PortraitPath => $"res://images/cards/skill/Laevatain.png";

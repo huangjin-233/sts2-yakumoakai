@@ -48,7 +48,8 @@ namespace YakumoAkai.character.card.rare
                 await PowerCmd.Apply<VulnerablePower>(cardPlay.Target,2, base.Owner.Creature, this);//易伤
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -25, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 25;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 5;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 25;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 25;
             }
         }

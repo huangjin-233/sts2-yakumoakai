@@ -30,7 +30,7 @@ namespace YakumoAkai.character.card.rare
         {
            await PowerCmd.Apply<Restart>(base.Owner.Creature, 1, base.Owner.Creature, this);//复活
         }
-        public override string PortraitPath => $"res://images/cards/attack/none.png";
+        public override string PortraitPath => $"res://images/cards/power/PengLaiDoll.png";
 
         protected override void OnUpgrade()
         {

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
@@ -16,44 +15,35 @@ using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class Fate : CardModel
+    public sealed class DoubleDealingCharacter : CardModel
     {
+        public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
-            new BlockVar(18m, ValueProp.Move)
+            new BlockVar(26m, ValueProp.Move)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,];
-        public Fate()
-            : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public DoubleDealingCharacter()
+            : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            IEnumerable<CardModel> enumerable = PileType.Exhaust.GetPile(base.Owner).Cards.Where((CardModel c) => c.Keywords.Contains(CardKeyword.Exhaust)).ToList();
-            bool flag = true;
-            foreach (CardModel cards in enumerable)
-            {
-                cards.EnergyCost.SetUntilPlayed(0);
-                await CardPileCmd.Add(cards, PileType.Draw, CardPilePosition.Random);
-                flag = false;
-            }
+            await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);//防御
         }
-        public override string PortraitPath => $"res://images/cards/skill/Fate.png";
+        public override string PortraitPath => $"res://images/cards/skill/DoubleDealingCharacter.png";
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
+            base.DynamicVars.Block.UpgradeValueBy(5);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromKeyword(CardKeyword.Exhaust)];
-        //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Fate));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DoubleDealingCharacter));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -63,4 +53,3 @@ namespace YakumoAkai.character.card.rare
         }
     }
 }
-
