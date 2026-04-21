@@ -25,7 +25,7 @@ namespace YakumoAkai.character.card.common
         // 动态变量
         public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
         public StoneFragments()
-            : base(0, CardType.Attack, CardRarity.Common, TargetType.AllEnemies) { }
+            : base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -38,7 +38,7 @@ namespace YakumoAkai.character.card.common
             //群体攻击
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 10)
             {
-                await CardPileCmd.Add(this, PileType.Draw, CardPilePosition.Top);//返回抽卡堆
+                await CardPileCmd.Add(this, PileType.Draw);//返回抽卡堆
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -10m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 10;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
