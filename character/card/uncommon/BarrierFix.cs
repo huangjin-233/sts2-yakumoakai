@@ -43,9 +43,6 @@ namespace YakumoAkai.character.card.uncommon
             base.DynamicVars.Block.UpgradeValueBy(3m);
             base.DynamicVars["PlatingPower"].UpgradeValueBy(1m);// 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<mp>()];
-        //关键词
     
     [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
