@@ -45,7 +45,8 @@ namespace YakumoAkai.character.card.common
                       .Execute(choiceContext); // 执行攻击效果
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -10m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 10;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 1;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 10;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 10;
             }
         }
@@ -57,7 +58,8 @@ namespace YakumoAkai.character.card.common
             base.DynamicVars.Damage.UpgradeValueBy(3);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<Fire>()
+            HoverTipFactory.FromPower<Fire>(),
+            HoverTipFactory.FromPower<mp>()
             ];
         //关键词
         [ModInitializer(nameof(Initialize))]

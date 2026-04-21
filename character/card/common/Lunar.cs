@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
@@ -17,37 +16,38 @@ using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class Sleep : CardModel
+    public sealed class Lunar : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
-            new PowerVar<IntangiblePower>(2) //能力
+            new PowerVar<Lunarpower>(30) //能力
         ];
         // 动态变量
-        public Sleep()
-            : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+        public Lunar()
+            : base(1, CardType.Power, CardRarity.Common, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//mp
-            await CreatureCmd.Stun(cardPlay.Target);
+            await PowerCmd.Apply<Lunarpower>(base.Owner.Creature, 1, base.Owner.Creature, this);//mp
+            mp.max += (int)base.DynamicVars.Power<Lunarpower>().BaseValue;
         }
-        public override string PortraitPath => $"res://images/cards/attack/Sleep.png";
+        public override string PortraitPath => $"res://images/cards/power/Lunar.png";
 
         protected override void OnUpgrade()
         {
             base.EnergyCost.UpgradeBy(-1);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.Static(StaticHoverTip.Stun),
-            HoverTipFactory.FromPower<IntangiblePower>()];
+            HoverTipFactory.FromPower<Lunarpower>(),
+            HoverTipFactory.FromPower<mp>()
+            ];
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Sleep));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Lunar));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -57,4 +57,3 @@ namespace YakumoAkai.character.card.common
         }
     }
 }
-

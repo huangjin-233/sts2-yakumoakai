@@ -13,41 +13,43 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class Sleep : CardModel
+    public sealed class Luck : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
-            new PowerVar<IntangiblePower>(2) //能力
+            new CardsVar(2) //能力
         ];
         // 动态变量
-        public Sleep()
-            : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
+        public Luck()
+            : base(2, CardType.Skill, CardRarity.Common, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//mp
-            await CreatureCmd.Stun(cardPlay.Target);
+            var drawn = (await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, Owner)).ToList();
+            if (drawn != null)
+            {
+                foreach (CardModel cards in drawn)
+                {
+                    cards.EnergyCost.SetThisTurnOrUntilPlayed(0);
+                }
+            }
         }
-        public override string PortraitPath => $"res://images/cards/attack/Sleep.png";
+        public override string PortraitPath => $"res://images/cards/skill/Luck.png";
 
         protected override void OnUpgrade()
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.Static(StaticHoverTip.Stun),
-            HoverTipFactory.FromPower<IntangiblePower>()];
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Sleep));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Luck));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -57,4 +59,3 @@ namespace YakumoAkai.character.card.common
         }
     }
 }
-
