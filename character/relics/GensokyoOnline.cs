@@ -40,7 +40,7 @@ namespace YakumoAkai.character.relics
                 base.Owner.Creature.CombatState.RunState.Rng.CombatCardGeneration).ToList();
                 foreach (CardModel card in distinctForCombat)
                 {
-                    card.SetToFreeThisCombat();
+                    card.EnergyCost.SetThisTurn(0);
                     CardCmd.Upgrade(card);
                 }
                 await CardPileCmd.AddGeneratedCardsToCombat(distinctForCombat, PileType.Hand, addedByPlayer: true);

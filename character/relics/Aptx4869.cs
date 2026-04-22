@@ -19,7 +19,7 @@ namespace YakumoAkai.character.relics
     {
         private bool _isActivating;
 
-        private int _Played;
+        private int _Played = 0;
         public override RelicRarity Rarity => RelicRarity.Common;
         // 稀有度
 
