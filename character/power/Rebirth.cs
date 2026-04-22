@@ -22,6 +22,10 @@ namespace YakumoAkai.character.power
         public override bool AllowNegative => false;
         public override bool ShouldDieLate(Creature creature)
         {
+            if (creature != base.Owner)
+            {
+                return true;
+            }
             return false;
         }
         public override async Task AfterPreventingDeath(Creature creature)
