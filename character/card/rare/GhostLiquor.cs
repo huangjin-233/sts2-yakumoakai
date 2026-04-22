@@ -55,6 +55,7 @@ namespace YakumoAkai.character.card.rare
 
         protected override void OnUpgrade()
         {
+            base.DynamicVars.Damage.UpgradeValueBy(4);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.Static(StaticHoverTip.Fatal)];
