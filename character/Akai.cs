@@ -9,7 +9,7 @@ using YakumoAkai.character.relics;
 
 namespace YakumoAkai.character
 {
-    public class Akai : PlaceholderCharacterModel, IModCharacterEpochTimelineRequirement
+	public class Akai : PlaceholderCharacterModel, IModCharacterEpochTimelineRequirement
     {
 		public const string energyColorName = "yakumoakai";
 		// 角色名称颜色
@@ -19,7 +19,7 @@ namespace YakumoAkai.character
 
 		// 人物性别（男女中立）
 		public override CharacterGender Gender => CharacterGender.Masculine;
-        //public override bool RequiresEpochAndTimeline => false;
+        public  bool RequiresEpochAndTimeline => false;
         // 初始血量
         public override int StartingHp => 80;
 
@@ -90,10 +90,8 @@ namespace YakumoAkai.character
 			ModelDb.Relic<GensokyoOnlineBad>(),
 	];
 
-        public bool RequiresEpochAndTimeline => throw new System.NotImplementedException();
-
-        // 攻击建筑师的攻击特效列表
-        public override List<string> GetArchitectAttackVfx() => [
+		// 攻击建筑师的攻击特效列表
+		public override List<string> GetArchitectAttackVfx() => [
 			"vfx/vfx_attack_blunt",
 		"vfx/vfx_heavy_blunt",
 		"vfx/vfx_attack_slash",
