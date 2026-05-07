@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
@@ -12,35 +11,39 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class Time : CardModel
+    public sealed class YukaAttack : CardModel
     {
-        public Time()
-            : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
+        protected override List<DynamicVar> CanonicalVars => [
+            new DamageVar(16m, ValueProp.Move),new CardsVar(2),new PowerVar<Fire>(5)
+        ];
+        // 动态变量
+        public YukaAttack()
+            : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<Timepower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            if (IsUpgraded)
-            {
-                await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature,1, base.Owner.Creature, this);
-            }
+            Yukafight.fight[base.Owner] = -1;
+            await PowerCmd.Apply<Yukafight>(base.Owner.Creature, 1, base.Owner.Creature, this);
         }
-        public override string PortraitPath => $"res://images/cards/skill/Time.png";
+        public override string PortraitPath => $"res://images/cards/skill/YukaAttack.png";
 
         protected override void OnUpgrade()
         {
             base.EnergyCost.UpgradeBy(-1);
-            // 升级后
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<Timepower>()];
+            HoverTipFactory.FromPower<Yukafight>(),
+            HoverTipFactory.FromPower<StrengthPower>()
+        ];
         //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
@@ -48,7 +51,7 @@ namespace YakumoAkai.character.card.uncommon
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Time));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(YukaAttack));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -58,4 +61,3 @@ namespace YakumoAkai.character.card.uncommon
         }
     }
 }
-

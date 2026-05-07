@@ -19,10 +19,9 @@ namespace YakumoAkai.character.card.uncommon
     public sealed class WindFan : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
-            new PowerVar<Fire>(4)
+            new PowerVar<Fire>(6)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Mpex];
         public WindFan()
             : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -32,14 +31,14 @@ namespace YakumoAkai.character.card.uncommon
 
             if (cardPlay.Target.HasPower<Fire>() && cardPlay.Target.GetPowerAmount<Fire>() >= 0)
             {
-                await PowerCmd.Apply<Fire>(base.CombatState.HittableEnemies, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
+                await PowerCmd.Apply<Fire>(cardPlay.Target, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
             }
         }
         public override string PortraitPath => $"res://images/cards/attack/WindFan.png";
 
         protected override void OnUpgrade()
         {
-            base.DynamicVars.Power<Fire>().UpgradeValueBy(1);
+            base.DynamicVars.Power<Fire>().UpgradeValueBy(2);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<Fire>()

@@ -38,7 +38,7 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override void OnUpgrade()
         {
-            RemoveKeyword(CardKeyword.Eternal);
+            RemoveKeyword(CardKeyword.Ethereal);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<StrengthPower>(),

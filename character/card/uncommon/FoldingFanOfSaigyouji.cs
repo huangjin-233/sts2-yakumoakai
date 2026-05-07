@@ -7,6 +7,7 @@ using BaseLibToRitsu.Generated;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -30,34 +31,31 @@ namespace YakumoAkai.character.card.uncommon
             new PowerVar<Fire>(5)// 伤害值
         ];
         // 动态变量
+        private bool cost=false;
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
         public FoldingFanOfSaigyouji()
-            : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AllAllies) { }
+            : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override Task BeforeCardPlayed(CardPlay cardPlay)
+        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
+            if (this.EnergyCost.GetWithModifiers(CostModifiers.All) == 0)
             {
-                this.EnergyCost.SetThisTurnOrUntilPlayed(1);
             }
             else
             {
-                this.EnergyCost.SetThisTurnOrUntilPlayed(2);
+                if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
+                {
+                    this.EnergyCost.SetThisTurnOrUntilPlayed(2);
+                    cost= true; 
+                    
+                }
+                else
+                {
+                    this.EnergyCost.SetThisTurnOrUntilPlayed(3);
+                    cost= false;
+                }
             }
-            return Task.CompletedTask;
-        }//打出其他牌时判定
-        public override async Task AfterCardDrawnEarly(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-        {
-
-            if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
-            {
-                this.EnergyCost.SetThisTurnOrUntilPlayed(1);
-            }
-            else
-            {
-                this.EnergyCost.SetThisTurnOrUntilPlayed(2);
-            }
-        }//抽卡时判定
+        }//mp改变时
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<VulnerablePower>(base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);//易伤
@@ -66,12 +64,24 @@ namespace YakumoAkai.character.card.uncommon
             await PowerCmd.Apply<PoisonPower>(base.CombatState.HittableEnemies, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);//毒
             await PowerCmd.Apply<Fire>(base.CombatState.HittableEnemies,base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
             await PowerCmd.Apply<DoomPower>(base.CombatState.HittableEnemies, base.DynamicVars.Doom.BaseValue, base.Owner.Creature, this);//燃烧
-            if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
+            if (cost)
             {
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 1;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 15;
+            }
+            if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
+            {
+                this.EnergyCost.SetThisTurnOrUntilPlayed(2);
+                cost = true;
+
+            }
+            else
+            {
+                this.EnergyCost.SetThisTurnOrUntilPlayed(3);
+                cost = false;
             }
             //mp效果
         }

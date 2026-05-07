@@ -46,10 +46,6 @@ namespace YakumoAkai.character.card.uncommon
             {
                 await PowerCmd.Apply<DoomPower>(cardPlay.Target, cardPlay.Target.GetPowerAmount<DoomPower>(), base.Owner.Creature, this);
             }
-            if (cardPlay.Target.HasPower<StrengthPower>() && cardPlay.Target.GetPowerAmount<StrengthPower>() < 0)
-            {
-                await PowerCmd.Apply<StrengthPower>(cardPlay.Target, cardPlay.Target.GetPowerAmount<StrengthPower>(), base.Owner.Creature, this);
-            }
         }
         public override string PortraitPath => $"res://images/cards/skill/Opp.png";
 

@@ -35,7 +35,7 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
+            base.DynamicVars.Cards.UpgradeValueBy(1);
             base.DynamicVars.Power<mp>().UpgradeValueBy(5);
             // 升级后
         }

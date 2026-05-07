@@ -22,7 +22,7 @@ namespace YakumoAkai.character.card.uncommon
         ];
         // 动态变量
         public Mouth()
-            : base(3, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy) { }
+            : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
@@ -45,7 +45,9 @@ namespace YakumoAkai.character.card.uncommon
             // 升级后
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromCard<ReimuFlower>()];
+            HoverTipFactory.FromPower<StrengthPower>(),
+            HoverTipFactory.FromPower<DexterityPower>()
+            ];
         //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
@@ -12,35 +11,37 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
+using YakumoAkai.character.card.rare;
+using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class Time : CardModel
+    public sealed class MaidKnife : CardModel
     {
-        public Time()
-            : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
+        protected override List<DynamicVar> CanonicalVars => [
+            new PowerVar<Maidknifepower>(2)
+        ];
+        // 动态变量
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public MaidKnife()
+            : base(1, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<Timepower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            if (IsUpgraded)
-            {
-                await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature,1, base.Owner.Creature, this);
-            }
+            Maidknifepower.maid[base.Owner] = 0;
+            await PowerCmd.Apply<Maidknifepower>(base.Owner.Creature, base.DynamicVars.Power<Maidknifepower>().BaseValue, base.Owner.Creature, this);
         }
-        public override string PortraitPath => $"res://images/cards/skill/Time.png";
+        public override string PortraitPath => $"res://images/cards/power/MaidKnife.png";
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
-            // 升级后
+            base.DynamicVars.Power<Maidknifepower>().UpgradeValueBy(1);//升级后
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<Timepower>()];
+            HoverTipFactory.FromPower<mp>()
+            ];
         //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
@@ -48,7 +49,7 @@ namespace YakumoAkai.character.card.uncommon
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Time));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(MaidKnife));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -58,4 +59,3 @@ namespace YakumoAkai.character.card.uncommon
         }
     }
 }
-

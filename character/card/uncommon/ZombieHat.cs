@@ -36,8 +36,9 @@ namespace YakumoAkai.character.card.uncommon
                 await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);//力量
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -15, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 1;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 15;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
             }
         }
 

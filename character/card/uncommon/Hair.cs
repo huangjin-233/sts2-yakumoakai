@@ -22,7 +22,6 @@ namespace YakumoAkai.character.card.uncommon
     {
         public sealed class Hair : CardModel
         {
-            public override bool GainsBlock => true;
             protected override List<DynamicVar> CanonicalVars => [
                 new BlockVar(4m, ValueProp.Move)
             ];

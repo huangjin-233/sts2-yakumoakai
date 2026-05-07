@@ -72,6 +72,7 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override void OnUpgrade()
         {
+            base.EnergyCost.UpgradeBy(-1);
         }
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer

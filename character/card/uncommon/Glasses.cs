@@ -1,54 +1,53 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BaseLibToRitsu.Generated;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
-using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class Time : CardModel
+    public sealed class Glasses : CardModel
     {
-        public Time()
+        protected override List<DynamicVar> CanonicalVars => [
+           new PowerVar<IntangiblePower>(1)
+        ];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        // 动态变量
+        public Glasses()
             : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain];
+
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<Timepower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            if (IsUpgraded)
+            IReadOnlyList<CardModel> cards = PileType.Draw.GetPile(base.Owner).Cards;
+            foreach (CardModel glass in await CardSelectCmd.FromSimpleGrid(choiceContext, cards, base.Owner, new CardSelectorPrefs(base.SelectionScreenPrompt, 1)))
             {
-                await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature,1, base.Owner.Creature, this);
+                glass.EnergyCost.SetUntilPlayed(0);
+                await CardPileCmd.Add(glass, PileType.Draw, CardPilePosition.Top);
             }
         }
-        public override string PortraitPath => $"res://images/cards/skill/Time.png";
+        public override string PortraitPath => $"res://images/cards/skill/Glasses.png";
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
+            RemoveKeyword(CardKeyword.Exhaust);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<Timepower>()];
-        //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Time));
+                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Glasses));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
@@ -58,4 +57,3 @@ namespace YakumoAkai.character.card.uncommon
         }
     }
 }
-

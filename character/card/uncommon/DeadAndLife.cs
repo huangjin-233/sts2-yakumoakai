@@ -25,7 +25,7 @@ namespace YakumoAkai.character.card.uncommon
             new HealVar(8) // 伤害值
         ];
         private static int h;
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public DeadAndLife()
         : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -36,7 +36,8 @@ namespace YakumoAkai.character.card.uncommon
             {
                 h = base.Owner.Creature.GetPowerAmount<mp>();
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>()/10;
+                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>()/5;
+                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
                 DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
                 await PowerCmd.Remove<mp>(base.Owner.Creature);
                 await CreatureCmd.Heal(cardPlay.Target, h/15);//回血
