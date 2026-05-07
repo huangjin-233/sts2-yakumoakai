@@ -9,18 +9,23 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class SevenStarSword : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class SevenStarSword : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(5m, ValueProp.Move),new CardsVar(1) // 伤害值
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [
+                                                                ];
         public SevenStarSword()
             : base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -48,23 +53,9 @@ namespace YakumoAkai.character.card.common
         {
             base.DynamicVars.Damage.UpgradeValueBy(2m); // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(SevenStarSword));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -679,7 +679,7 @@ public abstract class ConstructedCardModel : CustomCardModel
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => _cardKeywords;
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => _hoverTips.Select(static tip => tip.Tip(null!));
+    protected override IEnumerable<IHoverTip> ExtraHoverTips  => _hoverTips.Select(static tip => tip.Tip(null!));
 
     protected override HashSet<CardTag> CanonicalTags => _constructedTags;
 
@@ -885,8 +885,6 @@ public abstract class CustomTemporaryPowerModel : CustomPowerModel
 
     public override bool AllowNegative => true;
 
-    public override bool IsInstanced => LastForXExtraTurns != 0;
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar(RepeatVarName, 0m),
@@ -967,11 +965,9 @@ public abstract class CustomTemporaryPowerModelWrapper<TModel, TPower> : CustomT
 
     public override PowerModel InternallyAppliedPower => ModelDb.Power<TPower>();
 
-    protected override Func<Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc => PowerCmd.Apply<TPower>;
-
     public override LocString Title => InternallyAppliedPower.Title;
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower(InternallyAppliedPower)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips  => [HoverTipFactory.FromPower(InternallyAppliedPower)];
 
     public override LocString Description => InternallyAppliedPower.Description;
 }

@@ -14,11 +14,13 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class BarrierFix : CardModel
     {
         public override bool GainsBlock => true;
@@ -26,7 +28,7 @@ namespace YakumoAkai.character.card.uncommon
             new BlockVar(3m, ValueProp.Move),new PowerVar<PlatingPower>(5m) // 伤害值
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public BarrierFix()
             : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -42,21 +44,6 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.DynamicVars.Block.UpgradeValueBy(3m);
             base.DynamicVars["PlatingPower"].UpgradeValueBy(1m);// 升级后
-        }
-    
-    [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(BarrierFix));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

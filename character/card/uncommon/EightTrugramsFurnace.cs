@@ -15,19 +15,26 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class EightTrugramsFurnace : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class EightTrugramsFurnace : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(16m, ValueProp.Move),new CardsVar(2),new PowerVar<Fire>(5)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public EightTrugramsFurnace()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -46,7 +53,7 @@ namespace YakumoAkai.character.card.uncommon
             //添加灼烧
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
             {
-                await PowerCmd.Apply<Fire>(base.CombatState.HittableEnemies, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
+                await PowerCmd.Apply<Fire>( base.CombatState.HittableEnemies, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
@@ -63,26 +70,12 @@ namespace YakumoAkai.character.card.uncommon
             base.DynamicVars.Cards.UpgradeValueBy(-1m);
             base.DynamicVars.Power<Fire>().UpgradeValueBy(2);// 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromCard<Burn>(),
             HoverTipFactory.FromPower<Fire>(),
             HoverTipFactory.FromPower<mp>()
         ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(EightTrugramsFurnace));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

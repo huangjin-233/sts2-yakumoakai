@@ -15,11 +15,14 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class Phoenix : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class Phoenix : ModCardTemplate
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8m, ValueProp.Move), new PowerVar<Fire>(5)];
         // 动态变量
@@ -48,26 +51,12 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Damage.UpgradeValueBy(3);
             base.DynamicVars.Power<Fire>().UpgradeValueBy(1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<Rebirth>(),
             HoverTipFactory.FromPower<Fire>(),
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Phoenix));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

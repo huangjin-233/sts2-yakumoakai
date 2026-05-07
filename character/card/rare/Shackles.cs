@@ -15,16 +15,21 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class Shackles : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class Shackles : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<Guai>(3),new PowerVar<StrengthPower>(2),new HpLossVar(3)
         ];
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public Shackles()
             : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -50,26 +55,12 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.HpLoss.UpgradeValueBy(-1);
             base.DynamicVars.Power<Guai>().UpgradeValueBy(1);// 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<Guai>(),
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<mp>()
         ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Shackles));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

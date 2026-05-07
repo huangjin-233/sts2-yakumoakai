@@ -11,12 +11,20 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.relics
-{
+{   
+    [RegisterRelic(typeof(YakumoAkaiRelicPool))]
     public sealed class Aptx4869 : RelicModel
     {
+        // 小图标（原版85x85）
+        public override string PackedIconPath => $"res://images/relic/aptx4869.png";
+        // 轮廓图标（原版85x85）
+        protected override string PackedIconOutlinePath => $"res://images/relic/outline/aptx4869.png";
+        // 大图标（原版256x256）
+        protected override string BigIconPath => $"res://images/relic/large/aptx4869.png";
         private bool _isActivating;
 
         private int _Played = 0;
@@ -113,21 +121,8 @@ namespace YakumoAkai.character.relics
             await Cmd.Wait(1f);
             IsActivating = false;
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> ExtraHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class MyCustomModInitializer
-        {
-            public static void Initialize()
-            {
-
-                ModHelper.AddModelToPool(typeof(YakumoAkaiRelicPool), typeof(Aptx4869));
-
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
-        }
     }
 }
 

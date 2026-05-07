@@ -16,10 +16,12 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class FriendOfDevil : CardModel
     {
         public override bool GainsBlock => true;
@@ -40,7 +42,7 @@ namespace YakumoAkai.character.card.rare
             {
                 await CreatureCmd.Heal(base.Owner.Creature, 1);
             }
-            AttackCommand attackCommand=await DamageCmd.Attack(h*1.5m).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext); // 执行攻击效果
+            AttackCommand attackCommand = await DamageCmd.Attack(h * 1.5m).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext); // 执行攻击效果
             await CreatureCmd.GainBlock(base.Owner.Creature, attackCommand.Results.Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage), ValueProp.Move, cardPlay);
         }
         public override string PortraitPath => $"res://images/cards/attack/Friend_of_devil.png";
@@ -48,20 +50,6 @@ namespace YakumoAkai.character.card.rare
         protected override void OnUpgrade()
         {
             base.EnergyCost.UpgradeBy(-1);
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(FriendOfDevil));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

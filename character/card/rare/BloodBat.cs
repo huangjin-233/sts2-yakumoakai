@@ -14,18 +14,23 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class BloodBat : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class BloodBat : ModCardTemplate
     {
         public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
             new BlockVar(3m, ValueProp.Move),new PowerVar<BufferPower>(1)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,AkaiKeyword.Mpex
+                                                                                   ];
         public BloodBat()
             : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -51,25 +56,11 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Block.UpgradeValueBy(3m);
             base.DynamicVars.Power<BufferPower>().UpgradeValueBy(1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromPower<BufferPower>(),
             HoverTipFactory.FromPower<blood>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(BloodBat));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -921,36 +921,6 @@ public static class CommonActions
         return CardPileCmd.Draw(context, card.DynamicVars.Cards.BaseValue, card.Owner);
     }
 
-    public static Task<T?> Apply<T>(Creature target, DynamicVarSource source, bool silent = false) where T : PowerModel
-    {
-        return PowerCmd.Apply<T>(target, source.DynamicVars.Power<T>().BaseValue, source.Owner, source.Card, silent);
-    }
-
-    public static Task<IReadOnlyList<T>> Apply<T>(IEnumerable<Creature> targets, DynamicVarSource source, bool silent = false) where T : PowerModel
-    {
-        return PowerCmd.Apply<T>(targets, source.DynamicVars.Power<T>().BaseValue, source.Owner, source.Card, silent);
-    }
-
-    public static Task<T?> Apply<T>(Creature target, CardModel card, bool silent = false) where T : PowerModel
-    {
-        return PowerCmd.Apply<T>(target, card.DynamicVars.Power<T>().BaseValue, card.Owner.Creature, card, silent);
-    }
-
-    public static Task<T?> Apply<T>(Creature target, CardModel? card, decimal amount, bool silent = false) where T : PowerModel
-    {
-        return PowerCmd.Apply<T>(target, amount, card?.Owner.Creature, card, silent);
-    }
-
-    public static Task<T?> ApplySelf<T>(CardModel card, bool silent = false) where T : PowerModel
-    {
-        return ApplySelf<T>(card, card.DynamicVars.Power<T>().BaseValue, silent);
-    }
-
-    public static Task<T?> ApplySelf<T>(CardModel card, decimal amount, bool silent = false) where T : PowerModel
-    {
-        return PowerCmd.Apply<T>(card.Owner.Creature, amount, card.Owner.Creature, card, silent);
-    }
-
     public static async Task<IEnumerable<CardModel>> SelectCards(CardModel card, LocString selectionPrompt, PlayerChoiceContext context, PileType pileType, int count = 1)
     {
         var prefs = new CardSelectorPrefs(selectionPrompt, count);

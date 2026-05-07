@@ -13,19 +13,22 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class DeadAndLife : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class DeadAndLife : ModCardTemplate
     {
         public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
         protected override List<DynamicVar> CanonicalVars => [
             new HealVar(8) // 伤害值
         ];
         private static int h;
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public DeadAndLife()
         : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -49,23 +52,9 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DeadAndLife));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

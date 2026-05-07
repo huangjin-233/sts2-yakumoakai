@@ -14,11 +14,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class EightEyedEelGrill : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class EightEyedEelGrill : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new CardsVar(3) // 伤害值
@@ -51,24 +54,10 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.DynamicVars.Cards.UpgradeValueBy(1m);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(EightEyedEelGrill));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -17,17 +17,22 @@ using MegaCrit.Sts2.Core.Models.Potions;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class DestroyRoar : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class DestroyRoar : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<VulnerablePower>(2),new PowerVar<StrengthPower>(4),
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
+                                                                                    ];
         public DestroyRoar()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -41,7 +46,7 @@ namespace YakumoAkai.character.card.rare
             }
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
             {
-                await PowerCmd.Apply<VulnerablePower>(base.CombatState.HittableEnemies, base.DynamicVars.Power<VulnerablePower>().BaseValue, base.Owner.Creature, this);//易伤
+                await PowerCmd.Apply<VulnerablePower>( base.CombatState.HittableEnemies, base.DynamicVars.Power<VulnerablePower>().BaseValue, base.Owner.Creature, this);//易伤
                 await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
@@ -56,25 +61,11 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Power<VulnerablePower>().UpgradeValueBy(1);
             base.DynamicVars.Power<StrengthPower>().UpgradeValueBy(2);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.Static(StaticHoverTip.Stun)];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DestroyRoar));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

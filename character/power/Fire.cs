@@ -31,7 +31,7 @@ namespace YakumoAkai.character.power
         IconPath: "res://images/powers/fire.png",
         BigIconPath: "res://images/powers/fire.png"
     );
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public static int mp1;

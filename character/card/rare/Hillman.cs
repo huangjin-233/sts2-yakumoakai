@@ -14,11 +14,15 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class Hillman : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class Hillman : ModCardTemplate
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4m, ValueProp.Move), new CardsVar(3)];
         // 动态变量
@@ -26,12 +30,14 @@ namespace YakumoAkai.character.card.rare
         public Hillman()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
              .FromCard(this) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
+             .WithHitFx("vfx/vfx_giant_horizontal_slash")
              .Execute(choiceContext); // 执行攻击效果
             if (cardPlay.Target.Powers.Any(p=>p.Type == PowerType.Debuff && p.Amount > 0)){ //debuff判定
                 for (int i = 0 ;i < cardPlay.Target.Powers.Where(p => p.Type == PowerType.Debuff).Distinct().Count(); i++)
@@ -39,10 +45,10 @@ namespace YakumoAkai.character.card.rare
                     await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
                         .FromCard(this) // 攻击来源
                         .Targeting(cardPlay.Target) // 攻击目标
+                        .WithHitFx("vfx/vfx_giant_horizontal_slash")
                         .Execute(choiceContext); // 执行攻击效果
-                        }
-            
-                }    
+                }
+            }    
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 25)
             {
                 await PowerCmd.Apply<VulnerablePower>(cardPlay.Target,2, base.Owner.Creature, this);//易伤
@@ -59,25 +65,11 @@ namespace YakumoAkai.character.card.rare
         {
             base.DynamicVars.Damage.UpgradeValueBy(3);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromPower<VulnerablePower>()
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Hillman));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

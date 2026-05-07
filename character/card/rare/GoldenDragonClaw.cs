@@ -7,6 +7,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -14,17 +15,23 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class GoldenDragonClaw : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class GoldenDragonClaw : ModCardTemplate
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move),new CardsVar(3)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public GoldenDragonClaw()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -36,6 +43,7 @@ namespace YakumoAkai.character.card.rare
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
              .FromCard(this) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
+             .WithHitVfxNode((Creature t) => NScratchVfx.Create(t, goingRight: true))
              .Execute(choiceContext); // 执行攻击效果
             }
             if (base.Owner.Creature.HasPower<mp>()   && base.Owner.Creature.GetPowerAmount<mp>()>= 30)
@@ -59,23 +67,9 @@ namespace YakumoAkai.character.card.rare
         {
             base.DynamicVars.Cards.UpgradeValueBy(1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(GoldenDragonClaw));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

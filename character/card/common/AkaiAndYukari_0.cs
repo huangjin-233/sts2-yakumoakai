@@ -17,12 +17,15 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class AkaiAndYukari_0 : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class AkaiAndYukari_0 : ModCardTemplate
     {
 
         protected override List<DynamicVar> CanonicalVars => [
@@ -67,22 +70,8 @@ namespace YakumoAkai.character.card.common
             await CardPileCmd.AddGeneratedCardsToCombat(AkaiAndYukari_0, PileType.Hand, addedByPlayer: true);
             return AkaiAndYukari_0;
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromCard<AkaiAndYukari_1>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(AkaiAndYukari_0));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

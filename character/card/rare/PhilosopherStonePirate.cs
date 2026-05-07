@@ -14,11 +14,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class PhilosopherStonePirate : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class PhilosopherStonePirate : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
            new CardsVar(2),new EnergyVar(3),new PowerVar<mp>(30),new PowerVar<Num>(0)
@@ -59,24 +62,10 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Power<mp>().UpgradeValueBy(15);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(PhilosopherStonePirate));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

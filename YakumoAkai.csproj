@@ -3,26 +3,39 @@
     <TargetFramework>net10.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
+    <Sts2Dir>C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2</Sts2Dir>
+    <Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
   </PropertyGroup>
-  <Target Name="CopyCustomOutput" AfterTargets="Build">
-    <ItemGroup>
-      <OutputDlls Include="$(OutputPath)\$(AssemblyName).dll" />
-      <OutputDlls Include="$(OutputPath)\$(AssemblyName).pdb" />
-    </ItemGroup>
-
-    <MakeDir Directories="$(MSBuildProjectDirectory)\build" />
-    <Copy SourceFiles="@(OutputDlls)" DestinationFolder="$(MSBuildProjectDirectory)\build" />
-</Target>
+  
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);STS001;STS003</NoWarn>
+  </PropertyGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\ritus\STS2-RitsuLib-main\STS2-RitsuLib.csproj" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="all" />
   </ItemGroup>
-<PropertyGroup><NoWarn>$(NoWarn);STS001;STS003</NoWarn></PropertyGroup><ItemGroup><PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="all" /></ItemGroup><ItemGroup><Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" /></ItemGroup><ItemGroup>
+  
+  <ItemGroup>
+    <Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" />
+  </ItemGroup>
+  
+  <ItemGroup>
   <Folder Include="scenes\creature_visuals\" />
-</ItemGroup><ItemGroup>
-  <Reference Include="0Harmony">
-    <HintPath>libs\0Harmony.dll</HintPath>
-  </Reference>
-  <Reference Include="sts2">
-    <HintPath>libs\sts2.dll</HintPath>
-  </Reference>
-</ItemGroup></Project>
+    <PackageReference Include=" STS2.RitsuLib.Compat.0.103.2 " Version="*" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="sts2">
+      <HintPath>libs\sts2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Target Name="Copy Mod" AfterTargets="PostBuildEvent">
+    <Message Text="Copying mod to Slay the Spire 2 mods folder..." Importance="high" />
+    <MakeDir Directories="$(Sts2Dir)\mods\" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Sts2Dir)\mods\$(MSBuildProjectName)\" />
+  </Target>
+  
+</Project>

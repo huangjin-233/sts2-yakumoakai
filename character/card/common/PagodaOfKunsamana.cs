@@ -14,10 +14,13 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class PagodaOfKunsamana : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class PagodaOfKunsamana : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(13m, ValueProp.Move)
@@ -53,23 +56,9 @@ namespace YakumoAkai.character.card.common
         {
             base.DynamicVars.Damage.UpgradeValueBy(5m); // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(PagodaOfKunsamana));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

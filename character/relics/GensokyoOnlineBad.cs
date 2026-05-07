@@ -4,17 +4,22 @@ using BaseLibToRitsu.Generated;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.relics
 {
-    [Pool(typeof(YakumoAkaiRelicPool))]
-    public class GensokyoOnlineBad : CustomRelicModel
+    [RegisterCharacterStarterRelic(typeof(Akai))]
+    [RegisterTouchOfOrobasRefinement(typeof(GensokyoOnline))]
+    public class GensokyoOnlineBad : RelicModel
     {
         // 稀有度
         public override RelicRarity Rarity => RelicRarity.Starter;
@@ -33,35 +38,21 @@ namespace YakumoAkai.character.relics
             if (side == Owner.Creature.Side && combatState.RoundNumber == 1)
             {
                 Flash(); // 触发遗物图标闪烁
-                await PowerCmd.Apply<mp>(base.Owner.Creature, 60m, base.Owner.Creature, null);
+                await PowerCmd.Apply<mp>( base.Owner.Creature, 60m,
+                    base.Owner.Creature, null);
                 await KindSoul.CreateInHand(base.Owner, 1, combatState);
             }
             else if (side == Owner.Creature.Side && combatState.RoundNumber != 1)
             {
                 Flash(); // 触发遗物图标闪烁
-                await PowerCmd.Apply<mp>(base.Owner.Creature, 10m, base.Owner.Creature, null);
+                await PowerCmd.Apply<mp>(base.Owner.Creature, 10m,
+                    base.Owner.Creature, null);
             }
 
         }
 
-        // 初始遗物的升级可以写这里
-        public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<GensokyoOnline>();
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> ExtraHoverTips   => [
             HoverTipFactory.FromCard<KindSoul>(),
             HoverTipFactory.FromPower<mp>()];
-    }
-    [HarmonyPatch(typeof(TouchOfOrobas))]
-    public static class TransBaseRelic
-    {
-        [HarmonyPostfix]
-        [HarmonyPatch("get_RefinementUpgrades")]
-        public static void Postfix(ref Dictionary<ModelId, RelicModel> __result)
-        {
-            var GensokyoOnline = ModelDb.Relic<GensokyoOnline>().Id;
-            var GensokyoOnlineBad = ModelDb.Relic<GensokyoOnlineBad>();
-
-
-            if (!__result.ContainsKey(GensokyoOnline)) __result[GensokyoOnline] = GensokyoOnlineBad;
-        }
     }
 }

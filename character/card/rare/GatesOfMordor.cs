@@ -15,18 +15,21 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class GatesOfMordor : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class GatesOfMordor : ModCardTemplate
     {
         public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
             new BlockVar(9m, ValueProp.Move)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public GatesOfMordor()
             : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -135,6 +138,12 @@ namespace YakumoAkai.character.card.rare
                 await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
                 await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
             }
+            if (cardPlay.Target.HasPower<PlatingPower>())
+            {
+                await PowerCmd.Remove<PlatingPower>(cardPlay.Target);
+                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            }
             if (cardPlay.Target.HasPower<RampartPower>())
             {
                 await PowerCmd.Remove<RampartPower>(cardPlay.Target);
@@ -201,24 +210,24 @@ namespace YakumoAkai.character.card.rare
                 await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
                 await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
             }
-            if (cardPlay.Target.HasPower<HungerPower>())
-            {
-                await PowerCmd.Remove<HungerPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<ScrutinyPower>())
-            {
-                await PowerCmd.Remove<ScrutinyPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<GraspPower>())
-            {
-                await PowerCmd.Remove<GraspPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
+         //   if (cardPlay.Target.HasPower<HungerPower>())
+//{
+           //     await PowerCmd.Remove<HungerPower>(cardPlay.Target);
+           //     await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+          //      await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
+           // if (cardPlay.Target.HasPower<ScrutinyPower>())
+           // {
+           //     await PowerCmd.Remove<ScrutinyPower>(cardPlay.Target);
+           //     await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+           //     await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
+           // if (cardPlay.Target.HasPower<GraspPower>())
+          //  {
+           //     await PowerCmd.Remove<GraspPower>(cardPlay.Target);
+            //    await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+           //     await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
         }
         public override string PortraitPath => $"res://images/cards/skill/Gates_of_mordor.png";
 
@@ -226,24 +235,10 @@ namespace YakumoAkai.character.card.rare
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<DexterityPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(GatesOfMordor));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

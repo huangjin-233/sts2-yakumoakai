@@ -13,16 +13,19 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-        public sealed class SparkNeedleSword : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class SparkNeedleSword : ModCardTemplate
         {
             protected override List<DynamicVar> CanonicalVars => [
                 new PowerVar<DexterityPower>(3),new PowerVar<ShrinkPower>(2),new PowerVar<WeakPower>(2) //能力
             ];
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         // 动态变量
         public SparkNeedleSword()
                 : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
@@ -41,23 +44,9 @@ namespace YakumoAkai.character.card.common
             base.DynamicVars.Power<ShrinkPower>().UpgradeValueBy(-1);
             base.DynamicVars.Power<WeakPower>().UpgradeValueBy(-1);
         }
-            protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+            protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
                 HoverTipFactory.FromPower<DexterityPower>(),
                 HoverTipFactory.FromPower<ShrinkPower>(),
                 HoverTipFactory.FromPower<WeakPower>()];
-            [ModInitializer(nameof(Initialize))]
-            public static class YakumoakaiInitializer
-            {
-                public static void Initialize()
-                {
-                    {
-                        ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(SparkNeedleSword));
-
-                        var harmony = new Harmony("huangjin.yakumoakai");
-                        harmony.PatchAll();
-                        // 初始化 harmony 库
-                    }
-                }
-            }
         }
     }

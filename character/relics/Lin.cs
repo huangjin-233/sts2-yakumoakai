@@ -17,38 +17,39 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.relics
 {
+    [RegisterRelic(typeof(YakumoAkaiRelicPool))]
     public sealed class Lin : RelicModel
     {
+        // 小图标（原版85x85）
+        public override string PackedIconPath => $"res://images/relic/lin.png";
+        // 轮廓图标（原版85x85）
+        protected override string PackedIconOutlinePath => $"res://images/relic/outline/lin.png";
+        // 大图标（原版256x256）
+        protected override string BigIconPath => $"res://images/relic/large/lin.png";
         public override RelicRarity Rarity => RelicRarity.Event;
+
         // 稀有度
-        protected override List<DynamicVar> CanonicalVars => [
-                   new DamageVar(10m,ValueProp.Unpowered)
-                ];
+        protected override List<DynamicVar> CanonicalVars =>
+        [
+            new DamageVar(10m, ValueProp.Unpowered)
+        ];
         // 动态变量
 
-        public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+        public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target,
+            DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
         {
             if (CombatManager.Instance.IsInProgress && target == base.Owner.Creature && result.UnblockedDamage > 0)
             {
-                await CreatureCmd.Damage(choiceContext, base.Owner.Creature.CombatState.HittableEnemies, base.DynamicVars.Damage, base.Owner.Creature);
+                await CreatureCmd.Damage(choiceContext, base.Owner.Creature.CombatState.HittableEnemies,
+                    base.DynamicVars.Damage, base.Owner.Creature);
             }
-            
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class MyCustomModInitializer
-        {
-            public static void Initialize()
-            {
-                ModHelper.AddModelToPool(typeof(YakumoAkaiRelicPool), typeof(Lin));
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
+
         }
     }
 }

@@ -20,12 +20,16 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
         public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
         {
+            if (card.Owner.Creature != base.Owner)
+            {
+                return true;
+            }
             if (card.Type == CardType.Attack) 
             {
                 return false;

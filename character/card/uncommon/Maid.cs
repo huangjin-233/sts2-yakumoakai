@@ -14,11 +14,16 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class Maid : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class Maid : ModCardTemplate
     {
         public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
@@ -43,24 +48,10 @@ namespace YakumoAkai.character.card.uncommon
             base.DynamicVars.Block.UpgradeValueBy(3m);
             base.DynamicVars.Power<Nextmp>().UpgradeValueBy(5);// 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromPower<Nextmp>(),
              HoverTipFactory.FromPower<EnergyNextTurnPower>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Maid));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

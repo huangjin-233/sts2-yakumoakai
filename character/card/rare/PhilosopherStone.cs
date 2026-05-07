@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,20 +14,32 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class PhilosopherStone : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class PhilosopherStone : ModCardTemplate
     {
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Ethereal];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Ethereal];
         public PhilosopherStone()
             : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            NCreature? ownerNode = NCombatRoom.Instance?.GetCreatureNode(Owner.Creature);
+            if (ownerNode != null)
+            {
+                Vector2 spawnPos = ownerNode.VfxSpawnPosition;
+                Node2D? vfxNode = AkaiVfx.PlaySimple("res://scenes/vfx/PhilosopherStone/PhilosopherStone.tscn", spawnPos,1.7f);
+            }
+
             foreach (CardModel card in PileType.Hand.GetPile(base.Owner).Cards)
             {
                 if (!card.EnergyCost.CostsX)
@@ -43,23 +56,9 @@ namespace YakumoAkai.character.card.rare
             RemoveKeyword(CardKeyword.Exhaust);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(PhilosopherStone));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

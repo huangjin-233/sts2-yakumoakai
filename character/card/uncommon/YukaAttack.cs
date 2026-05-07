@@ -14,12 +14,17 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class YukaAttack : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class YukaAttack : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(16m, ValueProp.Move),new CardsVar(2),new PowerVar<Fire>(5)
@@ -40,24 +45,10 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<Yukafight>(),
             HoverTipFactory.FromPower<StrengthPower>()
         ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(YukaAttack));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

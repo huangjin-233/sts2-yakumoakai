@@ -12,11 +12,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class ClearMirror : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class ClearMirror : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<Clearmirrorpower>(1)
@@ -36,24 +39,10 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
             HoverTipFactory.FromPower<Clearmirrorpower>()
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(ClearMirror));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

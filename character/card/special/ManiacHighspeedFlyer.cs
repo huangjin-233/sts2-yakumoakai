@@ -16,15 +16,18 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.card.special
 {
-    internal class ManiacHighspeedFlyer : CardModel
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
+    internal class ManiacHighspeedFlyer : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(5m, ValueProp.Move) // 伤害值
         ];        // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
 
         public ManiacHighspeedFlyer()
@@ -66,22 +69,8 @@ namespace YakumoAkai.character.card.special
             await CardPileCmd.AddGeneratedCardsToCombat(ManiacHighspeedFlyer, PileType.Hand, addedByPlayer: true);
             return ManiacHighspeedFlyer;
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromCard<ManiacHighspeedFlyer>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(ManiacHighspeedFlyer));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

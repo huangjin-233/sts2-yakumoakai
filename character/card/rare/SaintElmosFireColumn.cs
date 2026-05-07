@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,12 +14,18 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
-    public sealed class SaintElmosFireColumn : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class SaintElmosFireColumn : ModCardTemplate
     {
         public override bool GainsBlock => true;
         protected override List<DynamicVar> CanonicalVars => [
@@ -26,15 +33,21 @@ namespace YakumoAkai.character.card.rare
         ];
         protected override bool HasEnergyCostX => true;
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public SaintElmosFireColumn()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-    
-                int num = ResolveEnergyXValue(); 
+            NCreature? ownerNode = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
+            if (ownerNode != null)
+            {
+                Vector2 spawnPos = ownerNode.VfxSpawnPosition;
+                Node2D? vfxNode = AkaiVfx.PlaySimple("res://scenes/vfx/saint/saint.tscn", spawnPos, 1f);
+            }
+            int num = ResolveEnergyXValue(); 
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 30)
             {
                 num += 2;
@@ -62,25 +75,11 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Block.UpgradeValueBy(1m);
             base.DynamicVars.Power<Fire>().UpgradeValueBy(1);// 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<Fire>(),
             HoverTipFactory.FromPower<mp>()
         ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(SaintElmosFireColumn));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

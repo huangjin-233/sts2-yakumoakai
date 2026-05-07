@@ -14,13 +14,15 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class YukaDress : CardModel
     {
         public override bool GainsBlock => true;
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Retain];
         public YukaDress()
         : base(0, CardType.Skill, CardRarity.Token, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -60,20 +62,6 @@ namespace YakumoAkai.character.card.special
             }
             await CardPileCmd.AddGeneratedCardsToCombat(YukaDress, PileType.Hand, addedByPlayer: true);
             return YukaDress;
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(YukaDress));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

@@ -16,11 +16,14 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
-    public sealed class ReimuFlower : CardModel
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
+    public sealed class ReimuFlower : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => 
             [new PowerVar<ArtifactPower>(1), 
@@ -32,7 +35,7 @@ namespace YakumoAkai.character.card.special
             new PowerVar<mp>(90),
             new EnergyVar(2),
             new CardsVar(2)];// 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public ReimuFlower()
         : base(0, CardType.Power, CardRarity.Token, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -76,7 +79,7 @@ namespace YakumoAkai.character.card.special
             await CardPileCmd.AddGeneratedCardsToCombat(ReimuFlower, PileType.Hand, addedByPlayer: true);
             return ReimuFlower;
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<DexterityPower>(),
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<ArtifactPower>(),
@@ -87,20 +90,6 @@ namespace YakumoAkai.character.card.special
             HoverTipFactory.FromPower<EnergyNextTurnPower>(),
             HoverTipFactory.FromPower<Nextmp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(ReimuFlower));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

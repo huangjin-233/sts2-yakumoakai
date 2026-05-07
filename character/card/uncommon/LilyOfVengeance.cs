@@ -14,19 +14,26 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class LilyOfVengeance : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class LilyOfVengeance : ModCardTemplate
     {
         protected override bool HasEnergyCostX => true;
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(5m, ValueProp.Move) // 伤害值
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public LilyOfVengeance()
             : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -58,22 +65,8 @@ namespace YakumoAkai.character.card.uncommon
         }
 
         public override string PortraitPath => $"res://images/cards/attack/Lily_of_vengeance.png";
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(LilyOfVengeance));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

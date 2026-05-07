@@ -12,11 +12,14 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class DivineGodIncantation : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class DivineGodIncantation : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<DivineGodIncantationPower>(4) //能力
@@ -37,23 +40,9 @@ namespace YakumoAkai.character.card.uncommon
         {
             base.DynamicVars.Power<DivineGodIncantationPower>().UpgradeValueBy(2);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.Static(StaticHoverTip.Block),
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DivineGodIncantation));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

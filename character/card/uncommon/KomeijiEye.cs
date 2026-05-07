@@ -16,15 +16,22 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class KomeijiEye : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class KomeijiEye : ModCardTemplate
     {
         public override bool GainsBlock => true;
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         protected override List<DynamicVar> CanonicalVars => [
             new BlockVar(8m, ValueProp.Move),new DamageVar(9m, ValueProp.Move),new PowerVar<WeakPower>(1),new PowerVar<ArtifactPower>(1) // 伤害值
         ];
@@ -74,26 +81,12 @@ namespace YakumoAkai.character.card.uncommon
             base.DynamicVars.Damage.UpgradeValueBy(3m);
             base.DynamicVars.Power<WeakPower>().UpgradeValueBy(1);// 升级后加 2 点伤害
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<WeakPower>(),
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromPower<ArtifactPower>()
            ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(KomeijiEye));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

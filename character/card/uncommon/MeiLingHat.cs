@@ -12,17 +12,22 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class MeiLingHat : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class MeiLingHat : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<StrengthPower>(3), new PowerVar<DexterityPower>(3),new PowerVar<BufferPower>(1)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [ CardKeyword.Ethereal];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Ethereal];
         public MeiLingHat()
             : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -40,25 +45,11 @@ namespace YakumoAkai.character.card.uncommon
         {
             RemoveKeyword(CardKeyword.Ethereal);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<DexterityPower>(),
             HoverTipFactory.FromPower<BufferPower>()
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(MeiLingHat));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

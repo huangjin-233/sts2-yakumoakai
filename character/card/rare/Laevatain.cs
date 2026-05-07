@@ -15,17 +15,22 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 using static System.Collections.Specialized.BitVector32;
 
 namespace YakumoAkai.character.card.rare
 {
-    internal class Laevatain : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    internal class Laevatain : ModCardTemplate
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(3)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal,AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal,AkaiKeyword.Mpex
+                                                                                                          ];
         
         protected override bool IsPlayable => base.Owner.Creature.GetPowerAmount<mp>() >= 45
             //打出条件
@@ -68,22 +73,8 @@ namespace YakumoAkai.character.card.rare
         {
             RemoveKeyword(CardKeyword.Ethereal);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Laevatain));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

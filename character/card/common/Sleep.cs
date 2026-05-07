@@ -13,11 +13,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
-    public sealed class Sleep : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class Sleep : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<IntangiblePower>(2) //能力
@@ -38,23 +41,9 @@ namespace YakumoAkai.character.card.common
         {
             base.EnergyCost.UpgradeBy(-1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.Static(StaticHoverTip.Stun),
             HoverTipFactory.FromPower<IntangiblePower>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Sleep));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

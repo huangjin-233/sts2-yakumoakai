@@ -15,14 +15,17 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.GameInfo.Objects;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
-    public sealed class Medice2 : CardModel
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
+    public sealed class Medice2 : ModCardTemplate
     {
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
         protected override List<DynamicVar> CanonicalVars => [new CardsVar(2),new PowerVar<Fire>(6)];// 动态变量
         public Medice2()
         : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy) { }
@@ -39,23 +42,9 @@ namespace YakumoAkai.character.card.special
             base.EnergyCost.UpgradeBy(-1);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
                 HoverTipFactory.FromPower<Fire>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice2));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

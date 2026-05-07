@@ -18,13 +18,16 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
-    internal class KindSoul : CardModel
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
+    internal class KindSoul : ModCardTemplate
     {
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
         // 动态变量
 
@@ -89,23 +92,9 @@ namespace YakumoAkai.character.card.special
         {
             base.EnergyCost.AddThisCombat(-amount);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-    }
-    [ModInitializer(nameof(Initialize))]
-    public static class YakumoakaiInitializer
-    {
-        public static void Initialize()
-        {
-            {
-                ModHelper.AddModelToPool<YakumoakaiTokenCardPool, KindSoul>();
-
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
-        }
     }
 }
 

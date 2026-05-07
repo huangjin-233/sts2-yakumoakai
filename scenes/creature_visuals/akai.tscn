@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcyyj83mkvpgt"]
+[gd_scene load_steps=9 format=3 uid="uid://dcyyj83mkvpgt"]
 
 [ext_resource type="Script" uid="uid://d31p7jv10fixv" path="res://character/AkaiNCreature.cs" id="1_o6qp3"]
 [ext_resource type="Texture2D" uid="uid://dthyi8iy4hm2c" path="res://character/akai/akai.tres" id="2_o6qp3"]
+[ext_resource type="Texture2D" uid="uid://cmlgp3fkglm6t" path="res://images/atlases/ui_atlas.sprites/health_bar_bg.png" id="4_1m6yb"]
+[ext_resource type="Script" uid="uid://b6rpv6j5bpitd" path="res://scenes/creature_visuals/Mps.cs" id="4_k2i5w"]
+[ext_resource type="Texture2D" uid="uid://cbrvt0pqt6yd8" path="res://images/atlases/ui_atlas.sprites/health_bar.png" id="5_xpo8b"]
+[ext_resource type="Texture2D" uid="uid://di5ekd0e6laq7" path="res://images/atlases/ui_atlas.sprites/health_bar_fill.png" id="6_gvsdp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w1114"]
+font_size = 25
+outline_size = 3
+outline_color = Color(0.14509805, 0.2784314, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1m6yb"]
+font_size = 40
+outline_size = 9
+outline_color = Color(0, 0, 0.8039216, 1)
 
 [node name="Akai" type="Node2D"]
 script = ExtResource("1_o6qp3")
@@ -20,7 +34,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = -121.0
 offset_top = -338.0
-offset_right = 124.0
+offset_right = 219.0
 offset_bottom = -3.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
@@ -28,7 +42,123 @@ unique_name_in_owner = true
 
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(212, -186)
 
 [node name="TalkPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(165, -367)
+
+[node name="mp" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -224.0
+offset_top = -105.0
+offset_right = -136.0
+offset_bottom = -62.0
+rotation = 4.7246065
+script = ExtResource("4_k2i5w")
+
+[node name="mpshow" type="Control" parent="mp"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 78.0
+offset_right = 66.0
+offset_bottom = 78.0
+
+[node name="background" type="NinePatchRect" parent="mp/mpshow"]
+unique_name_in_owner = true
+modulate = Color(0.16470589, 0.3764706, 0.41960785, 0.7529412)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -11.0
+offset_right = 163.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1m6yb")
+patch_margin_left = 9
+patch_margin_right = 9
+
+[node name="Mpcontorl" type="Control" parent="mp/mpshow"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -169.0
+offset_top = -17.0
+offset_right = 155.0
+offset_bottom = 23.0
+
+[node name="mpmask" type="NinePatchRect" parent="mp/mpshow/Mpcontorl"]
+unique_name_in_owner = true
+clip_children = 1
+texture_filter = 2
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 3.0
+offset_right = 3.255005
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xpo8b")
+patch_margin_left = 6
+patch_margin_right = 6
+
+[node name="mpcolor" type="NinePatchRect" parent="mp/mpshow/Mpcontorl/mpmask"]
+unique_name_in_owner = true
+modulate = Color(0.1254902, 0.16470589, 1, 1)
+texture_filter = 2
+texture_repeat = 1
+layout_mode = 0
+offset_left = -2.152
+offset_top = 6.336
+offset_right = 340.388
+offset_bottom = 18.336
+texture = ExtResource("6_gvsdp")
+patch_margin_left = 6
+patch_margin_right = 6
+
+[node name="mpshows" type="Label" parent="mp/mpshow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.478
+offset_top = -117.103
+offset_right = -40.244995
+offset_bottom = -82.103
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5620697
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+text = "150/150"
+label_settings = SubResource("LabelSettings_w1114")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="mp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 214.67
+offset_top = -28.595
+offset_right = 204.66998
+offset_bottom = -16.595
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -4.722861
+text = "MP:"
+label_settings = SubResource("LabelSettings_1m6yb")
+horizontal_alignment = 1
+vertical_alignment = 1

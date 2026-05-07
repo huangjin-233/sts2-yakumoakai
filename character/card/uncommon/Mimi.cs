@@ -16,19 +16,24 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
-    public sealed class Mimi : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
+    public sealed class Mimi : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(12m, ValueProp.Move),new EnergyVar(2),new PowerVar<Fire>(3)
         ];
         // 动态变量
         private bool flag=false;
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
+                                                                ];
         public Mimi()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -70,10 +75,10 @@ namespace YakumoAkai.character.card.uncommon
              .FromCard(this) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
              .Execute(choiceContext); // 执行攻击效果
-            await PowerCmd.Apply<Fire>(base.CombatState.HittableEnemies, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
+            await PowerCmd.Apply<Fire>( base.CombatState.HittableEnemies, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
             if (flag == true)
             {
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>( base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
@@ -101,23 +106,9 @@ namespace YakumoAkai.character.card.uncommon
             base.DynamicVars.Damage.UpgradeValueBy(5m); // 升级后
             base.DynamicVars.Power<Fire>().UpgradeValueBy(1);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Mimi));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

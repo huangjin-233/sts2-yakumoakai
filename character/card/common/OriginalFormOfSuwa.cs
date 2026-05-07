@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -10,11 +11,15 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class OriginalFormOfSuwa : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -28,6 +33,12 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            NCreature? ownerNode = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
+            if (ownerNode != null)
+            {
+                Vector2 spawnPos = ownerNode.VfxSpawnPosition;
+                Node2D? vfxNode = AkaiVfx.PlaySimple("res://scenes/vfx/suwako/suwako.tscn", spawnPos, 2.37f);
+            }
             for (int i = 0; i < base.DynamicVars.Cards.IntValue; i++)
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
@@ -44,20 +55,6 @@ namespace YakumoAkai.character.card.common
         protected override void OnUpgrade()
         {
             base.DynamicVars.Cards.UpgradeValueBy(1m); // 升级后
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(OriginalFormOfSuwa));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }
