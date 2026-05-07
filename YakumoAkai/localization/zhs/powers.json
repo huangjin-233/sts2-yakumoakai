@@ -58,5 +58,11 @@
 	"LUNARPOWER.smartDescription":  "[gold]mp[/gold]上限增加30",
 	"YUKAFIGHT.title":  "幽香传授的基础体术",
 	"YUKAFIGHT.description":  "每打出2张攻击牌，获得对应层数的[gold]力量[/gold]",
-	"YUKAFIGHT.smartDescription":  "每打出2张攻击牌，获得{Amount}点[gold]力量[/gold]"
+	"YUKAFIGHT.smartDescription":  "每打出2张攻击牌，获得{Amount}点[gold]力量[/gold]",	
+	"SKY.title":  "羽衣",
+	"SKY.description":  "回合结束结束翱翔",
+	"SKY.smartDescription":  "回合结束结束翱翔",
+	"TIMEPOWER.title":  "时间（残）",
+	"TIMEPOWER.description":  "下回合开始获得结束阶段剩余{energyPrefix:energyIcons(1)}",
+	"TIMEPOWER.smartDescription":  "下回合开始获得结束阶段剩余{energyPrefix:energyIcons(1)}"
 }

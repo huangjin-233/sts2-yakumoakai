@@ -1,6 +1,6 @@
 {
 	"GENSOKYO_ONLINE.title": "幻想乡玩家Online",
-	"GENSOKYO_ONLINE.description": "每场战斗开始时获得80[gold]mp[/gold]，将一张 [gold]纯净的灵魂[/gold] 加入手卡，将一张随机牌加入手卡，之后每回合获得15[gold]mp[/gold]",
+	"GENSOKYO_ONLINE.description": "每场战斗开始时获得80[gold]mp[/gold]，将一张 [gold]纯净的灵魂[/gold] 加入手卡，将一张随机牌加入手卡，加入的手牌本回合变为0费，之后每回合获得15[gold]mp[/gold]",
 	"GENSOKYO_ONLINE.flavor": "被纯狐纯化之后后的系统",
 	"SEVENTEEN_FOLDING_FAN.title": "十七岁少女的折扇",
 	"SEVENTEEN_FOLDING_FAN.description": "每打出17张牌，消耗20[gold]mp[/gold],获得1层[gold]无实体[/gold]",
@@ -8,7 +8,10 @@
 	"APTX4869.title": "APTX4869",
 	"APTX4869.description": "每打出17张牌，获得50[gold]mp[/gold]",
 	"APTX4869.flavor": "里香的火箭筒",
-	"YAKUMO_AKAI_RELIC_GENSOKYO_ONLINE_BAD.title": "幻想乡玩家Online(残)",
-	"YAKUMO_AKAI_RELIC_GENSOKYO_ONLINE_BAD.description": "每场战斗开始时获得60[gold]mp[/gold]，将一张 [gold]纯净的灵魂[/gold]  加入手卡，之后每回合获得10[gold]mp[/gold]",
-	"YAKUMO_AKAI_RELIC_GENSOKYO_ONLINE_BAD.flavor": "损坏的系统，但为什么损坏了呢"
+	"YAKUMOAKAI_RELIC_GENSOKYO_ONLINE_BAD.title": "幻想乡玩家Online(残)",
+	"YAKUMOAKAI_RELIC_GENSOKYO_ONLINE_BAD.description": "每场战斗开始时获得60[gold]mp[/gold]，将一张 [gold]纯净的灵魂[/gold]  加入手卡，之后每回合获得10[gold]mp[/gold]",
+	"YAKUMOAKAI_RELIC_GENSOKYO_ONLINE_BAD.flavor": "损坏的系统，但为什么损坏了呢",
+	"LIN.title": "冴月麟",
+	"LIN.description": "每受到一次伤害，对所有敌人造成10点伤害",
+	"LIN.flavor": "小红的女儿"
 }
