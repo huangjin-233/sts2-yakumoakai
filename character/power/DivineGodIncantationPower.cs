@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BaseLibToRitsu.Generated;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -49,7 +50,7 @@ namespace YakumoAkai.character.power
                 await CreatureCmd.GainBlock(base.Owner, base.Amount, ValueProp.Unpowered, null);//防御
             }
         }
-        public override async Task AfterEnergyReset(Player player)
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             await PowerCmd.Remove(this);
         }

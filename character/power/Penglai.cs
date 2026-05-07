@@ -28,7 +28,7 @@ namespace YakumoAkai.character.power
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 
         {
-            await CardPileCmd.Draw(choiceContext, Amount, base.Owner.Player);
+            await CardPileCmd.Draw(choiceContext, 1, base.Owner.Player);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace YakumoAkai.character.power
         // 效果类型
         public override PowerType Type => PowerType.Buff;
         // 效果堆叠类型
-        public override PowerStackType StackType => PowerStackType.Counter;
+        public override PowerStackType StackType => PowerStackType.Single;
 
         // 叠加的行为
         public override bool IsInstanced => false;
@@ -26,8 +26,6 @@ namespace YakumoAkai.character.power
         {
             if (player == base.Owner.Player)
             {
-                for (int i = 0; i < base.Amount; i++)
-                {
                     CardModel cardModel = PileType.Exhaust.GetPile(base.Owner.Player).Cards.Where((CardModel c) => !c.Keywords.Contains(CardKeyword.Unplayable)).ToList().StableShuffle(base.Owner.Player.RunState.Rng.Shuffle)
                  .FirstOrDefault();
                     if (cardModel == null)
@@ -38,7 +36,6 @@ namespace YakumoAkai.character.power
                     {
                         await CardCmd.AutoPlay(choiceContext, cardModel, null);
                     }
-                }
             }
         }
     }

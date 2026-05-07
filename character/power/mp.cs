@@ -32,9 +32,19 @@ namespace YakumoAkai.character.power
 		public static int max = 150;
         public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
-            if (base.Owner.GetPowerAmount<mp>() >= max)
+            if (base.Owner.HasPower<Lunarpower>())
             {
-                Amount = 150;
+                if (base.Owner.GetPowerAmount<mp>() >= (150 + base.Owner.GetPowerAmount<Lunarpower>() * 30))
+                {
+                    Amount = 150 + base.Owner.GetPowerAmount<Lunarpower>() * 30;
+                }
+            }
+            else
+            {
+                if (base.Owner.GetPowerAmount<mp>() >= 150)
+                {
+                    Amount = 150;
+                }
             }
         }
         public override Task AfterCombatEnd(CombatRoom room)

@@ -1,43 +1,42 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using YakumoAkai.character.card.rare;
+using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Scaffolding.Characters;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Dreambirth : PowerModel
+    public sealed class Timepower : PowerModel
     {
+        private int _energy;
+
         // 效果类型
         public override PowerType Type => PowerType.Buff;
         // 效果堆叠类型
-        public override PowerStackType StackType => PowerStackType.Counter;
+        public override PowerStackType StackType => PowerStackType.Single;
+
         // 叠加的行为
         public override bool IsInstanced => false;
 
         // 允许层数为负数
         public override bool AllowNegative => false;
-        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-
+        public int num;
+        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
-            await PowerCmd.Apply<mp>(Owner, 9999, Owner, null);
+             num = base.Owner.Player.PlayerCombatState.Energy;
         }
         public override async Task AfterEnergyReset(Player player)
         {
-            if (player == base.Owner.Player)
-            {
-                await PowerCmd.TickDownDuration(this);
-                await PowerCmd.Apply<mp>(Owner, -9999, Owner, null);
-                await PowerCmd.Apply<mp>(Owner, DreamBirth.nowmp, Owner, null);
-            }
+            await PlayerCmd.GainEnergy(num, base.Owner.Player);//能量
+            await PowerCmd.Remove(this);
         }
     }
 }
-

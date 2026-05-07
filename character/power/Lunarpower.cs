@@ -13,7 +13,7 @@ namespace YakumoAkai.character.power
         // 效果类型
         public override PowerType Type => PowerType.Buff;
         // 效果堆叠类型
-        public override PowerStackType StackType => PowerStackType.Single;
+        public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
         public override bool IsInstanced => false;
