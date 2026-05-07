@@ -19,7 +19,7 @@ namespace YakumoAkai.character.card.common
     public sealed class TsubameGaeshi : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
-            new DamageVar(3m, ValueProp.Move) // 伤害值
+            new DamageVar(5m, ValueProp.Move) // 伤害值
         ];
         // 动态变量
 
@@ -29,7 +29,7 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
             .FromCard(this)
@@ -44,7 +44,7 @@ namespace YakumoAkai.character.card.common
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(1m); // 升级后
+        base.DynamicVars.Damage.UpgradeValueBy(2m); // 升级后
     }
     [ModInitializer(nameof(Initialize))]
     public static class YakumoakaiInitializer

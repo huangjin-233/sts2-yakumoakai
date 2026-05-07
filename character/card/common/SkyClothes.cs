@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
@@ -29,6 +30,7 @@ namespace YakumoAkai.character.card.common
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<SoarPower>(base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<Sky>(base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
         }
         public override string PortraitPath => $"res://images/cards/skill/SkyClothes.png";
 
@@ -37,7 +39,9 @@ namespace YakumoAkai.character.card.common
             base.EnergyCost.UpgradeBy(-1);
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromPower<SoarPower>()];
+            HoverTipFactory.FromPower<SoarPower>(),
+            HoverTipFactory.FromPower<Sky>()
+            ];
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {

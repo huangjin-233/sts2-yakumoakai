@@ -29,7 +29,6 @@ namespace YakumoAkai.character.card.common
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<Lunarpower>(base.Owner.Creature, 1, base.Owner.Creature, this);//mp
-            mp.max += (int)base.DynamicVars.Power<Lunarpower>().BaseValue;
         }
         public override string PortraitPath => $"res://images/cards/power/Lunar.png";
 

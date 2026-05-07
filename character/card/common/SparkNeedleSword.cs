@@ -25,7 +25,7 @@ namespace YakumoAkai.character.card.common
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         // 动态变量
         public SparkNeedleSword()
-                : base(1, CardType.Status, CardRarity.Common, TargetType.Self) { }
+                : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
             // 卡牌的构造函数，指定卡牌的相关属性
 
             protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
