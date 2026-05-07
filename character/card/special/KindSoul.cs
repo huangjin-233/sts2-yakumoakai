@@ -99,7 +99,7 @@ namespace YakumoAkai.character.card.special
         public static void Initialize()
         {
             {
-                ModHelper.AddModelToPool<ColorlessCardPool, KindSoul>();
+                ModHelper.AddModelToPool<YakumoakaiTokenCardPool, KindSoul>();
 
                 var harmony = new Harmony("huangjin.yakumoakai");
                 harmony.PatchAll();

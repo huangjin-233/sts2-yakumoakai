@@ -136,7 +136,7 @@ namespace YakumoAkai.character.card.special
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(ColorlessCardPool), typeof(White));
+                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(White));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();

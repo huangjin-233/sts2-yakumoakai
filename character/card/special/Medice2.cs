@@ -14,6 +14,8 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.GameInfo.Objects;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
@@ -21,7 +23,7 @@ namespace YakumoAkai.character.card.special
     public sealed class Medice2 : CardModel
     {
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
-        protected override List<DynamicVar> CanonicalVars => [new CardsVar(2),new PowerVar<Fire>(10)];// 动态变量
+        protected override List<DynamicVar> CanonicalVars => [new CardsVar(2),new PowerVar<Fire>(6)];// 动态变量
         public Medice2()
         : base(0, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -46,7 +48,7 @@ namespace YakumoAkai.character.card.special
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Medice2));
+                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice2));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();

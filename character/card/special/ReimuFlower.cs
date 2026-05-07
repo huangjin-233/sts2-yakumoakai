@@ -32,7 +32,7 @@ namespace YakumoAkai.character.card.special
             new PowerVar<mp>(90),
             new EnergyVar(2),
             new CardsVar(2)];// 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         public ReimuFlower()
         : base(0, CardType.Power, CardRarity.Token, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -93,7 +93,7 @@ namespace YakumoAkai.character.card.special
             public static void Initialize()
             {
                 {
-                    ModHelper.AddModelToPool(typeof(ColorlessCardPool), typeof(ReimuFlower));
+                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(ReimuFlower));
 
                     var harmony = new Harmony("huangjin.yakumoakai");
                     harmony.PatchAll();
