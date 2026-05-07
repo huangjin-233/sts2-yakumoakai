@@ -36,7 +36,7 @@ namespace YakumoAkai.character.card.rare
         {
             int h = (int)((int)Owner.Creature.CurrentHp * 30 / 100m);
             await CreatureCmd.Damage(choiceContext, base.Owner.Creature, h, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
-            if (base.Owner.Creature.MaxHp <= 0)
+            if (base.Owner.Creature.CurrentHp <= 0)
             {
                 await CreatureCmd.Heal(base.Owner.Creature, 1);
             }

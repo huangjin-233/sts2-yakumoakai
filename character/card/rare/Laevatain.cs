@@ -38,12 +38,12 @@ namespace YakumoAkai.character.card.rare
         {
             CardModel cardModel = (
                 await CardSelectCmd.FromHand(
-                    choiceContext,
-                    base.Owner,
-                    new CardSelectorPrefs(new LocString("gameplay_ui", ""), 1),
-                    null,
-                    this)
-                ).FirstOrDefault();
+                choiceContext,
+                base.Owner,
+                new CardSelectorPrefs(base.SelectionScreenPrompt, 1),
+                null,
+                this)
+           ).FirstOrDefault();
             //选择手牌
             if (cardModel != null)
             {

@@ -27,11 +27,12 @@ namespace YakumoAkai.character.card.rare
         public DreamBirth()
             : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-
+        public static int nowmp;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);//防御
             await PowerCmd.Apply<Dreambirth>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            nowmp = base.Owner.Creature.GetPowerAmount<mp>();
             await PowerCmd.Apply<mp>(base.Owner.Creature, 150, base.Owner.Creature, this);
             //mp 效果
         }

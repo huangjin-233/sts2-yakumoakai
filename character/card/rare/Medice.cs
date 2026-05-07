@@ -12,7 +12,9 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
@@ -21,7 +23,7 @@ namespace YakumoAkai.character.card.rare
         protected override List<DynamicVar> CanonicalVars => [
            new PowerVar<IntangiblePower>(1)
         ];
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
         // 动态变量
         public Medice()
             : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
@@ -29,7 +31,7 @@ namespace YakumoAkai.character.card.rare
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in base.Owner.Character.CardPool.GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
+            CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in ModelDb.CardPool<YakumoakaiTokenCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
                                                                                where c.Keywords.Contains(AkaiKeyword.Medice)
                                                                                select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
             await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
@@ -42,6 +44,10 @@ namespace YakumoAkai.character.card.rare
             base.EnergyCost.UpgradeBy(-1);
             // 升级后
         }
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+            HoverTipFactory.FromKeyword(AkaiKeyword.Medice)
+         ];
+        //关键词
         [ModInitializer(nameof(Initialize))]
         public static class YakumoakaiInitializer
         {

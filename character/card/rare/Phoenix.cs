@@ -35,7 +35,7 @@ namespace YakumoAkai.character.card.rare
          .Targeting(cardPlay.Target) // 攻击目标
          .Execute(choiceContext); // 执行攻击效果
             await PowerCmd.Apply<Fire>(cardPlay.Target, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
-            if (cardPlay.Target.HasPower<Fire>() && cardPlay.Target.GetPowerAmount<Fire>() >= 20)
+            if (cardPlay.Target.HasPower<Fire>() && cardPlay.Target.GetPowerAmount<Fire>() >= 30)
             {
                 await PowerCmd.Apply<Rebirth>(base.Owner.Creature, 1, base.Owner.Creature, this);//复活
                 await CardCmd.Exhaust(choiceContext, this);//消耗

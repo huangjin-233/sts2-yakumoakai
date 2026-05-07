@@ -37,7 +37,7 @@ namespace YakumoAkai.character.card.rare
             List<CardModel> cards = new List<CardModel>();
             cards.AddRange(cards1);
             cards.AddRange(cards2);
-            foreach (CardModel dice in await CardSelectCmd.FromSimpleGrid(choiceContext,cards, base.Owner, new CardSelectorPrefs(RelicModel.L10NLookup("CHOICES_PARADOX.selectionScreenPrompt"), 1)))
+            foreach (CardModel dice in await CardSelectCmd.FromSimpleGrid(choiceContext,cards, base.Owner, new CardSelectorPrefs(RelicModel.L10NLookup("从弃牌堆和抽牌堆选择一张牌加入手卡"), 1)))
             {
                 await CardPileCmd.Add(dice, PileType.Hand);
             }

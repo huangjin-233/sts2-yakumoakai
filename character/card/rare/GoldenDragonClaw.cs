@@ -41,7 +41,7 @@ namespace YakumoAkai.character.card.rare
             if (base.Owner.Creature.HasPower<mp>()   && base.Owner.Creature.GetPowerAmount<mp>()>= 30)
             {
                 var debuff = base.Owner.Creature.Powers.Where(p => p.Type == PowerType.Debuff && p.Amount > 0).ToList();
-                if (debuff.Any())
+                if (debuff.Count != 0)
                 {
                     var selected = debuff[new Random().Next(debuff.Count)];
                     await PowerCmd.Remove(selected);
