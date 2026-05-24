@@ -14,10 +14,18 @@
     <Copy SourceFiles="@(OutputDlls)" DestinationFolder="$(MSBuildProjectDirectory)\build" />
 </Target>
   <ItemGroup>
-    <ProjectReference Include="..\ritus\STS2-RitsuLib-main\STS2-RitsuLib.csproj" />
+    <Compile Remove="character\card - 复制\**" />
+    <EmbeddedResource Remove="character\card - 复制\**" />
+    <Compile Remove="orobas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STS2-RitsuLib-main\STS2-RitsuLib.csproj" />
   </ItemGroup>
 <PropertyGroup><NoWarn>$(NoWarn);STS001;STS003</NoWarn></PropertyGroup><ItemGroup><PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="all" /></ItemGroup><ItemGroup><Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" /></ItemGroup><ItemGroup>
+  <Folder Include="character\monster\" />
   <Folder Include="scenes\creature_visuals\" />
+  <Folder Include="scenes\vfx\ironwheel\" />
+  <Folder Include="vfx\ironwheel\" />
 </ItemGroup><ItemGroup>
   <Reference Include="0Harmony">
     <HintPath>libs\0Harmony.dll</HintPath>
@@ -25,4 +33,34 @@
   <Reference Include="sts2">
     <HintPath>libs\sts2.dll</HintPath>
   </Reference>
+  <Reference Include="STS2-RitsuLib">
+    <HintPath>libs\STS2-RitsuLib.dll</HintPath>
+  </Reference>
+</ItemGroup><ItemGroup>
+  <Content Include="character\power\blood.cs.uid" />
+  <Content Include="character\power\Clearmirrorpower.cs.uid" />
+  <Content Include="character\power\DivineGodIncantationPower.cs.uid" />
+  <Content Include="character\power\Dreambirth.cs.uid" />
+  <Content Include="character\power\Fire.cs.uid" />
+  <Content Include="character\power\Ghostpower.cs.uid" />
+  <Content Include="character\power\Guai.cs.uid" />
+  <Content Include="character\power\Kind.cs.uid" />
+  <Content Include="character\power\Lazy.cs.uid" />
+  <Content Include="character\power\Lunarpower.cs.uid" />
+  <Content Include="character\power\Maidknifepower.cs.uid" />
+  <Content Include="character\power\Money.cs.uid" />
+  <Content Include="character\power\mp.cs.uid" />
+  <Content Include="character\power\Nextmp.cs.uid" />
+  <Content Include="character\power\Num.cs.uid" />
+  <Content Include="character\power\Penglai.cs.uid" />
+  <Content Include="character\power\Rebirth.cs.uid" />
+  <Content Include="character\power\Restart.cs.uid" />
+  <Content Include="character\power\Sky.cs.uid" />
+  <Content Include="character\power\Sm.cs.uid" />
+  <Content Include="character\power\stardex.cs.uid" />
+  <Content Include="character\power\Timepower.cs.uid" />
+  <Content Include="character\power\Water.cs.uid" />
+  <Content Include="character\power\Yukafight.cs.uid" />
+  <Content Include="character\power\Zombiedex.cs.uid" />
+  <Content Include="character\power\Zombiestrength.cs.uid" />
 </ItemGroup></Project>
