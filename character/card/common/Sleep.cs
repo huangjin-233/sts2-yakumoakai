@@ -13,10 +13,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class Sleep : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -29,7 +31,7 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<IntangiblePower>(cardPlay.Target, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<IntangiblePower>(choiceContext,cardPlay.Target, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//mp
             await CreatureCmd.Stun(cardPlay.Target);
         }
         public override string PortraitPath => $"res://images/cards/attack/Sleep.png";
@@ -41,20 +43,6 @@ namespace YakumoAkai.character.card.common
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.Static(StaticHoverTip.Stun),
             HoverTipFactory.FromPower<IntangiblePower>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Sleep));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

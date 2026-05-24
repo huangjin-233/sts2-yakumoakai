@@ -17,11 +17,13 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.card.special;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class AkaiAndYukari_0 : CardModel
     {
 
@@ -45,11 +47,11 @@ namespace YakumoAkai.character.card.common
         {
             base.DynamicVars.Block.UpgradeValueBy(2);
         }
-        public static async Task<CardModel> CreateInHand(Player owner, CombatState combatState)
+        public static async Task<CardModel> CreateInHand(Player owner, ICombatState combatState)
         {
             return (await CreateInHand(owner, 1, combatState)).FirstOrDefault();
         }
-        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, CombatState combatState)
+        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, ICombatState combatState)
         {
             if (count == 0)
             {
@@ -64,25 +66,11 @@ namespace YakumoAkai.character.card.common
             {
                 AkaiAndYukari_0.Add(combatState.CreateCard<AkaiAndYukari_0>(owner));
             }
-            await CardPileCmd.AddGeneratedCardsToCombat(AkaiAndYukari_0, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardsToCombat(AkaiAndYukari_0, PileType.Hand, owner);
             return AkaiAndYukari_0;
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromCard<AkaiAndYukari_1>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(AkaiAndYukari_0));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

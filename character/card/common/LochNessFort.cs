@@ -13,18 +13,22 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class LochNessFort : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(13m, ValueProp.Move),new PowerVar<VulnerablePower>(1m) // 伤害值
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                ];
         public LochNessFort()
             : base(2, CardType.Attack, CardRarity.Common, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -39,8 +43,8 @@ namespace YakumoAkai.character.card.common
             //群体攻击
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 25)
             {
-                await PowerCmd.Apply<VulnerablePower>(base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);//易伤
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -25m, base.Owner.Creature, this);
+                await PowerCmd.Apply<VulnerablePower>(choiceContext,base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);//易伤
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -25m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 25;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 5;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 25;
@@ -59,20 +63,6 @@ namespace YakumoAkai.character.card.common
             HoverTipFactory.FromPower<VulnerablePower>(),
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(LochNessFort));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -12,10 +12,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class Lunar : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -28,7 +30,7 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<Lunarpower>(base.Owner.Creature, 1, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<Lunarpower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);//mp
         }
         public override string PortraitPath => $"res://images/cards/power/Lunar.png";
 
@@ -40,19 +42,5 @@ namespace YakumoAkai.character.card.common
             HoverTipFactory.FromPower<Lunarpower>(),
             HoverTipFactory.FromPower<mp>()
             ];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Lunar));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

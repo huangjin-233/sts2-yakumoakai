@@ -12,10 +12,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.common
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class SkyClothes : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -29,8 +31,8 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<SoarPower>(base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
-            await PowerCmd.Apply<Sky>(base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<SoarPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<Sky>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<SoarPower>().BaseValue, base.Owner.Creature, this);
         }
         public override string PortraitPath => $"res://images/cards/skill/SkyClothes.png";
 
@@ -42,19 +44,5 @@ namespace YakumoAkai.character.card.common
             HoverTipFactory.FromPower<SoarPower>(),
             HoverTipFactory.FromPower<Sky>()
             ];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(SkyClothes));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
