@@ -885,8 +885,6 @@ public abstract class CustomTemporaryPowerModel : CustomPowerModel
 
     public override bool AllowNegative => true;
 
-    public override bool IsInstanced => LastForXExtraTurns != 0;
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar(RepeatVarName, 0m),
@@ -919,7 +917,7 @@ public abstract class CustomTemporaryPowerModel : CustomPowerModel
         await ApplyPowerFunc(target, amount, applier, cardSource, true);
     }
 
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (!ReferenceEquals(power, this))
         {
@@ -935,7 +933,7 @@ public abstract class CustomTemporaryPowerModel : CustomPowerModel
         await ApplyPowerFunc(Owner, amount, applier, cardSource, true);
     }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if ((!UntilEndOfOtherSideTurn && side != Owner.Side) || (UntilEndOfOtherSideTurn && side == Owner.Side))
         {
@@ -966,8 +964,6 @@ public abstract class CustomTemporaryPowerModelWrapper<TModel, TPower> : CustomT
     public override AbstractModel OriginModel => ModelDb.GetById<AbstractModel>(ModelDb.GetId<TModel>());
 
     public override PowerModel InternallyAppliedPower => ModelDb.Power<TPower>();
-
-    protected override Func<Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc => PowerCmd.Apply<TPower>;
 
     public override LocString Title => InternallyAppliedPower.Title;
 
