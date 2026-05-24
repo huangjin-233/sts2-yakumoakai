@@ -16,9 +16,11 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class MischiefDice : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -42,26 +44,12 @@ namespace YakumoAkai.character.card.rare
                 await CardPileCmd.Add(dice, PileType.Hand);
             }
         }
-        public override string PortraitPath => $"res://images/cards/skill/none.png";
+        public override string PortraitPath => $"res://images/cards/skill/MischiefDice.png";
 
         protected override void OnUpgrade()
         {
             RemoveKeyword(CardKeyword.Exhaust);
             // 升级后
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(MischiefDice));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

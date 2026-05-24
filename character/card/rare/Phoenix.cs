@@ -15,10 +15,12 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class Phoenix : CardModel
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8m, ValueProp.Move), new PowerVar<Fire>(5)];
@@ -34,10 +36,10 @@ namespace YakumoAkai.character.card.rare
          .FromCard(this) // 攻击来源
          .Targeting(cardPlay.Target) // 攻击目标
          .Execute(choiceContext); // 执行攻击效果
-            await PowerCmd.Apply<Fire>(cardPlay.Target, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
+            await PowerCmd.Apply<Fire>(choiceContext,cardPlay.Target, base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
             if (cardPlay.Target.HasPower<Fire>() && cardPlay.Target.GetPowerAmount<Fire>() >= 30)
             {
-                await PowerCmd.Apply<Rebirth>(base.Owner.Creature, 1, base.Owner.Creature, this);//复活
+                await PowerCmd.Apply<Rebirth>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);//复活
                 await CardCmd.Exhaust(choiceContext, this);//消耗
             }
         }
@@ -54,20 +56,6 @@ namespace YakumoAkai.character.card.rare
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Phoenix));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

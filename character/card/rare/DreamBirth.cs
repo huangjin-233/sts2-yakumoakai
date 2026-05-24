@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,11 +12,15 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class DreamBirth : CardModel
     {
         public override bool GainsBlock => true;
@@ -30,11 +35,25 @@ namespace YakumoAkai.character.card.rare
         public static int nowmp;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
+            NCreature? ownerNode = NCombatRoom.Instance?.GetCreatureNode(Owner.Creature);
+                     if (ownerNode != null)
+                     {
+                         Vector2 spawnPos = ownerNode.VfxSpawnPosition;
+                         Node2D? vfxNode = AkaiVfx.Play("res://scenes/vfx/dream/dream.tscn", spawnPos);
+                 
+                         // 将特效节点保存到 Timepower 能力中
+                         var Dreambirth = Owner.Creature.Powers.OfType<Dreambirth>().FirstOrDefault();
+                         if (Dreambirth != null && vfxNode != null)
+                         {
+                             Dreambirth.SetVfxNode(vfxNode);
+                         }
+                     }
             await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);//防御
-            await PowerCmd.Apply<Dreambirth>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<Dreambirth>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             nowmp = base.Owner.Creature.GetPowerAmount<mp>();
-            await PowerCmd.Apply<mp>(base.Owner.Creature, 150, base.Owner.Creature, this);
+            await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, 150, base.Owner.Creature, this);
             //mp 效果
+            
         }
         public override string PortraitPath => $"res://images/cards/skill/Dream_birth.png";
 
@@ -46,20 +65,6 @@ namespace YakumoAkai.character.card.rare
             HoverTipFactory.FromPower<Dreambirth>(),
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DreamBirth));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -1,24 +1,17 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using BaseLibToRitsu.Generated;
-using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.special;
-using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.ancient
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class MarlboroGavel : CardModel
     {
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -63,21 +56,6 @@ namespace YakumoAkai.character.card.ancient
             HoverTipFactory.FromCard<Ghost>(),
             HoverTipFactory.FromCard<White>()];
         //关键词
-    
-    [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(MarlboroGavel));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -15,17 +15,21 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 using static System.Collections.Specialized.BitVector32;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     internal class Laevatain : CardModel
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(3)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal,AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal,AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                                                          ];
         
         protected override bool IsPlayable => base.Owner.Creature.GetPowerAmount<mp>() >= 45
             //打出条件
@@ -50,13 +54,13 @@ namespace YakumoAkai.character.card.rare
                 for (int i = 0; i < base.DynamicVars.Cards.IntValue; i++)
                 {
                     CardModel card = cardModel.CreateClone();
-                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, addedByPlayer: true);
+                    await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
                     //复制3张
                     card.EnergyCost.SetThisTurnOrUntilPlayed(0);
                     //能耗变为0
                 }
             }
-            await PowerCmd.Apply<mp>(base.Owner.Creature, -45m, base.Owner.Creature, this);
+            await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -45m, base.Owner.Creature, this);
             Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 45;
             IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 9;
             Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 45;
@@ -71,19 +75,5 @@ namespace YakumoAkai.character.card.rare
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Laevatain));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

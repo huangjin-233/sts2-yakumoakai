@@ -12,9 +12,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.card.basic
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class DefendAkai : CardModel
     {
         public override bool GainsBlock => true;
@@ -39,20 +42,6 @@ namespace YakumoAkai.character.card.basic
         protected override void OnUpgrade()
         {
             base.DynamicVars.Block.UpgradeValueBy(3m); // 升级后
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DefendAkai));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

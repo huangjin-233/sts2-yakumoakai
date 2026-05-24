@@ -13,10 +13,13 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
-{
+{ 
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class DoubleBarrier : CardModel
     {
         public override bool GainsBlock => true;
@@ -24,7 +27,8 @@ namespace YakumoAkai.character.card.rare
             new BlockVar(4m, ValueProp.Move)
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                                    ];
         public DoubleBarrier()
             : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -36,7 +40,7 @@ namespace YakumoAkai.character.card.rare
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 40)
             {
                 await CreatureCmd.GainBlock(base.Owner.Creature, base.Owner.Creature.Block, ValueProp.Unpowered | ValueProp.Move, cardPlay);
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -40m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -40m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 40;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 8;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 40;
@@ -53,20 +57,6 @@ namespace YakumoAkai.character.card.rare
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DoubleBarrier));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

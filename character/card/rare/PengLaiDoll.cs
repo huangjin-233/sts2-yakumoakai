@@ -12,10 +12,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class PengLaiDoll : CardModel
     {
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8m, ValueProp.Move), new PowerVar<Fire>(5)];
@@ -28,7 +30,7 @@ namespace YakumoAkai.character.card.rare
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-           await PowerCmd.Apply<Restart>(base.Owner.Creature, 1, base.Owner.Creature, this);//复活
+           await PowerCmd.Apply<Restart>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);//复活
         }
         public override string PortraitPath => $"res://images/cards/power/PengLaiDoll.png";
 
@@ -40,19 +42,5 @@ namespace YakumoAkai.character.card.rare
             HoverTipFactory.FromPower<Restart>()
             ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(PengLaiDoll));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

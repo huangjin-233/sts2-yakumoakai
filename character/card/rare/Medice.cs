@@ -14,10 +14,14 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class Medice : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -32,9 +36,9 @@ namespace YakumoAkai.character.card.rare
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             CardModel cardModel = CardFactory.GetDistinctForCombat(base.Owner, from c in ModelDb.CardPool<YakumoakaiTokenCardPool>().GetUnlockedCards(base.Owner.UnlockState, base.Owner.RunState.CardMultiplayerConstraint)
-                                                                               where c.Keywords.Contains(AkaiKeyword.Medice)
+                                                                               where c.Keywords.Contains(AkaiKeyword.Medice.GetModCardKeyword())
                                                                                select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
-            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
 
         }
         public override string PortraitPath => $"res://images/cards/skill/Medice.png";
@@ -45,23 +49,9 @@ namespace YakumoAkai.character.card.rare
             // 升级后
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-            HoverTipFactory.FromKeyword(AkaiKeyword.Medice)
+            ModKeywordRegistry.CreateHoverTip(AkaiKeyword.Medice),
          ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Medice));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

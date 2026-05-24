@@ -15,10 +15,12 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.rare
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class GatesOfMordor : CardModel
     {
         public override bool GainsBlock => true;
@@ -36,189 +38,195 @@ namespace YakumoAkai.character.card.rare
             if (cardPlay.Target.HasPower<ArtifactPower>())
             {
                 await PowerCmd.Remove<ArtifactPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<CrabRagePower>())
             {
                 await PowerCmd.Remove<CrabRagePower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<StrengthPower>() && cardPlay.Target.GetPowerAmount<StrengthPower>() > 0)
             {
                 await PowerCmd.Remove<StrengthPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<CurlUpPower>())
             {
                 await PowerCmd.Remove<CurlUpPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<EscapeArtistPower>())
             {
                 await PowerCmd.Remove<EscapeArtistPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<FlutterPower>())
             {
                 await PowerCmd.Remove<FlutterPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<GalvanicPower>())
             {
                 await PowerCmd.Remove<GalvanicPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<HardToKillPower>())
             {
                 await PowerCmd.Remove<HardToKillPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<HardenedShellPower>())
             {
                 await PowerCmd.Remove<HardenedShellPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<HighVoltagePower>())
             {
                 await PowerCmd.Remove<HighVoltagePower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<IllusionPower>())
             {
                 await PowerCmd.Remove<IllusionPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<InfestedPower>())
             {
                 await PowerCmd.Remove<InfestedPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<IntangiblePower>())
             {
                 await PowerCmd.Remove<IntangiblePower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<NemesisPower>())
             {
                 await PowerCmd.Remove<NemesisPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<PainfulStabsPower>())
             {
                 await PowerCmd.Remove<PainfulStabsPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<PaperCutsPower>())
             {
                 await PowerCmd.Remove<PaperCutsPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<PersonalHivePower>())
             {
                 await PowerCmd.Remove<PersonalHivePower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+            }
+            if (cardPlay.Target.HasPower<PlatingPower>())
+            {
+                await PowerCmd.Remove<PlatingPower>(cardPlay.Target);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<RampartPower>())
             {
                 await PowerCmd.Remove<RampartPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<RampartPower>())
             {
                 await PowerCmd.Remove<RampartPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SkittishPower>())
             {
                 await PowerCmd.Remove<SkittishPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SlipperyPower>())
             {
                 await PowerCmd.Remove<SlipperyPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SoarPower>())
             {
                 await PowerCmd.Remove<SoarPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SteamEruptionPower>())
             {
                 await PowerCmd.Remove<SteamEruptionPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<StockPower>())
             {
                 await PowerCmd.Remove<StockPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SuckPower>())
             {
                 await PowerCmd.Remove<SuckPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<SwipePower>())
             {
                 await PowerCmd.Remove<SwipePower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<VitalSparkPower>())
             {
                 await PowerCmd.Remove<VitalSparkPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
             if (cardPlay.Target.HasPower<ThornsPower>())
             {
                 await PowerCmd.Remove<ThornsPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
             }
-            if (cardPlay.Target.HasPower<HungerPower>())
-            {
-                await PowerCmd.Remove<HungerPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<ScrutinyPower>())
-            {
-                await PowerCmd.Remove<ScrutinyPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<GraspPower>())
-            {
-                await PowerCmd.Remove<GraspPower>(cardPlay.Target);
-                await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-                await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 1, base.Owner.Creature, this);
-            }
+         //   if (cardPlay.Target.HasPower<HungerPower>())
+//{
+           //     await PowerCmd.Remove<HungerPower>(cardPlay.Target);
+           //     await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+          //      await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
+           // if (cardPlay.Target.HasPower<ScrutinyPower>())
+           // {
+           //     await PowerCmd.Remove<ScrutinyPower>(cardPlay.Target);
+           //     await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+           //     await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
+           // if (cardPlay.Target.HasPower<GraspPower>())
+          //  {
+           //     await PowerCmd.Remove<GraspPower>(cardPlay.Target);
+            //    await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+           //     await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
+           // }
         }
         public override string PortraitPath => $"res://images/cards/skill/Gates_of_mordor.png";
 
@@ -230,20 +238,6 @@ namespace YakumoAkai.character.card.rare
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<DexterityPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(GatesOfMordor));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 
