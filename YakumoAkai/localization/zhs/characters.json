@@ -25,5 +25,6 @@
 	"YAKUMOAKAI_CHARACTER_AKAI.unlockText":  "完成 {Prerequisite} 的条件后解锁。",
 	"YAKUMOAKAI_CHARACTER_AKAI.banter.alive.endTurnPing":  "[sine]快点[/sine]",
 	"YAKUMOAKAI_CHARACTER_AKAI.banter.dead.endTurnPing":  "等我复活再战",
-	"TEST_CHARACTER_TEST_CHARACTER.goldMonologue": "[sine]这些金币……也许能派上用场……[/sine]"
+	"YAKUMOAKAI_CHARACTER_AKAI.goldMonologue": "[sine]这是……“生”与“死”[/sine]",
+	"YAKUMOAKAI_CHARACTER_AKAI.aromaPrinciple": "[sine][red]？？？[/red][/sine]"
 }
