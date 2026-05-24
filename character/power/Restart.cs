@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
 namespace YakumoAkai.character.power
@@ -16,7 +17,7 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
@@ -32,7 +33,7 @@ namespace YakumoAkai.character.power
         {
             decimal amount = Math.Max(1m, (decimal)base.Owner.MaxHp);
             await CreatureCmd.Heal(base.Owner, amount);
-            await PowerCmd.Apply<mp>(base.Owner, 300, base.Owner, null);//复活
+            await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),base.Owner, 300, base.Owner, null);//复活
             await PowerCmd.TickDownDuration(this);
         }
     }

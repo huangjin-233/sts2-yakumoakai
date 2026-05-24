@@ -25,14 +25,14 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Single;
 
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<WeakPower>()
             ];
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext,PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (base.Owner.HasPower<WeakPower>() && base.Owner.GetPowerAmount<WeakPower>() >= 0)
             {

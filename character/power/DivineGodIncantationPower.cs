@@ -7,6 +7,7 @@ using BaseLibToRitsu.Generated;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -23,7 +24,7 @@ namespace YakumoAkai.character.power
 
         public override PowerStackType StackType => PowerStackType.Counter;
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
@@ -50,7 +51,7 @@ namespace YakumoAkai.character.power
                 await CreatureCmd.GainBlock(base.Owner, base.Amount, ValueProp.Unpowered, null);//防御
             }
         }
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide combatSide, IEnumerable<Creature> participants)
         {
             await PowerCmd.Remove(this);
         }

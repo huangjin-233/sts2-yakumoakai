@@ -20,7 +20,7 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
@@ -28,7 +28,7 @@ namespace YakumoAkai.character.power
         {
             if (player == base.Owner.Player)
             {
-                await PowerCmd.Apply<mp>(Owner, 20m,Owner, null);
+                await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),Owner, 20m,Owner, null);
                 await PowerCmd.Remove(this);
             }
         }

@@ -28,7 +28,7 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public override bool AllowNegative => false;
@@ -44,7 +44,7 @@ namespace YakumoAkai.character.power
         {
             await PowerCmd.Remove(this);
         }
-        public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override async Task  AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side == base.Owner.Side)
             {

@@ -12,12 +12,21 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using STS2RitsuLib.Interop.AutoRegistration;
+using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.relics
 {
+    [RegisterRelic(typeof(YakumoAkaiRelicPool))]
     public sealed class SeventeenFoldingFan : RelicModel
     {
+        // 小图标（原版85x85）
+        public override string PackedIconPath => $"res://images/relic/seventeen_folding_fan.png";
+        // 轮廓图标（原版85x85）
+        protected override string PackedIconOutlinePath => $"res://images/relic/outline/seventeen_folding_fan.png";
+        // 大图标（原版256x256）
+        protected override string BigIconPath => $"res://images/relic/large/seventeen_folding_fan.png";
         private bool _isActivating;
 
         private int _Played;
@@ -99,9 +108,17 @@ namespace YakumoAkai.character.relics
                 Played++;
                 if (Played >= Threshold)
                 {
-                    TaskHelper.RunSafely(DoActivateVisuals());
-                    await PowerCmd.Apply<IntangiblePower>(base.Owner.Creature, 1m, base.Owner.Creature, null);//无实体
-                    Played -= Threshold;
+                    if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 20)
+                    {
+                        await PowerCmd.Apply<mp>(context,base.Owner.Creature, -20m, base.Owner.Creature, null);
+                        Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
+                        IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
+                        Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
+                        DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 20;
+                        TaskHelper.RunSafely(DoActivateVisuals());
+                        await PowerCmd.Apply<IntangiblePower>(context,base.Owner.Creature, 1m, base.Owner.Creature, null);//无实体                                                                                          
+                        Played -= Threshold;
+                    }
                 }
             }
         }
@@ -116,19 +133,6 @@ namespace YakumoAkai.character.relics
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<IntangiblePower>(),
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class MyCustomModInitializer
-        {
-            public static void Initialize()
-            {
-
-                ModHelper.AddModelToPool(typeof(YakumoAkaiRelicPool), typeof(SeventeenFoldingFan));
-
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
-        }
     }
 }
 

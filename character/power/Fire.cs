@@ -31,7 +31,7 @@ namespace YakumoAkai.character.power
         IconPath: "res://images/powers/fire.png",
         BigIconPath: "res://images/powers/fire.png"
     );
-        public override bool IsInstanced => false;
+
 
         // 允许层数为负数
         public static int mp1;
@@ -54,7 +54,7 @@ namespace YakumoAkai.character.power
                 return Math.Min(base.Amount, 1 + source.Sum((Creature a) => a.GetPowerAmount<AccelerantPower>()));
             }
         }
-        public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+        public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 
         {
             if (side != base.Owner.Side)

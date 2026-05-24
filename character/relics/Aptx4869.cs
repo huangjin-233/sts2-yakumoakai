@@ -11,12 +11,20 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves.Runs;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.relics
-{
+{   
+    [RegisterRelic(typeof(YakumoAkaiRelicPool))]
     public sealed class Aptx4869 : RelicModel
     {
+        // 小图标（原版85x85）
+        public override string PackedIconPath => $"res://images/relic/aptx4869.png";
+        // 轮廓图标（原版85x85）
+        protected override string PackedIconOutlinePath => $"res://images/relic/outline/aptx4869.png";
+        // 大图标（原版256x256）
+        protected override string BigIconPath => $"res://images/relic/large/aptx4869.png";
         private bool _isActivating;
 
         private int _Played = 0;
@@ -100,7 +108,7 @@ namespace YakumoAkai.character.relics
                 if (Played >= Threshold)
                 {
                     TaskHelper.RunSafely(DoActivateVisuals());
-                    await PowerCmd.Apply<mp>(base.Owner.Creature, 50, base.Owner.Creature, null);//无实体
+                    await PowerCmd.Apply<mp>(context,base.Owner.Creature, 50, base.Owner.Creature, null);//无实体
                     Played -= Threshold;
                 }
             }
@@ -115,19 +123,6 @@ namespace YakumoAkai.character.relics
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class MyCustomModInitializer
-        {
-            public static void Initialize()
-            {
-
-                ModHelper.AddModelToPool(typeof(YakumoAkaiRelicPool), typeof(Aptx4869));
-
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
-        }
     }
 }
 
