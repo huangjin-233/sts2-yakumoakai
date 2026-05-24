@@ -14,10 +14,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class EightEyedEelGrill : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -42,7 +44,7 @@ namespace YakumoAkai.character.card.uncommon
             {
                 await CardCmd.Exhaust(choiceContext, cardModel);//消耗
                 await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);//抽卡
-                await PowerCmd.Apply<mp>(base.Owner.Creature, 10m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, 10m, base.Owner.Creature, this);
             }
         }
         public override string PortraitPath => $"res://images/cards/skill/Eight_eyed_eel_grill.png";
@@ -55,20 +57,6 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust)];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(EightEyedEelGrill));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

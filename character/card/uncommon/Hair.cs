@@ -14,13 +14,14 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
-
 namespace YakumoAkai.character.card.uncommon
 {
-    namespace YakumoAkai.character.card.uncommon
-    {
-        public sealed class Hair : CardModel
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
+    public sealed class Hair : CardModel
         {
             protected override List<DynamicVar> CanonicalVars => [
                 new BlockVar(4m, ValueProp.Move)
@@ -36,10 +37,10 @@ namespace YakumoAkai.character.card.uncommon
             {
                     str = base.Owner.Creature.GetPowerAmount<StrengthPower>();
                     dex = base.Owner.Creature.GetPowerAmount<DexterityPower>();
-                    await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, dex, base.Owner.Creature, this);
-                    await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, str, base.Owner.Creature, this);
-                    await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, -dex, base.Owner.Creature, this);
-                    await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, -str, base.Owner.Creature, this);
+                    await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, dex, base.Owner.Creature, this);
+                    await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, str, base.Owner.Creature, this);
+                    await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, -dex, base.Owner.Creature, this);
+                    await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, -str, base.Owner.Creature, this);
             }
             public override string PortraitPath => $"res://images/cards/skill/Hair.png";
 
@@ -52,21 +53,7 @@ namespace YakumoAkai.character.card.uncommon
                 HoverTipFactory.FromPower<DexterityPower>()
             ];
             //关键词
-            [ModInitializer(nameof(Initialize))]
-            public static class YakumoakaiInitializer
-            {
-                public static void Initialize()
-                {
-                    {
-                        ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Hair));
-
-                        var harmony = new Harmony("huangjin.yakumoakai");
-                        harmony.PatchAll();
-                        // 初始化 harmony 库
-                    }
-                }
-            }
         }
     }
-}
+
 

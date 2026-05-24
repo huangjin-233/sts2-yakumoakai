@@ -14,11 +14,15 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class YukaAttack : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -32,7 +36,7 @@ namespace YakumoAkai.character.card.uncommon
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             Yukafight.fight[base.Owner] = -1;
-            await PowerCmd.Apply<Yukafight>(base.Owner.Creature, 1, base.Owner.Creature, this);
+            await PowerCmd.Apply<Yukafight>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);
         }
         public override string PortraitPath => $"res://images/cards/skill/YukaAttack.png";
 
@@ -45,19 +49,5 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<StrengthPower>()
         ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(YukaAttack));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }

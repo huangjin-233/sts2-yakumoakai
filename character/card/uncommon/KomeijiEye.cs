@@ -16,15 +16,21 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class KomeijiEye : CardModel
     {
         public override bool GainsBlock => true;
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                ];
         protected override List<DynamicVar> CanonicalVars => [
             new BlockVar(8m, ValueProp.Move),new DamageVar(9m, ValueProp.Move),new PowerVar<WeakPower>(1),new PowerVar<ArtifactPower>(1) // 伤害值
         ];
@@ -41,8 +47,8 @@ namespace YakumoAkai.character.card.uncommon
                 await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, cardPlay);//防御
                 if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 20)
                 {
-                    await PowerCmd.Apply<WeakPower>(cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
-                    await PowerCmd.Apply<mp>(base.Owner.Creature, -20m, base.Owner.Creature, this);
+                    await PowerCmd.Apply<WeakPower>(choiceContext,cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
+                    await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -20m, base.Owner.Creature, this);
                     Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
                     IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
                     Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
@@ -57,8 +63,8 @@ namespace YakumoAkai.character.card.uncommon
                     .Execute(choiceContext); // 执行攻击效果
                 if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 100)
                 {
-                    await PowerCmd.Apply<ArtifactPower>(base.Owner.Creature, base.DynamicVars.Power<ArtifactPower>().BaseValue, base.Owner.Creature, this);//人工制品
-                    await PowerCmd.Apply<mp>(base.Owner.Creature, -100m, base.Owner.Creature, this);
+                    await PowerCmd.Apply<ArtifactPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<ArtifactPower>().BaseValue, base.Owner.Creature, this);//人工制品
+                    await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -100m, base.Owner.Creature, this);
                     Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 100;
                     IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 20;
                     Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 100;
@@ -80,20 +86,6 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<ArtifactPower>()
            ];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(KomeijiEye));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

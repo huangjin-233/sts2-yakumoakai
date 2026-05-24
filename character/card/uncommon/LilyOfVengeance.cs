@@ -14,11 +14,16 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class LilyOfVengeance : CardModel
     {
         protected override bool HasEnergyCostX => true;
@@ -26,7 +31,8 @@ namespace YakumoAkai.character.card.uncommon
             new DamageVar(5m, ValueProp.Move) // 伤害值
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                ];
         public LilyOfVengeance()
             : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -41,7 +47,7 @@ namespace YakumoAkai.character.card.uncommon
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
             {
                 base.DynamicVars.Damage.UpgradeValueBy(2m);
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
@@ -60,20 +66,6 @@ namespace YakumoAkai.character.card.uncommon
         public override string PortraitPath => $"res://images/cards/attack/Lily_of_vengeance.png";
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(LilyOfVengeance));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -11,9 +11,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class Glasses : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -40,20 +44,6 @@ namespace YakumoAkai.character.card.uncommon
         {
             RemoveKeyword(CardKeyword.Exhaust);
             // 升级后
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Glasses));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

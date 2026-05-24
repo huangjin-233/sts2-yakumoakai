@@ -14,6 +14,8 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.basic;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.card.special;
@@ -21,13 +23,17 @@ using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class Lenlautneedle : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
             new CardsVar(2) 
         ];
         // 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                ];
         public Lenlautneedle()
             : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -41,7 +47,7 @@ namespace YakumoAkai.character.card.uncommon
                 {
                     CardCmd.Upgrade(item);//升级
                 }
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -20m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -20m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
@@ -59,20 +65,6 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromCard<ManiacHighspeedFlyer>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Lenlautneedle));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 
     }

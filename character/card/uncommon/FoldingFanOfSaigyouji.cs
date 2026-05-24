@@ -15,11 +15,16 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class FoldingFanOfSaigyouji : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -32,11 +37,12 @@ namespace YakumoAkai.character.card.uncommon
         ];
         // 动态变量
         private bool cost=false;
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                                    ];
         public FoldingFanOfSaigyouji()
             : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-        public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
         {
             if (this.EnergyCost.GetWithModifiers(CostModifiers.All) == 0)
             {
@@ -58,15 +64,15 @@ namespace YakumoAkai.character.card.uncommon
         }//mp改变时
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<VulnerablePower>(base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);//易伤
-            await PowerCmd.Apply<StrengthPower>(base.CombatState.HittableEnemies, -base.DynamicVars.Strength.BaseValue, base.Owner.Creature, this);//减力量
-            await PowerCmd.Apply<WeakPower>(base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
-            await PowerCmd.Apply<PoisonPower>(base.CombatState.HittableEnemies, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);//毒
-            await PowerCmd.Apply<Fire>(base.CombatState.HittableEnemies,base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
-            await PowerCmd.Apply<DoomPower>(base.CombatState.HittableEnemies, base.DynamicVars.Doom.BaseValue, base.Owner.Creature, this);//燃烧
+            await PowerCmd.Apply<VulnerablePower>(choiceContext,base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue, base.Owner.Creature, this);//易伤
+            await PowerCmd.Apply<StrengthPower>(choiceContext,base.CombatState.HittableEnemies, -base.DynamicVars.Strength.BaseValue, base.Owner.Creature, this);//减力量
+            await PowerCmd.Apply<WeakPower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
+            await PowerCmd.Apply<PoisonPower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Poison.BaseValue, base.Owner.Creature, this);//毒
+            await PowerCmd.Apply<Fire>(choiceContext, base.CombatState.HittableEnemies,base.DynamicVars.Power<Fire>().BaseValue, base.Owner.Creature, this);//燃烧
+            await PowerCmd.Apply<DoomPower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Doom.BaseValue, base.Owner.Creature, this);//燃烧
             if (cost)
             {
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
@@ -104,20 +110,6 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<Fire>(),
             HoverTipFactory.FromPower<mp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(FoldingFanOfSaigyouji));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

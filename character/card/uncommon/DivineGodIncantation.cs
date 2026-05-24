@@ -12,10 +12,12 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class DivineGodIncantation : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -29,7 +31,7 @@ namespace YakumoAkai.character.card.uncommon
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             DivineGodIncantationPower.god[base.Owner] = 0;
-            await PowerCmd.Apply<DivineGodIncantationPower>(base.Owner.Creature, base.DynamicVars.Power<DivineGodIncantationPower>().BaseValue, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<DivineGodIncantationPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<DivineGodIncantationPower>().BaseValue, base.Owner.Creature, this);//mp
         }
         public override string PortraitPath => $"res://images/cards/skill/DivineGodIncantation.png";
 
@@ -40,20 +42,6 @@ namespace YakumoAkai.character.card.uncommon
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.Static(StaticHoverTip.Block),
             HoverTipFactory.FromPower<mp>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(DivineGodIncantation));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

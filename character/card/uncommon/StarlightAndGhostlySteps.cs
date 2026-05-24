@@ -14,16 +14,22 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.card.rare;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class StarlightAndGhostlySteps : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [new CardsVar(3), new PowerVar<DexterityPower>(1)];// 动态变量
 
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex.GetModCardKeyword()
+                                                                ];
         public StarlightAndGhostlySteps()
         : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
@@ -37,8 +43,8 @@ namespace YakumoAkai.character.card.uncommon
             await CardCmd.Discard(choiceContext, item);//丢弃1张
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 15)
             {
-                await PowerCmd.Apply<Stardex>(base.Owner.Creature, base.DynamicVars.Dexterity.BaseValue, base.Owner.Creature, this);//临时敏捷
-                await PowerCmd.Apply<mp>(base.Owner.Creature, -15m, base.Owner.Creature, this);
+                await PowerCmd.Apply<Stardex>(choiceContext,base.Owner.Creature, base.DynamicVars.Dexterity.BaseValue, base.Owner.Creature, this);//临时敏捷
+                await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -15m, base.Owner.Creature, this);
                 Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 15;
                 IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 3;
                 Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 15;
@@ -57,20 +63,6 @@ namespace YakumoAkai.character.card.uncommon
             HoverTipFactory.FromPower<mp>(),
             HoverTipFactory.FromPower<DexterityPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(StarlightAndGhostlySteps));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

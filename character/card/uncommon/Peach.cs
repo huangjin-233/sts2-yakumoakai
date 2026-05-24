@@ -14,10 +14,14 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.uncommon
 {
+    [RegisterCard(typeof(YakumoAkaiCardPool
+
+))]
     public sealed class Peach : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -30,7 +34,7 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-               await PowerCmd.Apply<Sm>(base.Owner.Creature,base.DynamicVars.Power<Sm>().BaseValue, base.Owner.Creature, this);
+               await PowerCmd.Apply<Sm>(choiceContext,base.Owner.Creature,base.DynamicVars.Power<Sm>().BaseValue, base.Owner.Creature, this);
         }
         public override string PortraitPath => $"res://images/cards/skill/Peach.png";
 
@@ -41,21 +45,6 @@ namespace YakumoAkai.character.card.uncommon
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<Sm>()];
         //关键词
-
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoAkaiCardPool), typeof(Peach));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 
