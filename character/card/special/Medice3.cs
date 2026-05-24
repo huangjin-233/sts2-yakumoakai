@@ -13,21 +13,24 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class Medice3 : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [new CardsVar(2),new PowerVar<StrengthPower>(3)];// 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [AkaiKeyword.Medice.GetModCardKeyword()];
         public Medice3()
         : base(0, CardType.Power, CardRarity.Token, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, 3, base.Owner.Creature, this);//力量
+            await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, 3, base.Owner.Creature, this);//力量
         }
         public override string PortraitPath => $"res://images/cards/power/Medice3.png";
 
@@ -39,20 +42,6 @@ namespace YakumoAkai.character.card.special
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
                 HoverTipFactory.FromPower<StrengthPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice3));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

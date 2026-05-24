@@ -16,9 +16,11 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     internal class ManiacHighspeedFlyer : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [
@@ -44,11 +46,11 @@ namespace YakumoAkai.character.card.special
         {
             base.DynamicVars.Damage.UpgradeValueBy(2m); // 升级后
         }
-        public static async Task<CardModel> CreateInHand(Player owner, CombatState combatState)
+        public static async Task<CardModel> CreateInHand(Player owner, ICombatState combatState)
         {
             return (await CreateInHand(owner, 1, combatState)).FirstOrDefault();
         }
-        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, CombatState combatState)
+        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, ICombatState combatState)
         {
             if (count == 0)
             {
@@ -63,25 +65,11 @@ namespace YakumoAkai.character.card.special
             {
                 ManiacHighspeedFlyer.Add(combatState.CreateCard<ManiacHighspeedFlyer>(owner));
             }
-            await CardPileCmd.AddGeneratedCardsToCombat(ManiacHighspeedFlyer, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardsToCombat(ManiacHighspeedFlyer, PileType.Hand, owner);
             return ManiacHighspeedFlyer;
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromCard<ManiacHighspeedFlyer>()];
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(ManiacHighspeedFlyer));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

@@ -15,9 +15,11 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class Curse : CardModel
     {
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -42,11 +44,11 @@ namespace YakumoAkai.character.card.special
             base.EnergyCost.UpgradeBy(-1);
             // 升级后
         }
-        public static async Task<CardModel> CreateInHand(Player owner, CombatState combatState)
+        public static async Task<CardModel> CreateInHand(Player owner, ICombatState combatState)
         {
             return (await CreateInHand(owner, 1, combatState)).FirstOrDefault();
         }
-        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, CombatState combatState)
+        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, ICombatState combatState)
         {
             if (count == 0)
             {
@@ -61,22 +63,8 @@ namespace YakumoAkai.character.card.special
             {
                 Curse.Add(combatState.CreateCard<Curse>(owner));
             }
-            await CardPileCmd.AddGeneratedCardsToCombat(Curse, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardsToCombat(Curse, PileType.Hand, owner);
             return Curse;
-        }
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Curse));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
         }
     }
 }

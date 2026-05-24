@@ -13,21 +13,24 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class WeakMedice : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => [new CardsVar(2)];// 动态变量
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice.GetModCardKeyword()];
         public WeakMedice()
         : base(1, CardType.Attack, CardRarity.Token, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-          await PowerCmd.Apply<WeakPower>(base.CombatState.HittableEnemies,99, base.Owner.Creature, this);//虚弱
+          await PowerCmd.Apply<WeakPower>(choiceContext,base.CombatState.HittableEnemies,99, base.Owner.Creature, this);//虚弱
         }
         public override string PortraitPath => $"res://images/cards/attack/Weak_medice.png";
 
@@ -36,24 +39,13 @@ namespace YakumoAkai.character.card.special
             base.EnergyCost.UpgradeBy(-1);
             // 升级后
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-                HoverTipFactory.FromPower<WeakPower>(),
-                HoverTipFactory.FromKeyword(AkaiKeyword.Medice)];
-        //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(WeakMedice));
 
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<WeakPower>(),
+            ModKeywordRegistry.CreateHoverTip(AkaiKeyword.Medice)
+        ];
+        //关键词
     }
 }
 

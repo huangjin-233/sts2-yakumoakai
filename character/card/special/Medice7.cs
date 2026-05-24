@@ -13,13 +13,16 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class Medice7 : CardModel
     {
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice.GetModCardKeyword()];
         protected override List<DynamicVar> CanonicalVars => [new EnergyVar(2)];// 动态变量
         public Medice7()
         : base(0, CardType.Skill, CardRarity.Token, TargetType.Self) { }
@@ -27,7 +30,7 @@ namespace YakumoAkai.character.card.special
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<mp>(base.Owner.Creature, 80, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, 80, base.Owner.Creature, this);//mp
         }
         public override string PortraitPath => $"res://images/cards/skill/Medice7.png";
 
@@ -39,20 +42,6 @@ namespace YakumoAkai.character.card.special
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
                 HoverTipFactory.FromPower<WeakPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice7));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

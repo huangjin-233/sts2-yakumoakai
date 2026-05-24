@@ -18,10 +18,12 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     internal class KindSoul : CardModel
     {
         public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
@@ -35,13 +37,13 @@ namespace YakumoAkai.character.card.special
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             Kind.mp[base.Owner] =0;
-            await PowerCmd.Apply<Kind>(base.Owner.Creature, 1m, base.Owner.Creature, this);//给予能力
+            await PowerCmd.Apply<Kind>(choiceContext,base.Owner.Creature, 1m, base.Owner.Creature, this);//给予能力
         }
-        public static async Task<CardModel?> CreateInHand(Player owner, CombatState combatState)
+        public static async Task<CardModel?> CreateInHand(Player owner, ICombatState combatState)
         {
             return (await CreateInHand(owner, 1, combatState)).FirstOrDefault();
         }
-        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, CombatState combatState)
+        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, ICombatState combatState)
         {
             if (count == 0)
             {
@@ -56,7 +58,7 @@ namespace YakumoAkai.character.card.special
             {
                 kindsoul.Add(combatState.CreateCard<KindSoul>(owner));
             }
-            await CardPileCmd.AddGeneratedCardsToCombat(kindsoul, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardsToCombat(kindsoul, PileType.Hand, owner);
             return kindsoul;
         }
         //计数
@@ -92,20 +94,6 @@ namespace YakumoAkai.character.card.special
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
             HoverTipFactory.FromPower<mp>()];
         //关键词
-    }
-    [ModInitializer(nameof(Initialize))]
-    public static class YakumoakaiInitializer
-    {
-        public static void Initialize()
-        {
-            {
-                ModHelper.AddModelToPool<YakumoakaiTokenCardPool, KindSoul>();
-
-                var harmony = new Harmony("huangjin.yakumoakai");
-                harmony.PatchAll();
-                // 初始化 harmony 库
-            }
-        }
     }
 }
 

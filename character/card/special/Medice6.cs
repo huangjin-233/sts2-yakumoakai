@@ -14,13 +14,16 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class Medice6 : CardModel
     {
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Medice.GetModCardKeyword()];
         protected override List<DynamicVar> CanonicalVars => [new EnergyVar(2)];// 动态变量
         public Medice6()
         : base(0, CardType.Skill, CardRarity.Token, TargetType.Self) { }
@@ -40,20 +43,6 @@ namespace YakumoAkai.character.card.special
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
                 HoverTipFactory.FromPower<WeakPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice6));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

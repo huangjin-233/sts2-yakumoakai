@@ -16,10 +16,12 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class ReimuFlower : CardModel
     {
         protected override List<DynamicVar> CanonicalVars => 
@@ -39,26 +41,26 @@ namespace YakumoAkai.character.card.special
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<ArtifactPower>(base.Owner.Creature, base.DynamicVars.Power<ArtifactPower>().BaseValue, base.Owner.Creature, this);//人工制品
-            await PowerCmd.Apply<StrengthPower>(base.Owner.Creature, base.DynamicVars.Power<StrengthPower>().BaseValue, base.Owner.Creature, this);//力量
-            await PowerCmd.Apply<DexterityPower>(base.Owner.Creature, base.DynamicVars.Power<DexterityPower>().BaseValue, base.Owner.Creature, this);//敏捷
-            await PowerCmd.Apply<ThornsPower>(base.Owner.Creature, base.DynamicVars.Power<ThornsPower>().BaseValue, base.Owner.Creature, this);//荆棘
-            await PowerCmd.Apply<PlatingPower>(base.Owner.Creature, base.DynamicVars.Power<PlatingPower>().BaseValue, base.Owner.Creature, this);//覆甲
-            await PowerCmd.Apply<IntangiblePower>(base.Owner.Creature, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//无实体
-            await PowerCmd.Apply<mp>(base.Owner.Creature, base.DynamicVars.Power<mp>().BaseValue, base.Owner.Creature, this);//mp
-            await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);//下回合能量
-            await PowerCmd.Apply<DrawCardsNextTurnPower>(base.Owner.Creature, base.DynamicVars.Cards.BaseValue, base.Owner.Creature, this);//下回合抽牌
+            await PowerCmd.Apply<ArtifactPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<ArtifactPower>().BaseValue, base.Owner.Creature, this);//人工制品
+            await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<StrengthPower>().BaseValue, base.Owner.Creature, this);//力量
+            await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<DexterityPower>().BaseValue, base.Owner.Creature, this);//敏捷
+            await PowerCmd.Apply<ThornsPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<ThornsPower>().BaseValue, base.Owner.Creature, this);//荆棘
+            await PowerCmd.Apply<PlatingPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<PlatingPower>().BaseValue, base.Owner.Creature, this);//覆甲
+            await PowerCmd.Apply<IntangiblePower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<IntangiblePower>().BaseValue, base.Owner.Creature, this);//无实体
+            await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<mp>().BaseValue, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Energy.BaseValue, base.Owner.Creature, this);//下回合能量
+            await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Cards.BaseValue, base.Owner.Creature, this);//下回合抽牌
         }
         public override string PortraitPath => $"res://images/cards/power/Reimu_flower.png";
 
         protected override void OnUpgrade()
         {
         }
-        public static async Task<CardModel> CreateInHand(Player owner, CombatState combatState)
+        public static async Task<CardModel> CreateInHand(Player owner, ICombatState combatState)
         {
             return (await CreateInHand(owner, 1, combatState)).FirstOrDefault();
         }
-        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, CombatState combatState)
+        public static async Task<IEnumerable<CardModel>> CreateInHand(Player owner, int count, ICombatState combatState)
         {
             if (count == 0)
             {
@@ -73,7 +75,7 @@ namespace YakumoAkai.character.card.special
             {
                 ReimuFlower.Add(combatState.CreateCard<ReimuFlower>(owner));
             }
-            await CardPileCmd.AddGeneratedCardsToCombat(ReimuFlower, PileType.Hand, addedByPlayer: true);
+            await CardPileCmd.AddGeneratedCardsToCombat(ReimuFlower, PileType.Hand, owner);
             return ReimuFlower;
         }
         protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -87,20 +89,6 @@ namespace YakumoAkai.character.card.special
             HoverTipFactory.FromPower<EnergyNextTurnPower>(),
             HoverTipFactory.FromPower<Nextmp>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(ReimuFlower));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 

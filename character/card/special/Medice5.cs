@@ -13,13 +13,16 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Keywords;
 using YakumoAkai.character.power;
 
 namespace YakumoAkai.character.card.special
 {
+    [RegisterCard(typeof(YakumoakaiTokenCardPool))]
     public sealed class Medice5 : CardModel
     {
-        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice];
+        public override List<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Medice.GetModCardKeyword()];
         protected override List<DynamicVar> CanonicalVars => [new EnergyVar(2)];// 动态变量
         public Medice5()
         : base(0, CardType.Skill, CardRarity.Token, TargetType.Self) { }
@@ -27,10 +30,10 @@ namespace YakumoAkai.character.card.special
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PowerCmd.Apply<mp>(base.Owner.Creature, 50, base.Owner.Creature, this);//mp
+            await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, 50, base.Owner.Creature, this);//mp
             await PlayerCmd.GainEnergy(base.DynamicVars.Energy.IntValue, base.Owner);//能量
-            await PowerCmd.Apply<Nextmp>(base.Owner.Creature, 30, base.Owner.Creature, this);//下回合mp
-            await PowerCmd.Apply<EnergyNextTurnPower>(base.Owner.Creature, 1, base.Owner.Creature, this);//下回合能量
+            await PowerCmd.Apply<Nextmp>(choiceContext,base.Owner.Creature, 30, base.Owner.Creature, this);//下回合mp
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,base.Owner.Creature, 1, base.Owner.Creature, this);//下回合能量
         }
         public override string PortraitPath => $"res://images/cards/skill/Medice5.png";
 
@@ -44,20 +47,6 @@ namespace YakumoAkai.character.card.special
                 HoverTipFactory.FromPower<Nextmp>(),
                 HoverTipFactory.FromPower<EnergyNextTurnPower>()];
         //关键词
-        [ModInitializer(nameof(Initialize))]
-        public static class YakumoakaiInitializer
-        {
-            public static void Initialize()
-            {
-                {
-                    ModHelper.AddModelToPool(typeof(YakumoakaiTokenCardPool), typeof(Medice5));
-
-                    var harmony = new Harmony("huangjin.yakumoakai");
-                    harmony.PatchAll();
-                    // 初始化 harmony 库
-                }
-            }
-        }
     }
 }
 
