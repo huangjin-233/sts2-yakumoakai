@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d31p7jv10fixv" path="res://character/AkaiNCreature.cs" id="1_o6qp3"]
 [ext_resource type="Texture2D" uid="uid://dthyi8iy4hm2c" path="res://character/akai/akai.tres" id="2_o6qp3"]
 [ext_resource type="Texture2D" uid="uid://cmlgp3fkglm6t" path="res://images/atlases/ui_atlas.sprites/health_bar_bg.png" id="4_1m6yb"]
-[ext_resource type="Script" uid="uid://b6rpv6j5bpitd" path="res://scenes/creature_visuals/Mps.cs" id="4_k2i5w"]
+[ext_resource type="Script" path="res://scenes/creature_visuals/Mps.cs" id="4_k2i5w"]
 [ext_resource type="Texture2D" uid="uid://cbrvt0pqt6yd8" path="res://images/atlases/ui_atlas.sprites/health_bar.png" id="5_xpo8b"]
 [ext_resource type="Texture2D" uid="uid://di5ekd0e6laq7" path="res://images/atlases/ui_atlas.sprites/health_bar_fill.png" id="6_gvsdp"]
 

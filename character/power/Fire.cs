@@ -51,7 +51,7 @@ namespace YakumoAkai.character.power
                 IEnumerable<Creature> source = from c in base.Owner.CombatState.GetOpponentsOf(base.Owner)
                                                where c.IsAlive
                                                select c;
-                return Math.Min(base.Amount, 1 + source.Sum((Creature a) => a.GetPowerAmount<AccelerantPower>()));
+                return Math.Min(base.Amount, 1 + source.Sum((Creature a) => a.GetPowerAmount<Huopower>()));
             }
         }
         public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
