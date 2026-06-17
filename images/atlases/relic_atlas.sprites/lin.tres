@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://wr4r43mgm2nx"]
-
-[ext_resource type="Texture2D" uid="uid://b1hcwj7o885p3" path="res://images/relics/lin.png" id="1_omn2g"]
-
-[resource]
-atlas = ExtResource("1_omn2g")
-region = Rect2(0, 0, 256, 256)

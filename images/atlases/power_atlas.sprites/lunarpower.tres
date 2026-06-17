@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://sr464q0flscn"]
-
-[ext_resource type="Texture2D" uid="uid://bvl46wqk7niqb" path="res://images/powers/lunarpower.png" id="1_hscuk"]
-
-[resource]
-atlas = ExtResource("1_hscuk")
-region = Rect2(0, 0, 84, 84)
