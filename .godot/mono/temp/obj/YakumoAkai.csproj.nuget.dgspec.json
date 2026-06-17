@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\mods\\sts2-yakumoakai\\YakumoAkai.csproj": {}
+    "D:\\mods\\a\\sts2-yakumoakai\\YakumoAkai.csproj": {}
   },
   "projects": {
-    "D:\\mods\\sts2-yakumoakai\\YakumoAkai.csproj": {
+    "D:\\mods\\a\\sts2-yakumoakai\\YakumoAkai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\mods\\sts2-yakumoakai\\YakumoAkai.csproj",
+        "projectUniqueName": "D:\\mods\\a\\sts2-yakumoakai\\YakumoAkai.csproj",
         "projectName": "YakumoAkai",
-        "projectPath": "D:\\mods\\sts2-yakumoakai\\YakumoAkai.csproj",
+        "projectPath": "D:\\mods\\a\\sts2-yakumoakai\\YakumoAkai.csproj",
         "packagesPath": "C:\\Users\\25516\\.nuget\\packages\\",
-        "outputPath": "D:\\mods\\sts2-yakumoakai\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "D:\\mods\\a\\sts2-yakumoakai\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\25516\\AppData\\Roaming\\NuGet\\NuGet.Config",
