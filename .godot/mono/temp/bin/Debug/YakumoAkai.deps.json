@@ -1,16 +1,16 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
+    "name": ".NETCoreApp,Version=v9.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v10.0": {
+    ".NETCoreApp,Version=v9.0": {
       "YakumoAkai/1.0.0": {
         "dependencies": {
           "GodotSharp": "4.5.1",
           "GodotSharpEditor": "4.5.1",
-          "STS2.RitsuLib.Compat.0.103.2": "0.4.24",
+          "STS2.RitsuLib.Compat.0.103.2": "0.4.10",
           "0Harmony": "2.4.2.0",
           "sts2": "0.1.0.0"
         },
@@ -37,15 +37,15 @@
           }
         }
       },
-      "STS2.RitsuLib.Compat.0.103.2/0.4.24": {
+      "STS2.RitsuLib.Compat.0.103.2/0.4.10": {
         "dependencies": {
           "GodotSharp": "4.5.1",
           "System.IO.Hashing": "9.0.0"
         },
         "runtime": {
           "lib/net9.0/STS2-RitsuLib.dll": {
-            "assemblyVersion": "0.4.24.0",
-            "fileVersion": "0.4.24.0"
+            "assemblyVersion": "0.4.10.0",
+            "fileVersion": "0.4.10.0"
           }
         }
       },
@@ -95,12 +95,12 @@
       "path": "godotsharpeditor/4.5.1",
       "hashPath": "godotsharpeditor.4.5.1.nupkg.sha512"
     },
-    "STS2.RitsuLib.Compat.0.103.2/0.4.24": {
+    "STS2.RitsuLib.Compat.0.103.2/0.4.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-di/0kkIMzUk/3kp8xw2CJWGP7khpug4g0RBWO4WKUzzVAqin3iEJDiBM39CQVeT7gBMyCVzhD4XtXTJmV0J8eg==",
-      "path": "sts2.ritsulib.compat.0.103.2/0.4.24",
-      "hashPath": "sts2.ritsulib.compat.0.103.2.0.4.24.nupkg.sha512"
+      "sha512": "sha512-vq4hKNKTlRUu410IPLD38Xwcw+iiafCOLt4lDn3xNKsh+XzhUO+N5FUCycqcMOycWbko0105vvcbRQbjN5HQwQ==",
+      "path": "sts2.ritsulib.compat.0.103.2/0.4.10",
+      "hashPath": "sts2.ritsulib.compat.0.103.2.0.4.10.nupkg.sha512"
     },
     "System.IO.Hashing/9.0.0": {
       "type": "package",

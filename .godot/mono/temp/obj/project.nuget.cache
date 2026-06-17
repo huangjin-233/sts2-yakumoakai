@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "a4u8I8jZH7k=",
+  "dgSpecHash": "22wcf3UyzOA=",
   "success": true,
-  "projectFilePath": "D:\\mods\\a\\sts2-yakumoakai\\YakumoAkai.csproj",
+  "projectFilePath": "D:\\mods\\sts2-yakumoakai\\YakumoAkai.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\25516\\.nuget\\packages\\godot.sourcegenerators\\4.5.1\\godot.sourcegenerators.4.5.1.nupkg.sha512",
     "C:\\Users\\25516\\.nuget\\packages\\godotsharp\\4.5.1\\godotsharp.4.5.1.nupkg.sha512",
     "C:\\Users\\25516\\.nuget\\packages\\godotsharpeditor\\4.5.1\\godotsharpeditor.4.5.1.nupkg.sha512",
     "C:\\Users\\25516\\.nuget\\packages\\krafs.publicizer\\2.3.0\\krafs.publicizer.2.3.0.nupkg.sha512",
-    "C:\\Users\\25516\\.nuget\\packages\\sts2.ritsulib.compat.0.103.2\\0.4.24\\sts2.ritsulib.compat.0.103.2.0.4.24.nupkg.sha512",
+    "C:\\Users\\25516\\.nuget\\packages\\sts2.ritsulib.compat.0.103.2\\0.4.10\\sts2.ritsulib.compat.0.103.2.0.4.10.nupkg.sha512",
     "C:\\Users\\25516\\.nuget\\packages\\system.io.hashing\\9.0.0\\system.io.hashing.9.0.0.nupkg.sha512"
   ],
   "logs": []
