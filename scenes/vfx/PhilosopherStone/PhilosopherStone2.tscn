@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5ey1djplvor1"]
+
+[ext_resource type="Script" uid="uid://nhsh6wefsdpm" path="res://scenes/vfx/vfx.cs" id="1_a8rst"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a8rst"]
+load_path = "res://.godot/imported/skeleton.png-b95d0aae0ed5f4518808ec32791f63dd.ctex"
+
+[sub_resource type="SpineAtlasResource" id="SpineAtlasResource_i81il"]
+source_path = "res://vfx/PhilosopherStone2/skeleton.atlas"
+textures = [SubResource("CompressedTexture2D_a8rst")]
+
+[sub_resource type="SpineSkeletonFileResource" id="SpineSkeletonFileResource_1udgo"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_xhjim"]
+atlas_res = SubResource("SpineAtlasResource_i81il")
+skeleton_file_res = SubResource("SpineSkeletonFileResource_1udgo")
+
+[node name="PhilosopherStone2" type="Node2D"]
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_xhjim")
+preview_skin = "Default"
+preview_animation = "animation"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(-221, 1)
+
+[node name="Node2D" type="Node2D" parent="SpineSprite"]
+show_behind_parent = true
+position = Vector2(43, -3)
+script = ExtResource("1_a8rst")

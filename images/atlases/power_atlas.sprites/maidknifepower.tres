@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://chh4cl6o3ooe"]
+
+[ext_resource type="Texture2D" uid="uid://b767yw4s5ue8i" path="res://images/powers/maidknifepower.png" id="1_gmqik"]
+
+[resource]
+atlas = ExtResource("1_gmqik")
+region = Rect2(0, 0, 84, 84)

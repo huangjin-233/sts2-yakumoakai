@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\25516\.nuget\packages\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\25516\.nuget\packages\" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.103.2\0.4.24\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\mod_manifest.generated.json" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.103.2\0.4.24\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\mod_manifest.generated.json')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.103.2</NuGetPackageId>
+      <NuGetPackageVersion>0.4.24</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>.godot\mono\temp\obj\Release\mod_manifest.generated.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Language)' == 'C#' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Compile Include="$(NuGetPackageRoot)krafs.publicizer\2.3.0\contentfiles\cs\any\Publicizer\IgnoresAccessChecksToAttribute.cs" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer\2.3.0\contentfiles\cs\any\Publicizer\IgnoresAccessChecksToAttribute.cs')">
+      <NuGetPackageId>Krafs.Publicizer</NuGetPackageId>
+      <NuGetPackageVersion>2.3.0</NuGetPackageVersion>
+      <NuGetItemType>Compile</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Publicizer\IgnoresAccessChecksToAttribute.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props" Condition="Exists('$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props')" />
+    <Import Project="$(NuGetPackageRoot)krafs.publicizer\2.3.0\build\Krafs.Publicizer.props" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer\2.3.0\build\Krafs.Publicizer.props')" />
+  </ImportGroup>
+</Project>

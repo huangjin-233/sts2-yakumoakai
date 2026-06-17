@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxnophbali7hg"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://cnd7rwsiuwglb" path="res://vfx/dream/dream.tres" id="1_gpunw"]
+[ext_resource type="Script" uid="uid://nhsh6wefsdpm" path="res://scenes/vfx/vfx.cs" id="1_p7o21"]
+
+[node name="Dream" type="Node2D"]
+rotation = -2.0943952
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("1_gpunw")
+preview_skin = "Default"
+preview_animation = "animation"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(-133.96413, 224.03262)
+scale = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="SpineSprite"]
+show_behind_parent = true
+position = Vector2(2.8660295, -2.9641004)
+script = ExtResource("1_p7o21")
