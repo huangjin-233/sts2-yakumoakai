@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://bpxa66vaxf0in"
+path="res://.godot/imported/skeleton.skel-32ebcc96be30a829f65e8b8987098e94.spskel"
+
+[deps]
+
+source_file="res://vfx/saint/skeleton.skel"
+dest_files=["res://.godot/imported/skeleton.skel-32ebcc96be30a829f65e8b8987098e94.spskel"]
+
+[params]
+

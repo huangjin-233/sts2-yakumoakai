@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cnwj83c6yc30j"]
+
+[ext_resource type="Texture2D" uid="uid://ccntvnmsw3y8k" path="res://images/relic/large/prue_soul.png" id="1_q70xm"]
+
+[resource]
+atlas = ExtResource("1_q70xm")
+region = Rect2(0, 0, 256, 256)

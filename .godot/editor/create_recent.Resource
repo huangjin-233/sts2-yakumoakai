@@ -1,0 +1,3 @@
+SpineSkeletonDataResource
+AtlasTexture
+SpineAtlasResource

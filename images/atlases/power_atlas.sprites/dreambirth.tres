@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cc8uoi2uuyqsb"]
+
+[ext_resource type="Texture2D" uid="uid://dh7rtlngt5n70" path="res://images/powers/dreambirth.png" id="1_vycfg"]
+
+[resource]
+atlas = ExtResource("1_vycfg")
+region = Rect2(0, 0, 84, 84)

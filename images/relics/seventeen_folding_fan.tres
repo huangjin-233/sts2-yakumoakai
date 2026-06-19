@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dijpqcpkpb8je"]
+
+[ext_resource type="Texture2D" uid="uid://bt30ovkrkfxy6" path="res://images/relics/seventeen_folding_fan.png" id="1_hyy06"]
+
+[resource]
+atlas = ExtResource("1_hyy06")
+region = Rect2(0, 0, 256, 256)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://gy4rrbecfplw"]
+
+[ext_resource type="Texture2D" uid="uid://c2yptpeikynv" path="res://images/relic/large/gensokyo_online_bad.png" id="1_200ge"]
+
+[resource]
+atlas = ExtResource("1_200ge")
+region = Rect2(0, 0, 256, 256)

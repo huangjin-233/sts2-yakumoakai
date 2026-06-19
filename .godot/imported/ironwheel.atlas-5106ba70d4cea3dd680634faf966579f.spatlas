@@ -1,0 +1,1 @@
+{"atlas_data":"\nskeleton.png\nsize: 68,68\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nbulletBa000\n  rotate: false\n  xy: 2, 2\n  size: 64, 64\n  orig: 64, 64\n  offset: 0, 0\n  index: -1\n","normal_texture_prefix":"n","source_path":"res://vfx/ironwheel/ironwheel.atlas","specular_texture_prefix":"s"}

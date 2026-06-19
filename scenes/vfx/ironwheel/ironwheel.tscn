@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cftxvekrsjsvk"]
+
+[ext_resource type="Script" uid="uid://nhsh6wefsdpm" path="res://scenes/vfx/vfx.cs" id="1_pikd2"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://ch5q65hp4h31b" path="res://vfx/ironwheel/ironwheel.tres" id="2_pikd2"]
+
+[node name="Ironwheel" type="Node2D"]
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("2_pikd2")
+preview_skin = "Default"
+preview_animation = "animation"
+preview_frame = false
+preview_time = 0.0
+show_behind_parent = true
+position = Vector2(-134, -130)
+scale = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="SpineSprite"]
+show_behind_parent = true
+position = Vector2(-1.4999995, 1.5000002)
+rotation = 0.9756391
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_pikd2")

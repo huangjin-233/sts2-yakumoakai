@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://45g5tjh2tae7"
+path="res://.godot/imported/skeleton.skel-bfe9ebcc166c03090b833e162ff39ff4.spskel"
+
+[deps]
+
+source_file="res://vfx/double_barrier/skeleton.skel"
+dest_files=["res://.godot/imported/skeleton.skel-bfe9ebcc166c03090b833e162ff39ff4.spskel"]
+
+[params]
+

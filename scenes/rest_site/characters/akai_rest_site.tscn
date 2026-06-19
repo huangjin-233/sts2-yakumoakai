@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlpc2ko0l0t51"]
+
+[ext_resource type="Texture2D" uid="uid://ce47mcssv3y5d" path="res://character/akai/shoulder.png" id="1_ax0s5"]
+
+[node name="YakumoakaiRestSite" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ax0s5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]

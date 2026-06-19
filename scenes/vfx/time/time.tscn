@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://blmac2j22ysic"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://b5co17f83vxro" path="res://vfx/time/time.tres" id="1_vgcvx"]
+[ext_resource type="Script" uid="uid://nhsh6wefsdpm" path="res://scenes/vfx/vfx.cs" id="2_fhx47"]
+
+[node name="Time" type="Node2D"]
+position = Vector2(0, 4)
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("1_vgcvx")
+preview_skin = "Default"
+preview_animation = "animation"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(-225, -165)
+scale = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="SpineSprite"]
+show_behind_parent = true
+position = Vector2(30, 11)
+script = ExtResource("2_fhx47")

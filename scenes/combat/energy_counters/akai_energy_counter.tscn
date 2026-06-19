@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgujei10xniit"]
+
+[ext_resource type="Script" uid="uid://dm4yv7142qsam" path="res://src/Core/Nodes/Combat/AkaiEnergyCounter.cs" id="1_t4x0n"]
+[ext_resource type="Texture2D" uid="uid://bql7c8qxyl2v5" path="res://images/packed/sprite_fonts/akai_energy_icon.png" id="2_4gkmo"]
+[ext_resource type="Script" uid="uid://qye0ec3ytp71" path="res://src/Core/Nodes/Combat/CustomMegaLabel.cs" id="3_4gkmo"]
+
+[node name="YakumoakaiEnergyCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t4x0n")
+
+[node name="EnergyVfxBack" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 45.0
+offset_bottom = 41.0
+
+[node name="TextureRect" type="TextureRect" parent="Layers"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 79.0
+texture = ExtResource("2_4gkmo")
+
+[node name="Control" type="Control" parent="Layers"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 79.0
+offset_bottom = 81.0
+
+[node name="EnergyVfxFront" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_4gkmo")

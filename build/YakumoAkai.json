@@ -1,0 +1,12 @@
+{
+  "id": "YakumoAkai",
+  "name": "八云红",
+  "author": "huangjin",
+  "description": "来自东方同人小说《幻想乡玩家》",
+  "version": "v0.9.2",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [{ "id": "STS2-RitsuLib", "min_version": "0.4.9" }],
+  "affects_gameplay": true,
+  "min_game_version": "0.107.1"
+}

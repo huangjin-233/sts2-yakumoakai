@@ -1,0 +1,2151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\windfan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\windfan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\yukasmile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\yukasmile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\gensokyoonline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\relics\\gensokyoonline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\clearmirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\clearmirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\luck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\luck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\blood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\blood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\sm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\sm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\timepower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\timepower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\yukafight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\yukafight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\fire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\dreambirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\dreambirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\divinegodincantationpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\divinegodincantationpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\zombiehat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\zombiehat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\gungnir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\ancient\\gungnir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\marlborogavel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\ancient\\marlborogavel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\strikeakai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\basic\\strikeakai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\defendakai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\basic\\defendakai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\hillman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\hillman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\kindsoul.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\kindsoul.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\agnishine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\agnishine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\akaiandyukari_0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\akaiandyukari_0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\flanrdewing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\flanrdewing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\leaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\originalformofsuwa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\originalformofsuwa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\pagodaofkunsamana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\pagodaofkunsamana.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\saigyoujitree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\saigyoujitree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\skyclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\skyclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\sleep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\sleep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\sparkneedlesword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\sparkneedlesword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\tsubamegaeshi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\tsubamegaeshi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\fate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\fate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\gap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\gap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\gatesofmordor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\gatesofmordor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\ghostliquor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\ghostliquor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\ironwheel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\ironwheel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\mischiefdice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\mischiefdice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\penglaidoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\penglaidoll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\philosopherstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\philosopherstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\philosopherstonepirate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\philosopherstonepirate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\phoenix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\phoenix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\relyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\relyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\akaiandyukari_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\akaiandyukari_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\curse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\curse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\ghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\maniachighspeedflyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\maniachighspeedflyer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\reimuflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\reimuflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\weakmedice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\weakmedice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\divinegodincantation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\divinegodincantation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\doulong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\doulong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\dream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\dream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\eighteyedeelgrill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\eighteyedeelgrill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\fxsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\fxsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\maidknife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\maidknife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\mouth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\mouth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\opp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\opp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\peachmedice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\peachmedice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\waterclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\waterclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\immortalwieldsenergy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\immortalwieldsenergy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\medice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\medice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\palmleaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\palmleaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\laevatain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\laevatain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\yukaattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\yukaattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\lunar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\lunar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\starlightandghostlysteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\starlightandghostlysteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\yukaangry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\yukaangry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\lochnessfort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\lochnessfort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\pfp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\pfp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\penglaijadebranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\penglaijadebranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\peach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\peach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\mimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\mimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\meilinghat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\meilinghat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\lilyofvengeance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\lilyofvengeance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\lenlautneedle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\lenlautneedle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\lazyrock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\lazyrock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\komeijieye.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\komeijieye.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\hair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\hair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\greatsage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\greatsage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\godshose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\godshose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\fxtz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\fxtz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\foldingfanofsaigyouji.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\foldingfanofsaigyouji.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\eighttrugramsfurnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\eighttrugramsfurnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\deadandlife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\deadandlife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\queenofbubbles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\queenofbubbles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\shackles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\shackles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\white.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\white.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\barrierfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\barrierfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\goldendragonclaw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\goldendragonclaw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\friendofdevil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\friendofdevil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\dreambirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\dreambirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\doubledealingcharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\doubledealingcharacter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\doublebarrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\doublebarrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\destroyroar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\destroyroar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\bloodbat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\bloodbat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\yakumoclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\yakumoclothes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\stonefragments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\stonefragments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\sevenstarsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\sevenstarsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\sealingmagicneedle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\sealingmagicneedle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\mirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\common\\mirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\saintelmosfirecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\rare\\saintelmosfirecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\maid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\uncommon\\maid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\yukadress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\yukadress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\medice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\special\\medice2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\godgungnir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\card\\basic\\godgungnir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\guai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\guai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\mp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\mp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\restart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\restart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\nextmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\nextmp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\gensokyoonlinebad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\relics\\gensokyoonlinebad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\sky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\sky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\rebirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\rebirth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\penglai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\penglai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\num.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\num.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\clearmirrorpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\clearmirrorpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\lunarpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\lunarpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\lazy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\lazy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\kind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\kind.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\ghostpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\ghostpower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\maidknifepower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\power\\maidknifepower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\aptx4869.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\relics\\aptx4869.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\orobas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:orobas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\yakumoakairelicpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\yakumoakairelicpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\lin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\relics\\lin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|d:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\seventeenfoldingfan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F62E7F23-9783-4AEB-A19C-6771162BE290}|YakumoAkai.csproj|solutionrelative:character\\relics\\seventeenfoldingfan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Yukafight.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Yukafight.cs",
+              "RelativeDocumentMoniker": "character\\power\\Yukafight.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Yukafight.cs",
+              "RelativeToolTip": "character\\power\\Yukafight.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:04.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Water.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Water.cs",
+              "RelativeDocumentMoniker": "character\\power\\Water.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Water.cs",
+              "RelativeToolTip": "character\\power\\Water.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAASwCIAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:44:31.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Timepower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Timepower.cs",
+              "RelativeDocumentMoniker": "character\\power\\Timepower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Timepower.cs",
+              "RelativeToolTip": "character\\power\\Timepower.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:03.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Sm.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Sm.cs",
+              "RelativeDocumentMoniker": "character\\power\\Sm.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Sm.cs",
+              "RelativeToolTip": "character\\power\\Sm.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:02.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "blood.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\blood.cs",
+              "RelativeDocumentMoniker": "character\\power\\blood.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\blood.cs",
+              "RelativeToolTip": "character\\power\\blood.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:47.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Luck.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Luck.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\Luck.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Luck.cs",
+              "RelativeToolTip": "character\\card\\common\\Luck.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:29:04.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClearMirror.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\ClearMirror.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\ClearMirror.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\ClearMirror.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\ClearMirror.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswBQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:58.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GensokyoOnline.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\GensokyoOnline.cs",
+              "RelativeDocumentMoniker": "character\\relics\\GensokyoOnline.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\GensokyoOnline.cs",
+              "RelativeToolTip": "character\\relics\\GensokyoOnline.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAWwDMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:41:17.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "YukaSmile.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\YukaSmile.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\YukaSmile.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\YukaSmile.cs",
+              "RelativeToolTip": "character\\card\\rare\\YukaSmile.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAmwHYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:23.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WindFan.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\WindFan.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\WindFan.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\WindFan.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\WindFan.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAuwDIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:57.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Fire.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Fire.cs",
+              "RelativeDocumentMoniker": "character\\power\\Fire.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Fire.cs",
+              "RelativeToolTip": "character\\power\\Fire.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAIA2wCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:52:37.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Dreambirth.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Dreambirth.cs",
+              "RelativeDocumentMoniker": "character\\power\\Dreambirth.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Dreambirth.cs",
+              "RelativeToolTip": "character\\power\\Dreambirth.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAxwA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:49.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DivineGodIncantationPower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\DivineGodIncantationPower.cs",
+              "RelativeDocumentMoniker": "character\\power\\DivineGodIncantationPower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\DivineGodIncantationPower.cs",
+              "RelativeToolTip": "character\\power\\DivineGodIncantationPower.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:41:15.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ZombieHat.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\ZombieHat.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\ZombieHat.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\ZombieHat.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\ZombieHat.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:05.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Gungnir.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\Gungnir.cs",
+              "RelativeDocumentMoniker": "character\\card\\ancient\\Gungnir.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\Gungnir.cs",
+              "RelativeToolTip": "character\\card\\ancient\\Gungnir.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAApwBEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:56:12.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MarlboroGavel.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\MarlboroGavel.cs",
+              "RelativeDocumentMoniker": "character\\card\\ancient\\MarlboroGavel.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\ancient\\MarlboroGavel.cs",
+              "RelativeToolTip": "character\\card\\ancient\\MarlboroGavel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:17.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StrikeAkai.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\StrikeAkai.cs",
+              "RelativeDocumentMoniker": "character\\card\\basic\\StrikeAkai.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\StrikeAkai.cs",
+              "RelativeToolTip": "character\\card\\basic\\StrikeAkai.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:34.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DefendAkai.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\DefendAkai.cs",
+              "RelativeDocumentMoniker": "character\\card\\basic\\DefendAkai.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\DefendAkai.cs",
+              "RelativeToolTip": "character\\card\\basic\\DefendAkai.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswCIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:22.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Hillman.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Hillman.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Hillman.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Hillman.cs",
+              "RelativeToolTip": "character\\card\\rare\\Hillman.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:28.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AgniShine.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\AgniShine.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\AgniShine.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\AgniShine.cs",
+              "RelativeToolTip": "character\\card\\common\\AgniShine.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:20:50.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "KindSoul.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\KindSoul.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\KindSoul.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\KindSoul.cs",
+              "RelativeToolTip": "character\\card\\special\\KindSoul.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAIA3wGcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:40.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AkaiAndYukari_0.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\AkaiAndYukari_0.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\AkaiAndYukari_0.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\AkaiAndYukari_0.cs",
+              "RelativeToolTip": "character\\card\\common\\AkaiAndYukari_0.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwBoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:51.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FlanrdeWing.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\FlanrdeWing.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\FlanrdeWing.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\FlanrdeWing.cs",
+              "RelativeToolTip": "character\\card\\common\\FlanrdeWing.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:54.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "leaf.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\leaf.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\leaf.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\leaf.cs",
+              "RelativeToolTip": "character\\card\\common\\leaf.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:58.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "OriginalFormOfSuwa.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\OriginalFormOfSuwa.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\OriginalFormOfSuwa.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\OriginalFormOfSuwa.cs",
+              "RelativeToolTip": "character\\card\\common\\OriginalFormOfSuwa.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwBMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:21:47.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PagodaOfKunsamana.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\PagodaOfKunsamana.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\PagodaOfKunsamana.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\PagodaOfKunsamana.cs",
+              "RelativeToolTip": "character\\card\\common\\PagodaOfKunsamana.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:21:53.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SaigyoujiTree.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SaigyoujiTree.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\SaigyoujiTree.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SaigyoujiTree.cs",
+              "RelativeToolTip": "character\\card\\common\\SaigyoujiTree.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:21:57.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SkyClothes.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SkyClothes.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\SkyClothes.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SkyClothes.cs",
+              "RelativeToolTip": "character\\card\\common\\SkyClothes.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:12.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Sleep.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Sleep.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\Sleep.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Sleep.cs",
+              "RelativeToolTip": "character\\card\\common\\Sleep.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:16.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SparkNeedleSword.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SparkNeedleSword.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\SparkNeedleSword.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SparkNeedleSword.cs",
+              "RelativeToolTip": "character\\card\\common\\SparkNeedleSword.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:21.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TsubameGaeshi.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\TsubameGaeshi.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\TsubameGaeshi.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\TsubameGaeshi.cs",
+              "RelativeToolTip": "character\\card\\common\\TsubameGaeshi.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:30.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Fate.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Fate.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Fate.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Fate.cs",
+              "RelativeToolTip": "character\\card\\rare\\Fate.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:03.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Gap.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Gap.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Gap.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Gap.cs",
+              "RelativeToolTip": "character\\card\\rare\\Gap.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:09.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GatesOfMordor.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GatesOfMordor.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\GatesOfMordor.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GatesOfMordor.cs",
+              "RelativeToolTip": "character\\card\\rare\\GatesOfMordor.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:13.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GhostLiquor.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GhostLiquor.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\GhostLiquor.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GhostLiquor.cs",
+              "RelativeToolTip": "character\\card\\rare\\GhostLiquor.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwBwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:20.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IronWheel.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\IronWheel.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\IronWheel.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\IronWheel.cs",
+              "RelativeToolTip": "character\\card\\rare\\IronWheel.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAuwB0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:36.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "MischiefDice.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\MischiefDice.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\MischiefDice.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\MischiefDice.cs",
+              "RelativeToolTip": "character\\card\\rare\\MischiefDice.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:48.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "PengLaiDoll.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PengLaiDoll.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\PengLaiDoll.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PengLaiDoll.cs",
+              "RelativeToolTip": "character\\card\\rare\\PengLaiDoll.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:52.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "PhilosopherStone.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PhilosopherStone.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\PhilosopherStone.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PhilosopherStone.cs",
+              "RelativeToolTip": "character\\card\\rare\\PhilosopherStone.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:56.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "PhilosopherStonePirate.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PhilosopherStonePirate.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\PhilosopherStonePirate.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\PhilosopherStonePirate.cs",
+              "RelativeToolTip": "character\\card\\rare\\PhilosopherStonePirate.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:00.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Phoenix.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Phoenix.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Phoenix.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Phoenix.cs",
+              "RelativeToolTip": "character\\card\\rare\\Phoenix.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:03.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "RelyOn.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\RelyOn.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\RelyOn.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\RelyOn.cs",
+              "RelativeToolTip": "character\\card\\rare\\RelyOn.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:13.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AkaiAndYukari_1.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\AkaiAndYukari_1.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\AkaiAndYukari_1.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\AkaiAndYukari_1.cs",
+              "RelativeToolTip": "character\\card\\special\\AkaiAndYukari_1.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:28.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Curse.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Curse.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Curse.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Curse.cs",
+              "RelativeToolTip": "character\\card\\special\\Curse.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:32.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Ghost.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Ghost.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Ghost.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Ghost.cs",
+              "RelativeToolTip": "character\\card\\special\\Ghost.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:36.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ManiacHighspeedFlyer.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\ManiacHighspeedFlyer.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\ManiacHighspeedFlyer.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\ManiacHighspeedFlyer.cs",
+              "RelativeToolTip": "character\\card\\special\\ManiacHighspeedFlyer.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:48.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Medice1.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice1.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice1.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice1.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice1.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:54.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Medice3.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice3.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice3.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice3.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice3.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:27.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Medice5.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice5.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice5.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice5.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice5.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:32.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Medice7.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice7.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice7.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice7.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice7.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:41.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ReimuFlower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\ReimuFlower.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\ReimuFlower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\ReimuFlower.cs",
+              "RelativeToolTip": "character\\card\\special\\ReimuFlower.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:45.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "WeakMedice.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\WeakMedice.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\WeakMedice.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\WeakMedice.cs",
+              "RelativeToolTip": "character\\card\\special\\WeakMedice.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:47.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DivineGodIncantation.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\DivineGodIncantation.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\DivineGodIncantation.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\DivineGodIncantation.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\DivineGodIncantation.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:04.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Doulong.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Doulong.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Doulong.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Doulong.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Doulong.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwBIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:07.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Dream.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Dream.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Dream.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Dream.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Dream.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:10.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "EightEyedEelGrill.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\EightEyedEelGrill.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\EightEyedEelGrill.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\EightEyedEelGrill.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\EightEyedEelGrill.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:12.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "FxSword.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\FxSword.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\FxSword.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\FxSword.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\FxSword.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:20.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Glasses.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Glasses.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Glasses.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Glasses.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Glasses.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwBIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:32.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "MaidKnife.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\MaidKnife.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\MaidKnife.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\MaidKnife.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\MaidKnife.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:19.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Mouth.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Mouth.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Mouth.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Mouth.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Mouth.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwBMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:29.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Opp.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Opp.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Opp.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Opp.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Opp.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:31.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "PeachMedice.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PeachMedice.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\PeachMedice.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PeachMedice.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\PeachMedice.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:41.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "WaterClothes.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\WaterClothes.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\WaterClothes.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\WaterClothes.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\WaterClothes.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:54.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Time.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Time.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Time.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Time.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Time.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:51.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ImmortalWieldsEnergy.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\ImmortalWieldsEnergy.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\ImmortalWieldsEnergy.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\ImmortalWieldsEnergy.cs",
+              "RelativeToolTip": "character\\card\\rare\\ImmortalWieldsEnergy.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:32.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Medice.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Medice.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Medice.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Medice.cs",
+              "RelativeToolTip": "character\\card\\rare\\Medice.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:44.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "PalmLeaf.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PalmLeaf.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\PalmLeaf.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PalmLeaf.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\PalmLeaf.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:35.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "Laevatain.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Laevatain.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Laevatain.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Laevatain.cs",
+              "RelativeToolTip": "character\\card\\rare\\Laevatain.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:40.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "YukaAttack.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\YukaAttack.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\YukaAttack.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\YukaAttack.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\YukaAttack.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:03.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Lunar.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Lunar.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\Lunar.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Lunar.cs",
+              "RelativeToolTip": "character\\card\\common\\Lunar.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:29:07.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "StarlightAndGhostlySteps.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\StarlightAndGhostlySteps.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\StarlightAndGhostlySteps.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\StarlightAndGhostlySteps.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\StarlightAndGhostlySteps.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:49.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "YukaAngry.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\YukaAngry.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\YukaAngry.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\YukaAngry.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\YukaAngry.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:00.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "LochNessFort.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\LochNessFort.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\LochNessFort.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\LochNessFort.cs",
+              "RelativeToolTip": "character\\card\\common\\LochNessFort.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:29:01.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "Pfp.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Pfp.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Pfp.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Pfp.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Pfp.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:45.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "PenglaiJadeBranch.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PenglaiJadeBranch.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\PenglaiJadeBranch.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\PenglaiJadeBranch.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\PenglaiJadeBranch.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:43.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Peach.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Peach.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Peach.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Peach.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Peach.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:38.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Mimi.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Mimi.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Mimi.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Mimi.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Mimi.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwBkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:25.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "MeiLingHat.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\MeiLingHat.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\MeiLingHat.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\MeiLingHat.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\MeiLingHat.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:22.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "LilyOfVengeance.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\LilyOfVengeance.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\LilyOfVengeance.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\LilyOfVengeance.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\LilyOfVengeance.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:12.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "Lenlautneedle.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Lenlautneedle.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Lenlautneedle.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Lenlautneedle.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Lenlautneedle.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwBkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:10.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "Lazyrock.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Lazyrock.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Lazyrock.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Lazyrock.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Lazyrock.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:08.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "KomeijiEye.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\KomeijiEye.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\KomeijiEye.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\KomeijiEye.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\KomeijiEye.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwBkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:04.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "Hair.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Hair.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Hair.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Hair.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Hair.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:41.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "GreatSage.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\GreatSage.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\GreatSage.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\GreatSage.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\GreatSage.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwBUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:37.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "GodShose.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\GodShose.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\GodShose.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\GodShose.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\GodShose.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwBUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:34.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "Fxtz.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Fxtz.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Fxtz.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Fxtz.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Fxtz.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwBYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:23.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "FoldingFanOfSaigyouji.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\FoldingFanOfSaigyouji.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\FoldingFanOfSaigyouji.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\FoldingFanOfSaigyouji.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\FoldingFanOfSaigyouji.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:50.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "EightTrugramsFurnace.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\EightTrugramsFurnace.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\EightTrugramsFurnace.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\EightTrugramsFurnace.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\EightTrugramsFurnace.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwBkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:15.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "DeadAndLife.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\DeadAndLife.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\DeadAndLife.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\DeadAndLife.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\DeadAndLife.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAmwBYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:26:02.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "QueenOfBubbles.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\QueenOfBubbles.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\QueenOfBubbles.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\QueenOfBubbles.cs",
+              "RelativeToolTip": "character\\card\\rare\\QueenOfBubbles.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAlwBYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:08.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "Shackles.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Shackles.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\Shackles.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\Shackles.cs",
+              "RelativeToolTip": "character\\card\\rare\\Shackles.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAlwBgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:20.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "Medice4.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice4.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice4.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice4.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice4.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAlwBYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:30.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "White.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\White.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\White.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\White.cs",
+              "RelativeToolTip": "character\\card\\special\\White.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAlwBkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:50.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "Medice6.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice6.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice6.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice6.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice6.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAlwBcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:35.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "BarrierFix.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\BarrierFix.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\BarrierFix.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\BarrierFix.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\BarrierFix.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAlwBgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:55.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "GoldenDragonClaw.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GoldenDragonClaw.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\GoldenDragonClaw.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\GoldenDragonClaw.cs",
+              "RelativeToolTip": "character\\card\\rare\\GoldenDragonClaw.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawBgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:24.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "FriendOfDevil.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\FriendOfDevil.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\FriendOfDevil.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\FriendOfDevil.cs",
+              "RelativeToolTip": "character\\card\\rare\\FriendOfDevil.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAewBkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:06.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "DreamBirth.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DreamBirth.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\DreamBirth.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DreamBirth.cs",
+              "RelativeToolTip": "character\\card\\rare\\DreamBirth.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawBUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:23:00.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "DoubleDealingCharacter.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DoubleDealingCharacter.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\DoubleDealingCharacter.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DoubleDealingCharacter.cs",
+              "RelativeToolTip": "character\\card\\rare\\DoubleDealingCharacter.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAawB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:50.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "DoubleBarrier.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DoubleBarrier.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\DoubleBarrier.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DoubleBarrier.cs",
+              "RelativeToolTip": "character\\card\\rare\\DoubleBarrier.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAawBYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:47.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "DestroyRoar.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DestroyRoar.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\DestroyRoar.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\DestroyRoar.cs",
+              "RelativeToolTip": "character\\card\\rare\\DestroyRoar.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAewCIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:43.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "BloodBat.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\BloodBat.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\BloodBat.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\BloodBat.cs",
+              "RelativeToolTip": "character\\card\\rare\\BloodBat.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAawCAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:40.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "YakumoClothes.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\YakumoClothes.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\YakumoClothes.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\YakumoClothes.cs",
+              "RelativeToolTip": "character\\card\\common\\YakumoClothes.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawB4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:34.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "StoneFragments.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\StoneFragments.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\StoneFragments.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\StoneFragments.cs",
+              "RelativeToolTip": "character\\card\\common\\StoneFragments.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAewB4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:26.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "SevenStarSword.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SevenStarSword.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\SevenStarSword.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SevenStarSword.cs",
+              "RelativeToolTip": "character\\card\\common\\SevenStarSword.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAewBsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:05.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "SealingMagicNeedle.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SealingMagicNeedle.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\SealingMagicNeedle.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\SealingMagicNeedle.cs",
+              "RelativeToolTip": "character\\card\\common\\SealingMagicNeedle.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAewCAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:22:01.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "Mirror.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Mirror.cs",
+              "RelativeDocumentMoniker": "character\\card\\common\\Mirror.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\common\\Mirror.cs",
+              "RelativeToolTip": "character\\card\\common\\Mirror.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAhwDgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:21:42.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "SaintElmosFireColumn.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\SaintElmosFireColumn.cs",
+              "RelativeDocumentMoniker": "character\\card\\rare\\SaintElmosFireColumn.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\rare\\SaintElmosFireColumn.cs",
+              "RelativeToolTip": "character\\card\\rare\\SaintElmosFireColumn.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAEwDEAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:24:17.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "Maid.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Maid.cs",
+              "RelativeDocumentMoniker": "character\\card\\uncommon\\Maid.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\uncommon\\Maid.cs",
+              "RelativeToolTip": "character\\card\\uncommon\\Maid.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAewB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:27:16.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "YukaDress.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\YukaDress.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\YukaDress.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\YukaDress.cs",
+              "RelativeToolTip": "character\\card\\special\\YukaDress.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAewBsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:52.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "Medice2.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice2.cs",
+              "RelativeDocumentMoniker": "character\\card\\special\\Medice2.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\special\\Medice2.cs",
+              "RelativeToolTip": "character\\card\\special\\Medice2.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwBgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:25:24.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 111,
+              "Title": "GodGungnir.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\GodGungnir.cs",
+              "RelativeDocumentMoniker": "character\\card\\basic\\GodGungnir.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\card\\basic\\GodGungnir.cs",
+              "RelativeToolTip": "character\\card\\basic\\GodGungnir.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAtwCQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:28:28.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 112,
+              "Title": "Guai.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Guai.cs",
+              "RelativeDocumentMoniker": "character\\power\\Guai.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Guai.cs",
+              "RelativeToolTip": "character\\power\\Guai.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAawB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:55.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 113,
+              "Title": "mp.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\mp.cs",
+              "RelativeDocumentMoniker": "character\\power\\mp.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\mp.cs",
+              "RelativeToolTip": "character\\power\\mp.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAawB0AAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:50:01.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 114,
+              "Title": "Restart.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Restart.cs",
+              "RelativeDocumentMoniker": "character\\power\\Restart.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Restart.cs",
+              "RelativeToolTip": "character\\power\\Restart.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAhwCQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:01.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 115,
+              "Title": "Nextmp.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Nextmp.cs",
+              "RelativeDocumentMoniker": "character\\power\\Nextmp.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Nextmp.cs",
+              "RelativeToolTip": "character\\power\\Nextmp.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAB4AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:10:57.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 116,
+              "Title": "GensokyoOnlineBad.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\GensokyoOnlineBad.cs",
+              "RelativeDocumentMoniker": "character\\relics\\GensokyoOnlineBad.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\GensokyoOnlineBad.cs",
+              "RelativeToolTip": "character\\relics\\GensokyoOnlineBad.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAjwCoAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:41:18.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 117,
+              "Title": "Sky.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Sky.cs",
+              "RelativeDocumentMoniker": "character\\power\\Sky.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Sky.cs",
+              "RelativeToolTip": "character\\power\\Sky.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:02.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 118,
+              "Title": "Rebirth.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Rebirth.cs",
+              "RelativeDocumentMoniker": "character\\power\\Rebirth.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Rebirth.cs",
+              "RelativeToolTip": "character\\power\\Rebirth.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:11:00.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 119,
+              "Title": "Penglai.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Penglai.cs",
+              "RelativeDocumentMoniker": "character\\power\\Penglai.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Penglai.cs",
+              "RelativeToolTip": "character\\power\\Penglai.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:10:59.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 120,
+              "Title": "Num.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Num.cs",
+              "RelativeDocumentMoniker": "character\\power\\Num.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Num.cs",
+              "RelativeToolTip": "character\\power\\Num.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:10:58.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 126,
+              "Title": "Ghostpower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Ghostpower.cs",
+              "RelativeDocumentMoniker": "character\\power\\Ghostpower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Ghostpower.cs",
+              "RelativeToolTip": "character\\power\\Ghostpower.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:54.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 125,
+              "Title": "Kind.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Kind.cs",
+              "RelativeDocumentMoniker": "character\\power\\Kind.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Kind.cs",
+              "RelativeToolTip": "character\\power\\Kind.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:56.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 124,
+              "Title": "Lazy.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Lazy.cs",
+              "RelativeDocumentMoniker": "character\\power\\Lazy.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Lazy.cs",
+              "RelativeToolTip": "character\\power\\Lazy.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:57.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 123,
+              "Title": "Lunarpower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Lunarpower.cs",
+              "RelativeDocumentMoniker": "character\\power\\Lunarpower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Lunarpower.cs",
+              "RelativeToolTip": "character\\power\\Lunarpower.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:58.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 122,
+              "Title": "Money.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Money.cs",
+              "RelativeDocumentMoniker": "character\\power\\Money.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Money.cs",
+              "RelativeToolTip": "character\\power\\Money.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:50:00.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 121,
+              "Title": "Clearmirrorpower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Clearmirrorpower.cs",
+              "RelativeDocumentMoniker": "character\\power\\Clearmirrorpower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Clearmirrorpower.cs",
+              "RelativeToolTip": "character\\power\\Clearmirrorpower.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:49:48.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 127,
+              "Title": "Maidknifepower.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Maidknifepower.cs",
+              "RelativeDocumentMoniker": "character\\power\\Maidknifepower.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\power\\Maidknifepower.cs",
+              "RelativeToolTip": "character\\power\\Maidknifepower.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:42:53.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 128,
+              "Title": "Aptx4869.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\Aptx4869.cs",
+              "RelativeDocumentMoniker": "character\\relics\\Aptx4869.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\Aptx4869.cs",
+              "RelativeToolTip": "character\\relics\\Aptx4869.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAjwHMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:41:03.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 129,
+              "Title": "orobas.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\orobas.cs",
+              "RelativeDocumentMoniker": "orobas.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\orobas.cs",
+              "RelativeToolTip": "orobas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAnwBEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:48:41.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 130,
+              "Title": "YakumoAkaiRelicPool.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\YakumoAkaiRelicPool.cs",
+              "RelativeDocumentMoniker": "character\\YakumoAkaiRelicPool.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\YakumoAkaiRelicPool.cs",
+              "RelativeToolTip": "character\\YakumoAkaiRelicPool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:48:16.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 131,
+              "Title": "Lin.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\Lin.cs",
+              "RelativeDocumentMoniker": "character\\relics\\Lin.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\Lin.cs",
+              "RelativeToolTip": "character\\relics\\Lin.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAnwBgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:48:14.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 132,
+              "Title": "SeventeenFoldingFan.cs",
+              "DocumentMoniker": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\SeventeenFoldingFan.cs",
+              "RelativeDocumentMoniker": "character\\relics\\SeventeenFoldingFan.cs",
+              "ToolTip": "D:\\mods\\a\\sts2-yakumoakai\u6D4B\u8BD5\u7248\\character\\relics\\SeventeenFoldingFan.cs",
+              "RelativeToolTip": "character\\relics\\SeventeenFoldingFan.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAjwHwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T05:44:29.95Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

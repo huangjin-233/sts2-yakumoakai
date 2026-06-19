@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://487sj41lbect"]
+
+[ext_resource type="Shader" uid="uid://cpccp0v6ovlir" path="res://materials/cards/frames/card_frame_akai_mat.gdshader" id="1_re6wq"]
+
+[resource]
+shader = ExtResource("1_re6wq")
+shader_parameter/h = 1.0
+shader_parameter/s = 3.5550001688625
+shader_parameter/v = 1.35

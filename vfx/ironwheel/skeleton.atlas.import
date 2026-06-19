@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://b6lkv1467kq5p"
+path="res://.godot/imported/skeleton.atlas-ddc72f58494a7c5cf2c9a5c953712f10.spatlas"
+
+[deps]
+
+source_file="res://vfx/ironwheel/skeleton.atlas"
+dest_files=["res://.godot/imported/skeleton.atlas-ddc72f58494a7c5cf2c9a5c953712f10.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

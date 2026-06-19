@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Godot;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Rewards;
+using MegaCrit.Sts2.Core.Rooms;
+using STS2RitsuLib.Scaffolding.Content;
+using YakumoAkai.character.card.rare;
+namespace YakumoAkai.character.power
+{
+	public sealed class mp : ModPowerTemplate
+	{
+		// 效果类型
+		public override PowerType Type => PowerType.Buff;
+		// 效果堆叠类型
+		public override PowerStackType StackType => PowerStackType.Counter;
+		// 允许层数为负数
+		public override bool AllowNegative => false;
+        protected override bool IsVisibleInternal
+        {
+            get
+            {
+                if (base.Owner.Player.Character is Akai)
+                {
+                    return false;
+                }
+        
+                return base.IsVisibleInternal;
+            }
+        }
+		public static int max = 150;
+        public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+        {
+            if (base.Owner.GetPowerAmount<mp>() < 0)
+            {
+                Amount = 0;
+            }
+            if (base.Owner.HasPower<Lunarpower>())
+            {
+                if (base.Owner.GetPowerAmount<mp>() >= (150 + base.Owner.GetPowerAmount<Lunarpower>() * 30))
+                {
+                    Amount = 150 + base.Owner.GetPowerAmount<Lunarpower>() * 30;
+                }
+            }
+            else
+            {
+                if (base.Owner.GetPowerAmount<mp>() >= 150)
+                {
+                    Amount = 150;
+                }
+            }
+        }
+        public override Task AfterCombatEnd(CombatRoom room)
+        {
+            IronWheel.SetValue(base.Owner.Player, 0);
+            max = 150;
+            return Task.CompletedTask;
+        }
+    }
+}
+
