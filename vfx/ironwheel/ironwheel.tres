@@ -1,8 +1,0 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://ch5q65hp4h31b"]
-
-[ext_resource type="SpineAtlasResource" uid="uid://b6lkv1467kq5p" path="res://vfx/ironwheel/skeleton.atlas" id="1_cenwy"]
-[ext_resource type="SpineSkeletonFileResource" uid="uid://dkgkafll6yhxp" path="res://vfx/ironwheel/skeleton.skel" id="2_12rhe"]
-
-[resource]
-atlas_res = ExtResource("1_cenwy")
-skeleton_file_res = ExtResource("2_12rhe")
