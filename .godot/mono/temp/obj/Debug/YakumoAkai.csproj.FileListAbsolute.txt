@@ -1,38 +1,63 @@
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.AssemblyReference.cache
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.GeneratedMSBuildEditorConfig.editorconfig
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfoInputs.cache
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfo.cs
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.CoreCompileInputs.cache
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.sourcelink.json
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.deps.json
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.runtimeconfig.json
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.pdb
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\GodotSharp.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\STS2-RitsuLib.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\System.IO.Hashing.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\0Harmony.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\bin\Debug\sts2.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.Up2Date
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\refint\YakumoAkai.dll
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.pdb
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.genruntimeconfig.cache
-D:\mods\a\sts2-yakumoakai\.godot\mono\temp\obj\Debug\ref\YakumoAkai.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.deps.json
-D:\mods\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\bin\Debug\YakumoAkai.pdb
-D:\mods\sts2-yakumoakai\.godot\mono\temp\bin\Debug\0Harmony.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\bin\Debug\sts2.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.AssemblyReference.cache
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.GeneratedMSBuildEditorConfig.editorconfig
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfoInputs.cache
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfo.cs
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.CoreCompileInputs.cache
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.sourcelink.json
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.Up2Date
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\refint\YakumoAkai.dll
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\YakumoAkai.pdb
-D:\mods\sts2-yakumoakai\.godot\mono\temp\obj\Debug\ref\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\YakumoAkai.deps.json
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\YakumoAkai.runtimeconfig.json
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\System.IO.Hashing.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\0Harmony.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\STS2-RitsuLib.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\sts2.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\STS2-RitsuLib.pdb
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\bin\Debug\STS2-RitsuLib.xml
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.AssemblyReference.cache
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.GeneratedMSBuildEditorConfig.editorconfig
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfoInputs.cache
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfo.cs
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.CoreCompileInputs.cache
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.Up2Date
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\refint\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\YakumoAkai.genruntimeconfig.cache
+D:\mods\a\sts2-yakumoakai-akai0.8.2\.godot\mono\temp\obj\Debug\ref\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\YakumoAkai.deps.json
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\YakumoAkai.runtimeconfig.json
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\System.IO.Hashing.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\0Harmony.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\STS2-RitsuLib.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\bin\Debug\sts2.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.AssemblyReference.cache
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.GeneratedMSBuildEditorConfig.editorconfig
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfoInputs.cache
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfo.cs
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.CoreCompileInputs.cache
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.Up2Date
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\refint\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\YakumoAkai.genruntimeconfig.cache
+D:\mods\a\sts2-yakumoakai - 副本\.godot\mono\temp\obj\Debug\ref\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.AssemblyReference.cache
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.GeneratedMSBuildEditorConfig.editorconfig
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfoInputs.cache
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.AssemblyInfo.cs
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.CoreCompileInputs.cache
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\refint\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\YakumoAkai.deps.json
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\YakumoAkai.runtimeconfig.json
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\YakumoAkai.pdb
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\STS2-RitsuLib.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.csproj.Up2Date
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\YakumoAkai.genruntimeconfig.cache
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\obj\Debug\ref\YakumoAkai.dll
+D:\mods\a\sts2-yakumoakai测试版\.godot\mono\temp\bin\Debug\System.IO.Hashing.dll
