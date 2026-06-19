@@ -1,1 +1,0 @@
-{"atlas_data":"\r\nskeleton.png\r\nsize: 66,66\r\nformat: RGBA8888\r\nfilter: Linear,Linear\r\nrepeat: none\r\n1\r\n  rotate: false\r\n  xy: 2, 2\r\n  size: 62, 62\r\n  orig: 64, 64\r\n  offset: 1, 1\r\n  index: -1\r\n","normal_texture_prefix":"n","source_path":"res://vfx/dream/skeleton.atlas","specular_texture_prefix":"s"}
