@@ -22,12 +22,6 @@
   <ItemGroup>
   <Folder Include="scenes\creature_visuals\" />
   </ItemGroup>
-  
-  <PropertyGroup>
-    <!-- 其余省略，添加以下这行，可以自动部署到你的mods文件夹 -->
-    <RitsuLibDeployDir>$(Sts2Dir)/mods/STS2-RitsuLib/</RitsuLibDeployDir>
-  </PropertyGroup>
-  
   <ItemGroup>
     <Reference Include="sts2">
       <HintPath>$(Sts2DataDir)\sts2.dll</HintPath>

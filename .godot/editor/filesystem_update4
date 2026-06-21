@@ -1,13 +1,2 @@
-res://YakumoAkai/localization/eng/relics.json
-res://YakumoAkai/localization/zhs/relics.json
-res://character/AkaiNCreature.cs
-res://scenes/creature_visuals/Mps.cs
-res://materials/vfx/CardTrailAkai.cs
-res://scenes/vfx/vfx.cs
-res://materials/vfx/Inner.cs
-res://materials/vfx/Out.cs
-res://src/Core/Nodes/Combat/CustomCreatureVisuals.cs
-res://src/Core/Nodes/Combat/AkaiEnergyCounter.cs
-res://src/Core/Nodes/Combat/CustomMegaLabel.cs
-res://scenes/vfx/CustomCardTrail.cs
-res://build/YakumoAkai.json
+res://scenes/creature_visuals/akai.tscn
+res://YakumoAkai/localization/zhs/ancients.json
