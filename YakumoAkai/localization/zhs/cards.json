@@ -198,6 +198,7 @@
 	"YAKUMO_AKAI_CARD_MARLBORO_GAVEL.description":  "将{IfUpgraded:show:升级后的|}[gold]人格—祸[/gold]，[gold]人格—鬼[/gold]，[gold]人格—白[/gold]各一张加入[gold]手卡[/gold]",
 	"YAKUMO_AKAI_CARD_MARLBORO_GAVEL.title":  "万宝槌",
 	"YAKUMO_AKAI_CARD_CURSE.description":  "升级所有牌",
+	"YAKUMO_AKAI_CARD_CURSE.title":  "人格—祸",
 	"YAKUMO_AKAI_CARD_GHOST.description":  "获得{Energy:energyIcons()}，抽{Cards:diff()}张牌，本回合造成3倍伤害，回合结束死亡",
 	"YAKUMO_AKAI_CARD_GHOST.title":  "人格—鬼",
 	"YAKUMO_AKAI_CARD_WHITE.description":  "将自身的所有正面buff翻倍",

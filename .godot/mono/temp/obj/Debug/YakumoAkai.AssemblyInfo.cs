@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YakumoAkai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02461dd9c24f613af929fda01827352032fb1f60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+102cc9b70827a2317c8a8f4b6bf04e081b96608d")]
 [assembly: System.Reflection.AssemblyProductAttribute("YakumoAkai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YakumoAkai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

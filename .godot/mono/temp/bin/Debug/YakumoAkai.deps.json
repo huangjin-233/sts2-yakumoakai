@@ -10,7 +10,7 @@
         "dependencies": {
           "GodotSharp": "4.5.1",
           "GodotSharpEditor": "4.5.1",
-          "STS2.RitsuLib": "0.4.9"
+          "STS2.RitsuLib": "0.4.26"
         },
         "runtime": {
           "YakumoAkai.dll": {}
@@ -35,15 +35,15 @@
           }
         }
       },
-      "STS2.RitsuLib/0.4.9": {
+      "STS2.RitsuLib/0.4.26": {
         "dependencies": {
           "GodotSharp": "4.5.1",
           "System.IO.Hashing": "9.0.0"
         },
         "runtime": {
           "lib/net9.0/STS2-RitsuLib.dll": {
-            "assemblyVersion": "0.4.9.0",
-            "fileVersion": "0.4.9.0"
+            "assemblyVersion": "0.4.26.0",
+            "fileVersion": "0.4.26.0"
           }
         }
       },
@@ -77,12 +77,12 @@
       "path": "godotsharpeditor/4.5.1",
       "hashPath": "godotsharpeditor.4.5.1.nupkg.sha512"
     },
-    "STS2.RitsuLib/0.4.9": {
+    "STS2.RitsuLib/0.4.26": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yVXJGDcJiT95dOPsz8CiJvux4DmeX8JEf/gbrKbIurV7g+a1x75MOtiGTnFo95SVXTGFWcIy8Vbow+X0bHBWAQ==",
-      "path": "sts2.ritsulib/0.4.9",
-      "hashPath": "sts2.ritsulib.0.4.9.nupkg.sha512"
+      "sha512": "sha512-M8Wl/ngPCX4Sxw+tKglhBKS/iEXcnRenGTBSS3vjOaNNRbPm/AkIEd2jlIrRiJpwEkypB7G08gPMvcszKX8/fQ==",
+      "path": "sts2.ritsulib/0.4.26",
+      "hashPath": "sts2.ritsulib.0.4.26.nupkg.sha512"
     },
     "System.IO.Hashing/9.0.0": {
       "type": "package",

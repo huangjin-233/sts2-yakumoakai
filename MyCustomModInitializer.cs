@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using Godot;
 using Godot.Bridge;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using STS2RitsuLib;
@@ -39,6 +41,10 @@ namespace YakumoAkai
             RitsuLibFramework.EnsureGodotScriptsRegistered(assembly, Logger);
             ModTypeDiscoveryHub.RegisterModAssembly(ModId, assembly);
             LoadScenes();
+            var harmony = new Harmony("YakumoAkai.neow.patch");
+            harmony.PatchAll();                         // 自动扫描当前程序集的所有补丁
+
+            Log.Info("八云红模组已加载");
         }
         static void LoadScenes() {
             //你的场景字符串列表
