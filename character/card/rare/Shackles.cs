@@ -56,7 +56,6 @@ namespace YakumoAkai.character.card.rare
             base.DynamicVars.Power<Guai>().UpgradeValueBy(1);// 升级后
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
-            HoverTipFactory.FromPower<Guai>(),
             HoverTipFactory.FromPower<StrengthPower>(),
             HoverTipFactory.FromPower<mp>()
         ];

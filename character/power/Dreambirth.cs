@@ -10,13 +10,20 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Combat.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Dreambirth : PowerModel
+    [RegisterPower]
+    public sealed class Dreambirth : ModPowerTemplate
     {
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/dreambirth.png",
+            BigIconPath: "res://images/powers/dreambirth.png"
+        );
         // 效果类型
         public override PowerType Type => PowerType.Buff;
         // 效果堆叠类型

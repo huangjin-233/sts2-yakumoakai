@@ -41,7 +41,6 @@ namespace YakumoAkai.character.card.common
             base.EnergyCost.UpgradeBy(-1);
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
-            HoverTipFactory.FromPower<Lunarpower>(),
             HoverTipFactory.FromPower<mp>()
             ];
     }

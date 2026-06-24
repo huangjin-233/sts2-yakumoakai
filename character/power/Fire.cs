@@ -17,10 +17,12 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Combat.HealthBars;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
+    [RegisterPower]
     public class Fire : ModPowerTemplate, IHealthBarForecastSource
     {
         public override PowerType Type => PowerType.Debuff;

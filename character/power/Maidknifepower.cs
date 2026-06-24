@@ -11,10 +11,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public class Maidknifepower : PowerModel
+    [RegisterPower]
+    public class Maidknifepower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
 
@@ -52,7 +55,7 @@ namespace YakumoAkai.character.power
                 }
             }
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips  => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
            HoverTipFactory.FromPower<mp>()
             ];
     }

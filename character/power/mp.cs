@@ -15,12 +15,18 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.card.rare;
 namespace YakumoAkai.character.power
 {
+    [RegisterPower]
 	public sealed class mp : ModPowerTemplate
 	{
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/mp.png",
+            BigIconPath: "res://images/powers/mp.png"
+        );
 		// 效果类型
 		public override PowerType Type => PowerType.Buff;
 		// 效果堆叠类型

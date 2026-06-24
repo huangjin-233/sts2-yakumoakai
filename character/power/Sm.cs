@@ -17,10 +17,13 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Sm : PowerModel
+    [RegisterPower]
+    public sealed class Sm : ModPowerTemplate
     {
         // 效果类型
         public override PowerType Type => PowerType.Buff;
@@ -28,7 +31,10 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/sm.png",
+            BigIconPath: "res://images/powers/sm.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

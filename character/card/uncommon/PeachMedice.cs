@@ -27,14 +27,16 @@ namespace YakumoAkai.character.card.uncommon
     {
         public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
         protected override List<DynamicVar> CanonicalVars => [
-            new PowerVar<Sm>(8) // 伤害值
+            new PowerVar<Sm>(8) ,// 伤害值
+            new CalculationBaseVar(0),
+            new CalculationExtraVar((decimal)0.08),
+            new CalculatedVar("Heal").WithMultiplier((CardModel _, Creature? target) => target?.MaxHp ?? 0)
         ];
 
 
         public PeachMedice()
         : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyAlly) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await PowerCmd.Apply<Sm>(choiceContext,cardPlay.Target, base.DynamicVars.Power<Sm>().BaseValue, base.Owner.Creature, this);
@@ -44,6 +46,7 @@ namespace YakumoAkai.character.card.uncommon
         protected override void OnUpgrade()
         {
             base.DynamicVars.Power<Sm>().UpgradeValueBy(4);// 升级后
+            base.DynamicVars.CalculationExtra.UpgradeValueBy(4);// 升级后
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromPower<Sm>()];

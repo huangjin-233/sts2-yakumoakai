@@ -11,10 +11,12 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Yukafight : PowerModel
+    [RegisterPower]
+    public sealed class Yukafight : ModPowerTemplate
     {
         // 效果类型
         public override PowerType Type => PowerType.Buff;
@@ -22,7 +24,10 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/yukafight.png",
+            BigIconPath: "res://images/powers/yukafight.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

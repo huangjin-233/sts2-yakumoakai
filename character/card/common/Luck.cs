@@ -43,7 +43,7 @@ namespace YakumoAkai.character.card.common
 
         protected override void OnUpgrade()
         {
-            base.EnergyCost.UpgradeBy(-1);
+            DynamicVars.Cards.UpgradeValueBy(1);
         }
     }
 }

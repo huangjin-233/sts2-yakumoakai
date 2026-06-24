@@ -15,47 +15,53 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
-{
-    public class DivineGodIncantationPower : PowerModel
+{    
+    [RegisterPower]
+    public class DivineGodIncantationPower : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
 
         public override PowerStackType StackType => PowerStackType.Counter;
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/divine_god_incantation_power.png",
+            BigIconPath: "res://images/powers/divine_god_incantation_power.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;
         public static Dictionary<Player, int> god = new Dictionary<Player, int>();
         public void SetValue(Player player, int value)
         {
-            DivineGodIncantationPower.god[player] = value;
+            god[player] = value;
         }
         public static int GetValue(Player player)
         {
-            return DivineGodIncantationPower.god.TryGetValue(player, out int value) ? value : 0;
+            return god.TryGetValue(player, out int value) ? value : 0;
         }
         public static void IncrementValue(Player player, int value)
         {
-            DivineGodIncantationPower.god[player] = value;
+            god[player] = value;
         }
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
 
         {
-            while (DivineGodIncantationPower.god[base.Owner.Player] >= 10)
+            while (god[Owner.Player] >= 10)
             {
-                DivineGodIncantationPower.god[base.Owner.Player] -= 10;
-                await CreatureCmd.GainBlock(base.Owner, base.Amount, ValueProp.Unpowered, null);//防御
+                god[Owner.Player] -= 10;
+                await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);//防御
             }
         }
         public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide combatSide, IEnumerable<Creature> participants)
         {
             await PowerCmd.Remove(this);
         }
-        protected override IEnumerable<IHoverTip> ExtraHoverTips  => [
+        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
            HoverTipFactory.Static(StaticHoverTip.Block)];
     }
 }

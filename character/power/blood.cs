@@ -13,16 +13,22 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public class blood : PowerModel
+    [RegisterPower]
+    public class blood : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
 
         public override PowerStackType StackType => PowerStackType.Counter;
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/blood.png",
+            BigIconPath: "res://images/powers/blood.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

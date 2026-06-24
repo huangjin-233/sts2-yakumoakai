@@ -9,10 +9,13 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Guai : PowerModel
+    [RegisterPower]
+    public sealed class Guai : ModPowerTemplate
     {
         // 效果类型
         public override PowerType Type => PowerType.Buff;
@@ -20,7 +23,10 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/guai.png",
+            BigIconPath: "res://images/powers/guai.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

@@ -9,10 +9,13 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Lazy : PowerModel
+    [RegisterPower]
+    public sealed class Lazy : ModPowerTemplate
     {
         // 效果类型
         public override PowerType Type => PowerType.Buff;
@@ -20,7 +23,10 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Counter;
 
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/lazy.png",
+            BigIconPath: "res://images/powers/lazy.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

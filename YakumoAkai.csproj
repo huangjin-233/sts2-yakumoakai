@@ -32,7 +32,7 @@
       <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <PackageReference Include="STS2.RitsuLib" Version="*" />
+    <PackageReference Include="STS2.RitsuLib.Compat.0.107.1" Version="*" />
   </ItemGroup>
   
   <Target Name="Copy Mod" AfterTargets="PostBuildEvent">

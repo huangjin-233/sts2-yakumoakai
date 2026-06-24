@@ -52,9 +52,9 @@ namespace YakumoAkai.character.card.ancient
         {
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
-            HoverTipFactory.FromCard<Curse>(),
-            HoverTipFactory.FromCard<Ghost>(),
-            HoverTipFactory.FromCard<White>()];
+            HoverTipFactory.FromCard<Curse>(IsUpgraded),
+            HoverTipFactory.FromCard<Ghost>(IsUpgraded),
+            HoverTipFactory.FromCard<White>(IsUpgraded)];
         //关键词
     }
 }

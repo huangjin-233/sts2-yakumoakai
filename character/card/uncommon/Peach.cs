@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Cards.DynamicVars;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
 using YakumoAkai.character.power;
@@ -26,13 +27,31 @@ namespace YakumoAkai.character.card.uncommon
     public sealed class Peach : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [
-            new PowerVar<Sm>(5) // 伤害值
+            new PowerVar<Sm>(5) ,// 伤害值
+            new HealVar(0)
         ];
         // 动态变量
         public Peach()
             : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-
+        public override Task AfterCardEnteredCombat(CardModel card)
+        {
+            if (card != this)
+            {
+                return Task.CompletedTask;
+            }
+            DynamicVars.Heal.BaseValue = Owner.Creature.MaxHp * DynamicVars.Power<Sm>().IntValue / 100;
+            return Task.CompletedTask;
+        }
+        public override Task BeforeCardPlayed(CardPlay cardPlay)
+        {
+            if (cardPlay.Card.Owner != base.Owner)
+            {
+                return Task.CompletedTask;
+            }
+            DynamicVars.Heal.BaseValue = Owner.Creature.MaxHp * DynamicVars.Power<Sm>().IntValue / 100;
+            return Task.CompletedTask;
+        }
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
                await PowerCmd.Apply<Sm>(choiceContext,base.Owner.Creature,base.DynamicVars.Power<Sm>().BaseValue, base.Owner.Creature, this);

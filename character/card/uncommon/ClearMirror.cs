@@ -41,7 +41,6 @@ namespace YakumoAkai.character.card.uncommon
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
             HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
-            HoverTipFactory.FromPower<Clearmirrorpower>()
             ];
         //关键词
     }

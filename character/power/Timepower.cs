@@ -11,11 +11,14 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Characters;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public sealed class Timepower : PowerModel
+    [RegisterPower]
+    public sealed class Timepower : ModPowerTemplate
     {
 
         private Node2D _vfxNode;  // 保存特效引用
@@ -25,7 +28,10 @@ namespace YakumoAkai.character.power
         public override PowerStackType StackType => PowerStackType.Single;
 
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/timepower.png",
+            BigIconPath: "res://images/powers/timepower.png"
+        );
 
         // 允许层数为负数
         public override bool AllowNegative => false;

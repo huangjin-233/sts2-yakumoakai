@@ -40,9 +40,6 @@ namespace YakumoAkai.character.card.rare
         {
             base.DynamicVars.Power<Money>().UpgradeValueBy(2);
         }
-        protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
-            HoverTipFactory.FromPower<Money>()];
-        //关键词
     }
 }
 

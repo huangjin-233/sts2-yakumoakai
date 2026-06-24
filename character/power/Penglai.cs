@@ -9,16 +9,22 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace YakumoAkai.character.power
 {
-    public class Penglai : PowerModel
+    [RegisterPower]
+    public class Penglai : ModPowerTemplate
     {
         public override PowerType Type => PowerType.Buff;
 
         public override PowerStackType StackType => PowerStackType.Single;
         // 叠加的行为
-
+        public override PowerAssetProfile AssetProfile => new(
+            IconPath: "res://images/powers/penglai.png",
+            BigIconPath: "res://images/powers/penglai.png"
+        );
 
         // 允许层数为负数
         public static int mp1;
