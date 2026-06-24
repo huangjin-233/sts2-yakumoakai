@@ -34,9 +34,6 @@ namespace YakumoAkai.character.events
         [
             new HpLossVar(20m)
         ];
-
-        // 什么时候会遇到。这里的条件是所有玩家的金币都大于等于60
-
         // 事件开始前的逻辑。这里是禁止玩家移除药水
         protected override Task BeforeEventStarted(bool isPreFinished)
         {
@@ -52,12 +49,20 @@ namespace YakumoAkai.character.events
 
         // 生成事件初始选项。这里是两个选项：失去生命值或者失去金币，然后进入选择奖励阶段
         // 与 CustomEventModel.Option(delegate, pageKey) 一致：textKey = Id.Entry + ".pages." + page + ".options." + Slugify(方法名)
-        protected override IReadOnlyList<EventOption> GenerateInitialOptions() =>
-        [
-            new EventOption(this, Drink, InitialOptionKey("Drink")),
-            new EventOption(this, Nodrink, InitialOptionKey("Nodrink")),
-    ];
-
+        protected override IReadOnlyList<EventOption> GenerateInitialOptions()
+        {
+            List<EventOption> list = new List<EventOption>();
+            if (Owner.Creature.Player.Character is Akai)
+            {
+                list.Add( new EventOption(this, Drink, InitialOptionKey("Drink")));
+            }
+            else
+            {
+                list.Add(new EventOption(this, null, InitialOptionKey("CantDrink")));
+            }
+            list.Add(new EventOption(this, Nodrink, InitialOptionKey("Nodrink")));
+            return list;
+        } 
         // 失去生命
         private async Task Drink()
         {
@@ -69,6 +74,7 @@ namespace YakumoAkai.character.events
         private async Task Nodrink()
         {
             SetEventFinished(L10NLookup($"{Id.Entry}.pages.End2.description"));
+            await CreatureCmd.Heal(base.Owner.Creature, 16);//回血
         }
 
         // 进入事件第二阶段，两个选项：选择药水或者选择卡牌

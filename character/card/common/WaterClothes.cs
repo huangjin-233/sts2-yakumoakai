@@ -43,7 +43,6 @@ namespace YakumoAkai.character.card.uncommon
             base.EnergyCost.UpgradeBy(-1);
         }
         protected override IEnumerable<IHoverTip> AdditionalHoverTips  => [
-            HoverTipFactory.FromPower<Water>(),
             HoverTipFactory.FromPower<WeakPower>()
             ];
     }

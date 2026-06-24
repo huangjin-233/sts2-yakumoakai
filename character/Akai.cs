@@ -39,23 +39,23 @@ namespace YakumoAkai.character
 				),
 				Ui: new(
 				// 人物头像路径。
-				//IconTexturePath: "res://icon.svg",
+				IconTexturePath: "res://images/packed/character/akai_icon.png",
 				// 人物头像2号。
-				// IconPath: "res://scenes/ui/character_icons/ironclad_icon.tscn",
+				IconPath: "res://scenes/ui/character_icons/akai_icon.tscn",
 				// 人物选择背景。
 				CharacterSelectBgPath: "res://scenes/screens/char_select/char_select_bg_akai.tscn",
 				// 人物选择图标。
 				CharacterSelectIconPath: "res://images/packed/character_select/char_select_akai.png",
 				// 人物选择图标-锁定状态。
-				CharacterSelectLockedIconPath: "res://test/images/char_select_test_locked.png"
+				CharacterSelectLockedIconPath: "res://images/packed/character_select/char_select_akai_locked.png",
 				// 人物选择过渡动画。
 				// CharacterSelectTransitionPath: "res://materials/transitions/ironclad_transition_mat.tres",
 				// 地图上的角色标记图标、表情轮盘上的角色头像
-				// MapMarkerPath: null
+				MapMarkerPath: "res://images/packed/character/akai_icon.png"
 				),
 				Vfx: new(
 				// 卡牌拖尾场景。
-				// TrailPath: "res://scenes/vfx/card_trail_ironclad.tscn"
+				TrailPath: "res://scenes/vfx/card_trail_akai.tscn"
 				),
 				Audio: new(
 				// 攻击音效
