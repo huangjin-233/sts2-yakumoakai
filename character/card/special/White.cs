@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -32,73 +33,19 @@ namespace YakumoAkai.character.card.special
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (base.Owner.Creature.HasPower<AccelerantPower>())
+            var powers = Owner.Creature.Powers.Where(p => p.Type == PowerType.Buff && p.Amount > 0).ToList();
+            foreach (var powered in powers)
             {
-                await PowerCmd.Apply<AccelerantPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<AccelerantPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<AccuracyPower>())
-            {
-                await PowerCmd.Apply<AccuracyPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<AccuracyPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<AfterimagePower>())
-            {
-                await PowerCmd.Apply<AfterimagePower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<AfterimagePower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<ArtifactPower>())
-            {
-                await PowerCmd.Apply<ArtifactPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<ArtifactPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<ArsenalPower>())
-            {
-                await PowerCmd.Apply<ArsenalPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<ArsenalPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<StrengthPower>() && base.Owner.Creature.GetPowerAmount<StrengthPower>() > 0)
-            {
-                await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<StrengthPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<DexterityPower>() && base.Owner.Creature.GetPowerAmount<DexterityPower>() > 0)
-            {
-                await PowerCmd.Apply<DexterityPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<DexterityPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<AutomationPower>())
-            {
-                await PowerCmd.Apply<AutomationPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<AutomationPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<BeaconOfHopePower>())
-            {
-                await PowerCmd.Apply<BeaconOfHopePower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<BeaconOfHopePower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<BufferPower>())
-            {
-                await PowerCmd.Apply<BufferPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<BufferPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<BurstPower>())
-            {
-                await PowerCmd.Apply<BurstPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<BurstPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<CuriousPower>())
-            {
-                await PowerCmd.Apply<CuriousPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<CuriousPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<MayhemPower>())
-            {
-                await PowerCmd.Apply<MayhemPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<MayhemPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<PlatingPower>())
-            {
-                await PowerCmd.Apply<PlatingPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<PlatingPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<RollingBoulderPower>())
-            {
-                await PowerCmd.Apply<RollingBoulderPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<RollingBoulderPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<ThornsPower>())
-            {
-                await PowerCmd.Apply<ThornsPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<ThornsPower>(), base.Owner.Creature, this);
-            }
-            if (base.Owner.Creature.HasPower<VigorPower>())
-            {
-                await PowerCmd.Apply<VigorPower>(choiceContext,base.Owner.Creature, base.Owner.Creature.GetPowerAmount<VigorPower>(), base.Owner.Creature, this);
+                if (!(powered is Penglai 
+                        or RegenPower 
+                        or ArtifactPower 
+                        or IntangiblePower
+                        or BufferPower
+                        or GalvanicPower
+                        or PlatingPower
+                        or ThornsPower
+                        or VigorPower))
+                await PowerCmd.Apply(choiceContext, powered, Owner.Creature, powered.Amount, null, cardSource: this);
             }
         }
         public static async Task<CardModel> CreateInHand(Player owner, ICombatState combatState)

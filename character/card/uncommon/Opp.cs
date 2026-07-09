@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Modding;
@@ -30,27 +31,13 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (cardPlay.Target.HasPower<WeakPower>())
+            var powers = cardPlay.Target.Powers.Where(p => p.Type == PowerType.Debuff && p.Amount > 0).ToList();
+            foreach (var powered in powers)
             {
-                await PowerCmd.Apply<WeakPower>(choiceContext,cardPlay.Target,cardPlay.Target.GetPowerAmount<WeakPower>(), base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<VulnerablePower>())
-            {
-                await PowerCmd.Apply<VulnerablePower>(choiceContext,cardPlay.Target, cardPlay.Target.GetPowerAmount<VulnerablePower>(), base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<PoisonPower>())
-            {
-                await PowerCmd.Apply<PoisonPower>(choiceContext,cardPlay.Target, cardPlay.Target.GetPowerAmount<PoisonPower>(), base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<Fire>())
-            {
-                await PowerCmd.Apply<Fire>(choiceContext,cardPlay.Target, cardPlay.Target.GetPowerAmount<Fire>(), base.Owner.Creature, this);
-            }
-            if (cardPlay.Target.HasPower<DoomPower>())
-            {
-                await PowerCmd.Apply<DoomPower>(choiceContext,cardPlay.Target, cardPlay.Target.GetPowerAmount<DoomPower>(), base.Owner.Creature, this);
+                await PowerCmd.Apply(choiceContext, powered, cardPlay.Target, powered.Amount, null, cardSource: this);
             }
         }
+
         public override string PortraitPath => $"res://images/cards/skill/Opp.png";
 
         protected override void OnUpgrade()
