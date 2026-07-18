@@ -27,6 +27,7 @@ namespace YakumoAkai.character.card.basic
             : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性
         public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CreatureCmd.LoseBlock(cardPlay.Target, cardPlay.Target.Block);

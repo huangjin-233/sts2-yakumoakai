@@ -30,8 +30,8 @@ namespace YakumoAkai.character.card.rare
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move),new CardsVar(3)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 30;
         public GoldenDragonClaw()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

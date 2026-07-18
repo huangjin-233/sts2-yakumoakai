@@ -31,8 +31,8 @@ namespace YakumoAkai.character.card.rare
             new BlockVar(4m, ValueProp.Move)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
-                                                                                    ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 40;
         public DoubleBarrier()
             : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

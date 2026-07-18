@@ -32,8 +32,8 @@ namespace YakumoAkai.character.card.uncommon
             new DamageVar(50m, ValueProp.Move),new PowerVar<mp>(80)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
-                                                                                    ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= DynamicVars.Power<mp>().BaseValue;
         public YukaAngry()
             : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

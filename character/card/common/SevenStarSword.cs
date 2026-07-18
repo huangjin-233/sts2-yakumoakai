@@ -24,8 +24,8 @@ namespace YakumoAkai.character.card.common
             new DamageVar(5m, ValueProp.Move),new CardsVar(1) // 伤害值
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public SevenStarSword()
             : base(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

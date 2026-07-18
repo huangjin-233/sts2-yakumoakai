@@ -27,6 +27,7 @@ namespace YakumoAkai.character.card.rare
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8m, ValueProp.Move), new PowerVar<Fire>(5)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 30;
         public Phoenix()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

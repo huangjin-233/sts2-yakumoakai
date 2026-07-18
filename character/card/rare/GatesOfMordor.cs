@@ -49,7 +49,10 @@ namespace YakumoAkai.character.card.rare
                     or RavenousPower
                     or SteamEruptionPower
                     or SurprisePower
-                    or SwipePower))
+                    or SwipePower
+                    or SandpitPower
+                    or BackAttackLeftPower
+                    or BackAttackRightPower))
                 {
                     await PowerCmd.Remove(powered);
                     await PowerCmd.Apply<DexterityPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);

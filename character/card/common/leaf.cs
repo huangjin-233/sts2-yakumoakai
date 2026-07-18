@@ -30,6 +30,7 @@ namespace YakumoAkai.character.card.common
         ];
         // 动态变量
         public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public Leaf()
             : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

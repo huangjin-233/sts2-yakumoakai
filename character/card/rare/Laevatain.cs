@@ -31,10 +31,9 @@ namespace YakumoAkai.character.card.rare
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
         public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, CardKeyword.Ethereal,AkaiKeyword.Mpex
                                                                                                           ];
-        
-        protected override bool IsPlayable => base.Owner.Creature.GetPowerAmount<mp>() >= 45
-            //打出条件
-            ;
+
+        protected override bool IsPlayable => base.Owner.Creature.GetPowerAmount<mp>() >= 45;
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 45;
         public Laevatain()
             : base(3, CardType.Skill, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

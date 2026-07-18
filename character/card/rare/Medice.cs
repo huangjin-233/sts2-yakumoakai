@@ -39,7 +39,6 @@ namespace YakumoAkai.character.card.rare
                                                                                where c.Keywords.Contains(AkaiKeyword.Medice)
                                                                                select c, 1, base.Owner.RunState.Rng.CombatCardGeneration).FirstOrDefault();
             await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
-
         }
         public override string PortraitPath => $"res://images/cards/skill/Medice.png";
 

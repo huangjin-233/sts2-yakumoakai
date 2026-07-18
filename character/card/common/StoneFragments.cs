@@ -27,8 +27,8 @@ namespace YakumoAkai.character.card.common
             new DamageVar(7m, ValueProp.Move) // 伤害值
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public StoneFragments()
             : base(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

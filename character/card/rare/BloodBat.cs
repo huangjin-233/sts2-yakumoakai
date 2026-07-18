@@ -29,8 +29,8 @@ namespace YakumoAkai.character.card.rare
             new BlockVar(3m, ValueProp.Move),new PowerVar<BufferPower>(1)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,AkaiKeyword.Mpex
-                                                                                   ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 25;
         public BloodBat()
             : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

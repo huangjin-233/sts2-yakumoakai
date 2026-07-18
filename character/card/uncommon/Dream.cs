@@ -23,9 +23,9 @@ namespace YakumoAkai.character.card.uncommon
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            int count = base.Owner.PlayerCombatState.Hand.Cards.Count;
-            await CardCmd.Discard(choiceContext, PileType.Hand.GetPile(base.Owner).Cards);
-            IReadOnlyList<CardModel> cards = PileType.Discard.GetPile(base.Owner).Cards;
+            int count = Owner.PlayerCombatState.Hand.Cards.Count;
+            await CardCmd.Discard(choiceContext, PileType.Hand.GetPile(Owner).Cards);
+            IReadOnlyList<CardModel> cards = PileType.Discard.GetPile(Owner).Cards;
             foreach (CardModel glass in await CardSelectCmd.FromSimpleGrid(choiceContext, cards, base.Owner, new CardSelectorPrefs(RelicModel.L10NLookup("DREAM.selectionScreenPrompt"), count)))
             {
                 await CardPileCmd.Add(glass, PileType.Hand);

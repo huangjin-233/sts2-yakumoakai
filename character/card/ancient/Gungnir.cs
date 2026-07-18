@@ -28,7 +28,7 @@ namespace YakumoAkai.character.card.ancient
         public Gungnir()
         : base(1, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性
-
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             foreach (Creature Enemy in base.CombatState.HittableEnemies)

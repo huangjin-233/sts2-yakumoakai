@@ -31,8 +31,8 @@ namespace YakumoAkai.character.card.rare
             new PowerVar<VulnerablePower>(2),new PowerVar<StrengthPower>(4),
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
-                                                                                    ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 15;
         public DestroyRoar()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

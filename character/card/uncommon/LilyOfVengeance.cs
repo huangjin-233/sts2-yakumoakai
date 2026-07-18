@@ -32,8 +32,8 @@ namespace YakumoAkai.character.card.uncommon
             new DamageVar(5m, ValueProp.Move) // 伤害值
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 15;
         public LilyOfVengeance()
             : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

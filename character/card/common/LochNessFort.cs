@@ -28,8 +28,8 @@ namespace YakumoAkai.character.card.common
             new DamageVar(13m, ValueProp.Move),new PowerVar<VulnerablePower>(1m) // 伤害值
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 25;
         public LochNessFort()
             : base(2, CardType.Attack, CardRarity.Common, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

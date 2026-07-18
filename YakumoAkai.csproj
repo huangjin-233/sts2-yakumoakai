@@ -1,44 +1,56 @@
 <Project Sdk="Godot.NET.Sdk/4.5.1">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>true</ImplicitUsings>
+    <LangVersion>13.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
     <Sts2Dir>C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2</Sts2Dir>
-    <Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
+    <!-- 新增 -->
+    <GodotExe>C:\Users\25516\Desktop\mod_Work\megadot\MegaDot_v4.5.1-stable_mono_win64.exe</GodotExe>
+    <Sts2DataDir>$(Sts2Dir)/data_sts2_windows_x86_64</Sts2DataDir>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <NoWarn>$(NoWarn);STS001;STS003</NoWarn>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="all" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.2" PrivateAssets="all" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" />
   </ItemGroup>
-  
+
   <ItemGroup>
-  <Folder Include="scenes\creature_visuals\" />
+    <Folder Include="scenes\creature_visuals\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="sts2">
-      <HintPath>$(Sts2DataDir)\sts2.dll</HintPath>
+      <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="0Harmony">
-      <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
+      <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <PackageReference Include="STS2.RitsuLib.Compat.0.107.1" Version="*" />
+    <PackageReference Include=" STS2.RitsuLib.Compat.0.107.1 " Version="*" />
   </ItemGroup>
-  
+
   <Target Name="Copy Mod" AfterTargets="PostBuildEvent">
     <Message Text="Copying mod to Slay the Spire 2 mods folder..." Importance="high" />
-    <MakeDir Directories="$(Sts2Dir)\mods\" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Sts2Dir)\mods\$(MSBuildProjectName)\" />
+    <MakeDir Directories="$(Sts2Dir)/mods/" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Sts2Dir)/mods/YakumoAkai-0.107.1/" />
   </Target>
-  
+
+  <!-- 新增 -->
+  <Target Name="ExportPck" AfterTargets="Publish">
+    <Message Text="Copying PCK to Slay the Spire 2 mods folder..." Importance="high" />
+    <Exec Command="&quot;$(GodotExe)&quot; --headless --export-pack &quot;Windows Desktop&quot; &quot;$(Sts2Dir)/mods/YakumoAkai-0.107.1/$(MSBuildProjectName).pck&quot;"
+          EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
+          ContinueOnError="WarnAndContinue" />
+  </Target>
 </Project>

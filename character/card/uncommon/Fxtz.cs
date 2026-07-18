@@ -31,8 +31,8 @@ namespace YakumoAkai.character.card.uncommon
             new DamageVar(13m, ValueProp.Move),new BlockVar(15m, ValueProp.Move),new PowerVar<DexterityPower>(1)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public Fxtz()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

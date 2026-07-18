@@ -28,9 +28,8 @@ namespace YakumoAkai.character.card.common
             new DamageVar(6m, ValueProp.Move),new PowerVar<WeakPower>(2m),new PowerVar<StrengthPower>(1m)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
-                                                                                    ];
-
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public SealingMagicNeedle()
             : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

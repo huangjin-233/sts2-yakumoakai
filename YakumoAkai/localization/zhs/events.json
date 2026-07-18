@@ -2,7 +2,7 @@
   "YAKUMO_AKAI_EVENT_UNKNOW.title": "永琳出品，必属精品",
   "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.description": "愣了愣，少女躺在床上侧起了身体，看向了自己的枕边，而在这个枕头边上，此刻正躺着这种香气的来源\n\n鲜艳异常却又没有人工气息的香喷喷的水果，比那名居的桃子。\n\n“咕噜……”\n\n少女不禁咽了口唾沫，这种水果特有的清香气息，又重新勾起了少女胃中的食虫，虽然刚才在餐桌上已经吃了不少东西，但是对于水果这种东西却是从来不会因为时间而没有食欲的，就像是饭后水果一样，少女现在觉得这个桃子显得意外地有诱惑力。\n\n（反正我也不准备要这个玩意儿了，把它吃了……应该没什么关系吧？）",
   "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.Drink.title": "吃掉桃子",
-  "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.Drink.description": "失去[red]{HpLoss}[/red]最大生命值。",
+  "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.Drink.description": "失去[red]{HpLoss}[/red]最大生命值，获得神秘遗物。",
   "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.Nodrink.title": "不吃",
   "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.Nodrink.description": "离开（回复20点血量）",
   "YAKUMO_AKAI_EVENT_UNKNOW.pages.INITIAL.options.CantDrink.title":"锁定",

@@ -32,6 +32,7 @@ namespace YakumoAkai.character.card.uncommon
         ];
         // 动态变量
         public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 20;
         public LazyRock()
             : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

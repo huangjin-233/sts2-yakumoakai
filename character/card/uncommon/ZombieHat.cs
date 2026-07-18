@@ -28,8 +28,8 @@ namespace YakumoAkai.character.card.uncommon
     public sealed class ZombieHat : ModCardTemplate
     {
         protected override List<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(5),new PowerVar<DexterityPower>(1)];// 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 15;
         public ZombieHat()
         : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

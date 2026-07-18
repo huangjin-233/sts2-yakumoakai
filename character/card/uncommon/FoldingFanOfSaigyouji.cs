@@ -38,8 +38,8 @@ namespace YakumoAkai.character.card.uncommon
         ];
         // 动态变量
         private bool cost=false;
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex
-                                                                                    ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 15;
         public FoldingFanOfSaigyouji()
             : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AllAllies) { }
         // 卡牌的构造函数，指定卡牌的相关属性

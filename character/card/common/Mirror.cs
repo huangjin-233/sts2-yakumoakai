@@ -29,8 +29,8 @@ namespace YakumoAkai.character.card.common
             new BlockVar(8m, ValueProp.Move),new PowerVar<ThornsPower>(2m)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Mpex
-                                                                                     ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 10;
         public Mirror()
             : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

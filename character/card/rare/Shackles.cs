@@ -28,8 +28,8 @@ namespace YakumoAkai.character.card.rare
         protected override List<DynamicVar> CanonicalVars => [
             new PowerVar<Guai>(3),new PowerVar<StrengthPower>(2),new HpLossVar(3)
         ];
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 30;
         public Shackles()
             : base(2, CardType.Power, CardRarity.Rare, TargetType.Self) { }
         // 卡牌的构造函数，指定卡牌的相关属性

@@ -33,8 +33,8 @@ namespace YakumoAkai.character.card.uncommon
             new DamageVar(16m, ValueProp.Move),new CardsVar(2),new PowerVar<Fire>(5)
         ];
         // 动态变量
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex
-                                                                ];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 15;
         public EightTrugramsFurnace()
             : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

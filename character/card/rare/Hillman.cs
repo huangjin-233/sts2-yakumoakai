@@ -27,6 +27,7 @@ namespace YakumoAkai.character.card.rare
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4m, ValueProp.Move), new CardsVar(3)];
         // 动态变量
         public override CardPoolModel VisualCardPool => ModelDb.CardPool<YakumoAkaiCardPool>();
+        protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 25;
         public Hillman()
             : base(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy) { }
         // 卡牌的构造函数，指定卡牌的相关属性

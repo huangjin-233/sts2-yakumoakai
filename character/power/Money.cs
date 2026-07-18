@@ -32,7 +32,10 @@ namespace YakumoAkai.character.power
         public override bool AllowNegative => false;
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await PlayerCmd.GainGold(Amount, base.Owner.Player);
+            if (cardPlay.Card.Owner.Creature == Owner)
+            {
+                await PlayerCmd.GainGold(Amount, base.Owner.Player);
+            }
         }
     }
 
