@@ -37,12 +37,12 @@ namespace YakumoAkai.character.card.rare
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             int h = (int)((int)Owner.Creature.CurrentHp * 30 / 100m);
-            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, h, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, h, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this,cardPlay);
             if (base.Owner.Creature.CurrentHp <= 0)
             {
                 await CreatureCmd.Heal(base.Owner.Creature, 1);
             }
-            AttackCommand attackCommand = await DamageCmd.Attack(h * 1.5m).FromCard(this).Targeting(cardPlay.Target).Execute(choiceContext); // 执行攻击效果
+            AttackCommand attackCommand = await DamageCmd.Attack(h * 1.5m).FromCard(this,cardPlay).Targeting(cardPlay.Target).Execute(choiceContext); // 执行攻击效果
             await CreatureCmd.GainBlock(base.Owner.Creature, attackCommand.Results.SelectMany((List<DamageResult> r) => r).Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage), ValueProp.Move, cardPlay);
         }
         public override string PortraitPath => $"res://images/cards/attack/Friend_of_devil.png";

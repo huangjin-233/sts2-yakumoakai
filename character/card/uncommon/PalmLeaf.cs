@@ -63,7 +63,7 @@ namespace YakumoAkai.character.card.uncommon
             }
             if (cardModel != null)
             {
-                cardModel.EnergyCost.SetThisTurnOrUntilPlayed(0);
+                cardModel.SetToFreeThisTurn();
                 await CardPileCmd.AddGeneratedCardToCombat(cardModel, PileType.Hand, Owner);
             }
         }

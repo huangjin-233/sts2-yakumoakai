@@ -772,129 +772,13 @@ internal static class LegacySavedSpireFieldRuntime
     private static void EnsureCacheEntry(string name)
     {
         const BindingFlags flags = BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
-
-        var propertyToIdField = typeof(SavedPropertiesTypeCache).GetField("_propertyNameToNetIdMap", flags);
-        var idToPropertyField = typeof(SavedPropertiesTypeCache).GetField("_netIdToPropertyNameMap", flags);
-        if (propertyToIdField?.GetValue(null) is not Dictionary<string, int> propertyToId ||
-            idToPropertyField?.GetValue(null) is not List<string> idToProperty)
-        {
-            return;
-        }
-
-        if (propertyToId.ContainsKey(name))
-        {
-            return;
-        }
-
-        propertyToId[name] = idToProperty.Count;
-        idToProperty.Add(name);
-
-        var netIdBitSizeProperty = typeof(SavedPropertiesTypeCache).GetProperty("NetIdBitSize", flags);
-        if (netIdBitSizeProperty == null || idToProperty.Count <= 1)
-        {
-            return;
-        }
-
-        var newBitSize = (int)Math.Ceiling(Math.Log(idToProperty.Count, 2));
-        netIdBitSizeProperty.SetValue(null, newBitSize);
+        
     }
 }
 
 public static class CommonActions
 {
-    public static AttackCommand CardAttack(CardModel card, CardPlay play, int hitCount = 1, string? vfx = null, string? sfx = null, string? tmpSfx = null)
-    {
-        return CardAttack(card, play.Target, hitCount, vfx, sfx, tmpSfx);
-    }
-
-    public static AttackCommand CardAttack(CardModel card, Creature? target, int hitCount = 1, string? vfx = null, string? sfx = null, string? tmpSfx = null)
-    {
-        if (card.DynamicVars.ContainsKey(CalculatedDamageVar.defaultName))
-        {
-            return CardAttack(card, target, card.DynamicVars.CalculatedDamage, hitCount, vfx, sfx, tmpSfx);
-        }
-
-        if (card.DynamicVars.ContainsKey(DamageVar.defaultName))
-        {
-            return CardAttack(card, target, card.DynamicVars.Damage.BaseValue, hitCount, vfx, sfx, tmpSfx);
-        }
-
-        throw new InvalidOperationException($"Card {card.Title} does not have a damage variable supported by CommonActions.CardAttack.");
-    }
-
-    public static AttackCommand CardAttack(CardModel card, Creature? target, decimal damage, int hitCount = 1, string? vfx = null, string? sfx = null, string? tmpSfx = null)
-    {
-        AttackCommand command = DamageCmd.Attack(damage).WithHitCount(hitCount).FromCard(card);
-        var combatState = card.CombatState;
-
-        switch (card.TargetType)
-        {
-            case TargetType.AnyEnemy:
-                if (target != null)
-                {
-                    command.Targeting(target);
-                }
-                break;
-            case TargetType.AllEnemies:
-                if (combatState != null)
-                {
-                    command.TargetingAllOpponents(combatState);
-                }
-                break;
-            case TargetType.RandomEnemy:
-                if (combatState != null)
-                {
-                    command.TargetingRandomOpponents(combatState);
-                }
-                break;
-            default:
-                throw new InvalidOperationException($"Unsupported AttackCommand target type {card.TargetType} for card {card.Title}.");
-        }
-
-        if (vfx != null || sfx != null || tmpSfx != null)
-        {
-            command.WithHitFx(vfx: vfx, sfx: sfx, tmpSfx: tmpSfx);
-        }
-
-        return command;
-    }
-
-    public static AttackCommand CardAttack(CardModel card, Creature? target, CalculatedDamageVar calculatedDamage, int hitCount = 1, string? vfx = null, string? sfx = null, string? tmpSfx = null)
-    {
-        AttackCommand command = DamageCmd.Attack(calculatedDamage).WithHitCount(hitCount).FromCard(card);
-        var combatState = card.CombatState;
-
-        switch (card.TargetType)
-        {
-            case TargetType.AnyEnemy:
-                if (target != null)
-                {
-                    command.Targeting(target);
-                }
-                break;
-            case TargetType.AllEnemies:
-                if (combatState != null)
-                {
-                    command.TargetingAllOpponents(combatState);
-                }
-                break;
-            case TargetType.RandomEnemy:
-                if (combatState != null)
-                {
-                    command.TargetingRandomOpponents(combatState);
-                }
-                break;
-            default:
-                throw new InvalidOperationException($"Unsupported AttackCommand target type {card.TargetType} for card {card.Title}.");
-        }
-
-        if (vfx != null || sfx != null || tmpSfx != null)
-        {
-            command.WithHitFx(vfx: vfx, sfx: sfx, tmpSfx: tmpSfx);
-        }
-
-        return command;
-    }
+    
 
     public static Task<decimal> CardBlock(CardModel card, CardPlay play)
     {
@@ -1215,11 +1099,7 @@ public static class LegacyMigrationSupport
         {
             return;
         }
-
-        if (SavedPropertiesTypeCache.GetJsonPropertiesForType(modelType) == null)
-        {
-            SavedPropertiesTypeCache.InjectTypeIntoCache(modelType);
-        }
+        
 
         lock (SyncRoot)
         {

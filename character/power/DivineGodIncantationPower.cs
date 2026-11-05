@@ -34,14 +34,14 @@ namespace YakumoAkai.character.power
 
         // 允许层数为负数
         public override bool AllowNegative => false;
-        public static Dictionary<Player, int> god = new Dictionary<Player, int>();
+        public static Dictionary<Player, decimal> god = new Dictionary<Player, decimal>();
         public void SetValue(Player player, int value)
         {
             god[player] = value;
         }
         public static int GetValue(Player player)
         {
-            return god.TryGetValue(player, out int value) ? value : 0;
+            return (int)(god.TryGetValue(player, out decimal value) ? value : 0);
         }
         public static void IncrementValue(Player player, int value)
         {

@@ -13,14 +13,78 @@
     <SourceRoot Include="C:\Users\25516\.nuget\packages\" />
   </ItemGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Content Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.5.10\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\0.107.1\mod_manifest.generated.json" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.5.10\contentFiles\any\net9.0\.godot\mono\temp\obj\Release\0.107.1\mod_manifest.generated.json')">
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\RitsuLib.References.props" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\RitsuLib.References.props')">
       <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
-      <NuGetPackageVersion>0.5.10</NuGetPackageVersion>
-      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
       <Pack>false</Pack>
       <Private>False</Private>
-      <Link>.godot\mono\temp\obj\Release\0.107.1\mod_manifest.generated.json</Link>
-    </Content>
+      <Link>RitsuLib.References.props</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\assets.zip" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\assets.zip')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>assets.zip</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\compat-target.txt" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\compat-target.txt')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>compat-target.txt</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\loader\STS2-RitsuLib.dll" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\loader\STS2-RitsuLib.dll')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>loader\STS2-RitsuLib.dll</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\mod_manifest.json" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\mod_manifest.json')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>mod_manifest.json</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\ritsulib-variants.manifest" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\ritsulib-variants.manifest')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>ritsulib-variants.manifest</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\assets\index.css" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\assets\index.css')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>viewer\assets\index.css</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\assets\index.js" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\assets\index.js')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>viewer\assets\index.js</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\index.html" Condition="Exists('$(NuGetPackageRoot)sts2.ritsulib.compat.0.107.1\0.6.2\contentFiles\any\any\viewer\index.html')">
+      <NuGetPackageId>STS2.RitsuLib.Compat.0.107.1</NuGetPackageId>
+      <NuGetPackageVersion>0.6.2</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>viewer\index.html</Link>
+    </None>
   </ItemGroup>
   <ItemGroup Condition=" '$(Language)' == 'C#' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <Compile Include="$(NuGetPackageRoot)krafs.publicizer\2.3.2\contentfiles\cs\any\Publicizer\IgnoresAccessChecksToAttribute.cs" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer\2.3.2\contentfiles\cs\any\Publicizer\IgnoresAccessChecksToAttribute.cs')">
@@ -33,7 +97,7 @@
     </Compile>
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props" Condition="Exists('$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props')" />
     <Import Project="$(NuGetPackageRoot)krafs.publicizer\2.3.2\build\Krafs.Publicizer.props" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer\2.3.2\build\Krafs.Publicizer.props')" />
+    <Import Project="$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props" Condition="Exists('$(NuGetPackageRoot)godot.sourcegenerators\4.5.1\build\Godot.SourceGenerators.props')" />
   </ImportGroup>
 </Project>

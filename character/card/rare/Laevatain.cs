@@ -40,7 +40,7 @@ namespace YakumoAkai.character.card.rare
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            CardModel cardModel = (
+            CardModel? cardModel = (
                 await CardSelectCmd.FromHand(
                 choiceContext,
                 base.Owner,
@@ -56,15 +56,11 @@ namespace YakumoAkai.character.card.rare
                     CardModel card = cardModel.CreateClone();
                     await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
                     //复制3张
-                    card.EnergyCost.SetThisTurnOrUntilPlayed(0);
+                    card.SetToFreeThisTurn();
                     //能耗变为0
                 }
             }
             await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -45m, base.Owner.Creature, this);
-            Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 45;
-            IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 9;
-            Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 45;
-            DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 45;
         }
         public override string PortraitPath => $"res://images/cards/skill/Laevatain.png";
 

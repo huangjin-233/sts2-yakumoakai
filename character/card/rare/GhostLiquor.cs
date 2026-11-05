@@ -36,7 +36,7 @@ namespace YakumoAkai.character.card.rare
                 {
                     ArgumentNullException.ThrowIfNull(cardPlay.Target);
                     bool shouldTriggerFatal = cardPlay.Target.Powers.All(( p) => p.ShouldOwnerDeathTriggerFatal());
-                    AttackCommand attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(cardPlay.Target)
+                    AttackCommand attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this,cardPlay).Targeting(cardPlay.Target)
                         .WithHitFx("vfx/vfx_attack_slash")
                         .Execute(choiceContext);
                     if (shouldTriggerFatal && attackCommand.Results.SelectMany(( r) => r).Any(( r) => r.WasTargetKilled))

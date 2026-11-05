@@ -45,7 +45,7 @@ namespace YakumoAkai.character.card.common
             {
                 await CardCmd.Exhaust(choiceContext, cardModel);//消耗
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-             .FromCard(this) // 攻击来源
+             .FromCard(this,cardPlay) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
              .Execute(choiceContext); // 执行攻击效果
             }

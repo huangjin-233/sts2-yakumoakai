@@ -33,7 +33,7 @@ namespace YakumoAkai.character.card.common
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, 3, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, 3, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this,cardPlay);
             await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<mp>().BaseValue, base.Owner.Creature, null);//燃烧
         }
         public override string PortraitPath => $"res://images/cards/skill/FlanrdeWing.png";

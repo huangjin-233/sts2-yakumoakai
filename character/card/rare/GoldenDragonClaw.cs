@@ -41,7 +41,7 @@ namespace YakumoAkai.character.card.rare
             for (int i=0;i < base.DynamicVars.Cards.BaseValue; i++)
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-             .FromCard(this) // 攻击来源
+             .FromCard(this,cardPlay) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
              .WithHitVfxNode((Creature t) => NScratchVfx.Create(t, goingRight: true))
              .Execute(choiceContext); // 执行攻击效果
@@ -54,10 +54,6 @@ namespace YakumoAkai.character.card.rare
                     var selected = debuff[new Random().Next(debuff.Count)];
                     await PowerCmd.Remove(selected);
                     await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -30, base.Owner.Creature, this);
-                    Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 30;
-                    IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 6;
-                    Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 30;
-                    DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 30;
                 }
             }
         }

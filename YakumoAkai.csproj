@@ -28,16 +28,15 @@
     <Folder Include="scenes\creature_visuals\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="sts2">
-      <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
+    <PackageReference Include="STS2.RitsuLib.Compat.0.107.1" Version="0.6.2" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>dll\0Harmony.dll</HintPath>
     </Reference>
-    <PackageReference Include=" STS2.RitsuLib.Compat.0.107.1 " Version="*" />
+    <Reference Include="sts2">
+      <HintPath>dll\sts2.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="Copy Mod" AfterTargets="PostBuildEvent">

@@ -37,7 +37,7 @@ namespace YakumoAkai.character.card.common
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-             .FromCard(this) // 攻击来源
+             .FromCard(this,cardPlay) // 攻击来源
              .Targeting(cardPlay.Target) // 攻击目标
              .Execute(choiceContext); // 执行攻击效果
             await PowerCmd.Apply<WeakPower>(choiceContext,cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
@@ -45,10 +45,6 @@ namespace YakumoAkai.character.card.common
             {
                 await PowerCmd.Apply<StrengthPower>(choiceContext,cardPlay.Target, -base.DynamicVars.Strength.BaseValue, base.Owner.Creature, this);//减力量
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -10m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 10;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 10;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 10;
             }
             //mp效果
         }

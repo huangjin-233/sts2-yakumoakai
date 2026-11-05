@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Ancients;
 using MegaCrit.Sts2.Core.Models;
@@ -31,7 +31,8 @@ public static class AncientDialogueSetPatch
             var matched = new List<AncientDialogue>();
             foreach (var dialogue in dialogues)
             {
-                if (dialogue.VisitIndex == charVisits)
+                // 只有精确匹配访问次数、且台词文本齐全的对话才可用
+                if (dialogue.VisitIndex == charVisits && IsFullyLocalized(dialogue))
                     matched.Add(dialogue);
             }
 
@@ -40,7 +41,8 @@ public static class AncientDialogueSetPatch
             {
                 foreach (var dialogue in dialogues)
                 {
-                    if (dialogue.IsRepeating && (!dialogue.VisitIndex.HasValue || charVisits >= dialogue.VisitIndex.Value))
+                    if (dialogue.IsRepeating && (!dialogue.VisitIndex.HasValue || charVisits >= dialogue.VisitIndex.Value)
+                        && IsFullyLocalized(dialogue))
                         matched.Add(dialogue);
                 }
             }
@@ -55,5 +57,23 @@ public static class AncientDialogueSetPatch
 
         // 如果没有找到专属对话，保留原逻辑（即 FirstVisitEver 或 ANY）
         MyCustomModInitializer.Logger.Warn("[AncientDialogueSetPatch] 未找到匹配的角色对话，保留原逻辑");
+    }
+
+    // 判断一个对话的所有台词是否都能在 ancients 表里取到文本
+    // 部分先古（如 TOUHOUANCIENTS 系列）为角色准备了比本地化条目更多的对话组，
+    // 缺文本的组在游戏里会退化成 "3-0" 这类键片段占位串，这里直接过滤掉这些对话，
+    // 保证玩家看到的永远是真实台词
+    private static bool IsFullyLocalized(AncientDialogue dialogue)
+    {
+        if (dialogue.Lines.Count == 0)
+            return false;
+
+        foreach (var line in dialogue.Lines)
+        {
+            if (line.LineText is null || !line.LineText.Exists())
+                return false;
+        }
+
+        return true;
     }
 }

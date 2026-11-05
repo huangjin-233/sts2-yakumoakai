@@ -111,10 +111,6 @@ namespace YakumoAkai.character.relics
                     if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 20)
                     {
                         await PowerCmd.Apply<mp>(context,base.Owner.Creature, -20m, base.Owner.Creature, null);
-                        Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
-                        IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
-                        Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
-                        DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 20;
                         TaskHelper.RunSafely(DoActivateVisuals());
                         await PowerCmd.Apply<IntangiblePower>(context,base.Owner.Creature, 1m, base.Owner.Creature, null);//无实体                                                                                          
                         Played -= Threshold;

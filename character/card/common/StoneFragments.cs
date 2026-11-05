@@ -36,7 +36,7 @@ namespace YakumoAkai.character.card.common
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this,cardPlay)
                 .TargetingAllOpponents(base.CombatState)
                 .WithHitFx("vfx/vfx_attack_slash", null, "blunt_attack.mp3")
                 .Execute(choiceContext); // 执行攻击效果
@@ -45,10 +45,6 @@ namespace YakumoAkai.character.card.common
             {
                 await CardPileCmd.Add(this, PileType.Draw);//返回抽卡堆
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -10m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 10;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 10;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 10;
             }
             //mp效果
         }

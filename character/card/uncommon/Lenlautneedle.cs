@@ -49,10 +49,6 @@ namespace YakumoAkai.character.card.uncommon
                     CardCmd.Upgrade(item);//升级
                 }
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -20m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 20;
             }
             //mp效果
         }

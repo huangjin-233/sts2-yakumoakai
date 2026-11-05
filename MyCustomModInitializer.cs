@@ -43,6 +43,7 @@ namespace YakumoAkai
             LoadScenes();
             var harmony = new Harmony("YakumoAkai.neow.patch");
             harmony.PatchAll();                         // 自动扫描当前程序集的所有补丁
+            YakumoAkaiTelemetry.Register();             // 注册遥测申请方（玩家授权后才会上报）
 
             Log.Info("八云红模组已加载");
         }

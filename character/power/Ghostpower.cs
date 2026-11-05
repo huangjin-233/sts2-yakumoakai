@@ -38,9 +38,9 @@ namespace YakumoAkai.character.power
 
         // 允许层数为负数
         public override bool AllowNegative => false;
-        public override decimal ModifyDamageMultiplicative(Creature target, decimal amount, ValueProp props, Creature dealer, CardModel cardSource)
+        public override decimal ModifyDamageMultiplicative(Creature target, decimal amount, ValueProp props, Creature dealer, CardModel cardSource, CardPlay cardPlay)
         {
-            if (amount > 0) 
+            if (amount > 0 && dealer == Owner) 
             {   
                 return base.Amount;
             }
@@ -54,7 +54,7 @@ namespace YakumoAkai.character.power
         {
             if (side == base.Owner.Side)
             {
-                await CreatureCmd.Damage(choiceContext, base.Owner, 99999, ValueProp.Unpowered, base.Owner, null);
+                await CreatureCmd.Damage(choiceContext, base.Owner, 99999, ValueProp.Unpowered, base.Owner, null,null);
             }
         }
     }

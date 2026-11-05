@@ -45,7 +45,7 @@ namespace YakumoAkai.character.card.rare
             {
                 if (base.IsUpgraded)
                 {
-                    await DamageCmd.Attack(65).FromCard(this)
+                    await DamageCmd.Attack(65).FromCard(this,cardPlay)
                     .TargetingRandomOpponents(base.CombatState)
                     .BeforeDamage(async delegate
                     {
@@ -69,7 +69,7 @@ namespace YakumoAkai.character.card.rare
                 }
                 else
                 {
-                    await DamageCmd.Attack(55).FromCard(this)
+                    await DamageCmd.Attack(55).FromCard(this,cardPlay)
                   .TargetingRandomOpponents(base.CombatState)
                   .BeforeDamage(async delegate
                   {
@@ -92,15 +92,11 @@ namespace YakumoAkai.character.card.rare
                   .Execute(choiceContext);
                 }
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -30m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 45;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 9;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 45;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 45;
             }
             else
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                    .FromCard(this)
+                    .FromCard(this,cardPlay)
                     .TargetingAllOpponents(base.CombatState)
                     .BeforeDamage(async delegate
                     {

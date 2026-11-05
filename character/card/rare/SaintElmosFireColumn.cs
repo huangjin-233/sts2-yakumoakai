@@ -31,7 +31,7 @@ namespace YakumoAkai.character.card.rare
         protected override List<DynamicVar> CanonicalVars => [
             new DamageVar(7m, ValueProp.Move),new BlockVar(5m, ValueProp.Move),new PowerVar<Fire>(3)
         ];
-        
+        protected override bool HasEnergyCostX => true;
         // 动态变量
         public override IEnumerable<CardKeyword> CanonicalKeywords => [AkaiKeyword.Mpex];
         protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPowerAmount<mp>() >= 30;
@@ -52,12 +52,8 @@ namespace YakumoAkai.character.card.rare
             {
                 num += 2;
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -30m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 30;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 6;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 30;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 30;
             }
-            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this)
+            await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount(num).FromCard(this,cardPlay)
                .Targeting(CurrentTarget)
                .WithHitFx("vfx/vfx_giant_horizontal_slash")
                .Execute(choiceContext);  //X攻击

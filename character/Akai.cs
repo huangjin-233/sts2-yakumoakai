@@ -32,7 +32,7 @@ namespace YakumoAkai.character
 				// 人物模型tscn路径。
 				VisualsPath: "res://scenes/creature_visuals/akai.tscn",
 				// 能量表盘tscn路径。
-				//EnergyCounterPath: "res://Test/scenes/test_energy_counter.tscn",
+				EnergyCounterPath: "res://scenes/ui/akai_energy_counter.tscn",
 				// 商店人物场景。
 				MerchantAnimPath: "res://scenes/creature_visuals/akai.tscn",
 				// 篝火休息场景。

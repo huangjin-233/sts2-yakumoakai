@@ -34,7 +34,7 @@ namespace YakumoAkai.character.card.common
             for (int i = 0; i < 3; i++)
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingAllOpponents(base.CombatState)
             .WithHitFx("vfx/vfx_attack_slash", null, "blunt_attack.mp3")
             .Execute(choiceContext); // 执行攻击效果

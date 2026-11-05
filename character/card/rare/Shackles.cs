@@ -36,16 +36,12 @@ namespace YakumoAkai.character.card.rare
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+            await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this,cardPlay);
             await PowerCmd.Apply<Guai>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<Guai>().BaseValue, base.Owner.Creature, this);
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 30)
             {
                 await PowerCmd.Apply<StrengthPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<StrengthPower>().BaseValue, base.Owner.Creature, this);
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -30m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 30;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 6;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 30;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 30;
             }
         }
         public override string PortraitPath => $"res://images/cards/power/Shackles.png";

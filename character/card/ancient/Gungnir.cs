@@ -33,20 +33,16 @@ namespace YakumoAkai.character.card.ancient
         {
             foreach (Creature Enemy in base.CombatState.HittableEnemies)
             { 
-                await CreatureCmd.LoseBlock(Enemy, Enemy.Block); 
+                await CreatureCmd.LoseBlock(choiceContext,Enemy, Enemy.Block,Owner.Creature); 
             }
             await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-             .FromCard(this) // 攻击来源
+             .FromCard(this,cardPlay) // 攻击来源
              .TargetingAllOpponents(base.CombatState) // 攻击目标
              .Execute(choiceContext); // 执行攻击效果
             if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 10)
             {
                 await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);//抽卡
                 await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -10m, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 10;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 2;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 10;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 10;
             }//mp 效果
         }
         public override string PortraitPath => $"res://images/cards/attack/Gungnir.png";

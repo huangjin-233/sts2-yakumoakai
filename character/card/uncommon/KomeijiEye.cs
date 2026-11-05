@@ -50,26 +50,18 @@ namespace YakumoAkai.character.card.uncommon
                 {
                     await PowerCmd.Apply<WeakPower>(choiceContext,cardPlay.Target, base.DynamicVars.Weak.BaseValue, base.Owner.Creature, this);//虚弱
                     await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -20m, base.Owner.Creature, this);
-                    Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 20;
-                    IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 4;
-                    Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 20;
-                    DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 20;
                 }//mp效果
             }
             else
             {
                 await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-                    .FromCard(this) // 攻击来源
+                    .FromCard(this,cardPlay) // 攻击来源
                     .Targeting(cardPlay.Target) // 攻击目标
                     .Execute(choiceContext); // 执行攻击效果
                 if (base.Owner.Creature.HasPower<mp>() && base.Owner.Creature.GetPowerAmount<mp>() >= 100)
                 {
                     await PowerCmd.Apply<ArtifactPower>(choiceContext,base.Owner.Creature, base.DynamicVars.Power<ArtifactPower>().BaseValue, base.Owner.Creature, this);//人工制品
                     await PowerCmd.Apply<mp>(choiceContext,base.Owner.Creature, -100m, base.Owner.Creature, this);
-                    Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + 100;
-                    IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + 20;
-                    Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + 100;
-                    DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + 100;
                 }//mp效果
             }
         }

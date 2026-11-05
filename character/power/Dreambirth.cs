@@ -45,14 +45,15 @@ namespace YakumoAkai.character.power
         {
             if (player == base.Owner.Player)
             {
-                await PowerCmd.TickDownDuration(this);
-                await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),Owner, -9999, Owner, null);
-                await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),Owner, DreamBirth.nowmp, Owner, null);
                 if (_vfxNode != null && GodotObject.IsInstanceValid(_vfxNode))
                 {
                     _vfxNode.QueueFree();
                     _vfxNode = null;
                 }
+                await PowerCmd.TickDownDuration(this);
+                await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),Owner, -9999, Owner, null);
+                await PowerCmd.Apply<mp>(new ThrowingPlayerChoiceContext(),Owner, DreamBirth.nowmp, Owner, null);
+                
             }
         }
     }

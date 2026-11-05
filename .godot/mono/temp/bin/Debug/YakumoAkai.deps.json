@@ -10,7 +10,9 @@
         "dependencies": {
           "GodotSharp": "4.5.1",
           "GodotSharpEditor": "4.5.1",
-          "STS2.RitsuLib.Compat.0.107.1": "0.5.10"
+          "STS2.RitsuLib.Compat.0.107.1": "0.6.2",
+          "0Harmony": "2.4.2.0",
+          "sts2": "0.1.0.0"
         },
         "runtime": {
           "YakumoAkai.dll": {}
@@ -35,23 +37,46 @@
           }
         }
       },
-      "STS2.RitsuLib.Compat.0.107.1/0.5.10": {
+      "STS2.RitsuLib.Compat.0.107.1/0.6.2": {
         "dependencies": {
-          "GodotSharp": "4.5.1",
-          "System.IO.Hashing": "9.0.0"
+          "GodotSharp": "4.5.1"
         },
         "runtime": {
+          "lib/net9.0/STS2-RitsuLib.Runtime.dll": {
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.6.2.0"
+          },
+          "lib/net9.0/STS2-RitsuLib.Settings.dll": {
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.6.2.0"
+          },
+          "lib/net9.0/STS2-RitsuLib.Shared.dll": {
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.6.2.0"
+          },
+          "lib/net9.0/STS2-RitsuLib.Ui.dll": {
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.6.2.0"
+          },
           "lib/net9.0/STS2-RitsuLib.dll": {
-            "assemblyVersion": "0.5.10.0",
-            "fileVersion": "0.5.10.0"
+            "assemblyVersion": "0.6.2.0",
+            "fileVersion": "0.6.2.0"
           }
         }
       },
-      "System.IO.Hashing/9.0.0": {
+      "0Harmony/2.4.2.0": {
         "runtime": {
-          "lib/net9.0/System.IO.Hashing.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.24.52809"
+          "0Harmony.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
+          }
+        }
+      },
+      "sts2/0.1.0.0": {
+        "runtime": {
+          "sts2.dll": {
+            "assemblyVersion": "0.1.0.0",
+            "fileVersion": "0.1.0.0"
           }
         }
       }
@@ -77,19 +102,22 @@
       "path": "godotsharpeditor/4.5.1",
       "hashPath": "godotsharpeditor.4.5.1.nupkg.sha512"
     },
-    "STS2.RitsuLib.Compat.0.107.1/0.5.10": {
+    "STS2.RitsuLib.Compat.0.107.1/0.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hZ6ht/5ONs6sYgHqy/4HV8HWVmWZKZA0RZVj/YgEONyHH11Kbm5CE8ZOtOSUqvWg3aq09IQbML/y+Fz9hy6jtQ==",
-      "path": "sts2.ritsulib.compat.0.107.1/0.5.10",
-      "hashPath": "sts2.ritsulib.compat.0.107.1.0.5.10.nupkg.sha512"
+      "sha512": "sha512-yzmwZ/9AyvdDW8Evkg0p3Lk6IjgRDlW3Mti5Q8XOjToLsSwFPG3tMWUyB7G50eZunzqaSOGggYIuB+kl3sPhFg==",
+      "path": "sts2.ritsulib.compat.0.107.1/0.6.2",
+      "hashPath": "sts2.ritsulib.compat.0.107.1.0.6.2.nupkg.sha512"
     },
-    "System.IO.Hashing/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-seeO8icDfED/Qwl9PDFUx2Gf/7xv7dPsMnw5PnRwNZuz4EWMpy0wIVohC4MfCcTIoJgp+KUrWG4WH3NPSusQOA==",
-      "path": "system.io.hashing/9.0.0",
-      "hashPath": "system.io.hashing.9.0.0.nupkg.sha512"
+    "0Harmony/2.4.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "sts2/0.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

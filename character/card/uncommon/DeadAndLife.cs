@@ -38,10 +38,6 @@ namespace YakumoAkai.character.card.uncommon
             if (base.Owner.Creature.HasPower<mp>())
             {
                 h = base.Owner.Creature.GetPowerAmount<mp>();
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>()/5;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + base.Owner.Creature.GetPowerAmount<mp>();
                 await PowerCmd.Remove<mp>(base.Owner.Creature);
                 await CreatureCmd.Heal(cardPlay.Target, h/15);//回血
             }

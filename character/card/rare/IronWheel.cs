@@ -25,7 +25,7 @@ namespace YakumoAkai.character.card.rare
     [RegisterCard(typeof(YakumoAkaiCardPool))]
     public sealed class IronWheel : ModCardTemplate
     {
-        public static Dictionary<Player, int> card = new Dictionary<Player, int>();
+        public static Dictionary<Player, decimal> card = new Dictionary<Player, decimal>();
         public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
 
         public static void SetValue(Player player, int value)
@@ -35,7 +35,7 @@ namespace YakumoAkai.character.card.rare
 
         public static int GetValue(Player player)
         {
-            return IronWheel.card.TryGetValue(player, out int value) ? value : 0;
+            return (int)(IronWheel.card.TryGetValue(player, out decimal value) ? value : 0);
         }
 
         public static void IncrementValue(Player player, int value)
@@ -69,7 +69,7 @@ namespace YakumoAkai.character.card.rare
             AkaiVfx.PlaySimple("res://scenes/vfx/ironwheel/ironwheel.tscn",spawnPos, 1f);
             await Task.Delay(750);
             await DamageCmd.Attack(base.DynamicVars.CalculatedDamage)
-                .FromCard(this) // 攻击来源
+                .FromCard(this,cardPlay) // 攻击来源
                 .Targeting(cardPlay.Target) // 攻击目标
                 .Execute(choiceContext); // 执行攻击效果
         }

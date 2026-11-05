@@ -44,14 +44,10 @@ namespace YakumoAkai.character.card.uncommon
                 {
                     await PowerCmd.Apply<IntangiblePower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);//无实体
                     await PowerCmd.Apply<mp>(choiceContext, base.Owner.Creature, -base.DynamicVars.Power<mp>().BaseValue, base.Owner.Creature, this);
-                Kind.mp[base.Owner] = Kind.GetValue(base.Owner) + (int)base.DynamicVars.Power<mp>().BaseValue;
-                IronWheel.card[base.Owner] = IronWheel.GetValue(base.Owner) + (int)base.DynamicVars.Power<mp>().BaseValue/5;
-                DivineGodIncantationPower.god[base.Owner] = DivineGodIncantationPower.GetValue(base.Owner) + (int)base.DynamicVars.Power<mp>().BaseValue;
-                Maidknifepower.maid[base.Owner] = Maidknifepower.GetValue(base.Owner) + (int)base.DynamicVars.Power<mp>().BaseValue;
             }
             Creature creature = base.Owner.Creature;
             DamageVar damage = base.DynamicVars.Damage;
-            await CreatureCmd.Damage(choiceContext, base.Owner.Creature.CombatState.Creatures, damage.BaseValue, damage.Props, null, null);
+            await CreatureCmd.Damage(choiceContext, Owner.Creature.CombatState.Creatures, damage.BaseValue, damage.Props, null, this,cardPlay);
             }
         public override string PortraitPath => $"res://images/cards/attack/Yuka_angry.png";
 

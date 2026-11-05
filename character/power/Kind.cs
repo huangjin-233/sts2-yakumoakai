@@ -28,14 +28,14 @@ namespace YakumoAkai.character.power
         // 允许层数为负数
         public override bool AllowNegative => false;
         protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1),new CardsVar(1),new PowerVar<mp>(0)];
-        public static Dictionary<Player,int>mp=new Dictionary<Player,int>();
+        public static Dictionary<Player, decimal> mp=new Dictionary<Player, decimal>();
         public void SetValue(Player player,int value)
         {
             Kind.mp[player] = value;
         }
         public static int GetValue(Player player)
         {
-            return Kind.mp.TryGetValue(player,out int value) ? value : 0;
+            return (int)(Kind.mp.TryGetValue(player,out decimal value) ? value : 0);
         }
         public static void IncrementValue(Player player,int value)
         {
